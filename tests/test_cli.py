@@ -12,11 +12,20 @@ from rpmlb import LOG
 from rpmlb.cli import run
 
 
-# Module-level CLI runner
-runner = CliRunner()
+@pytest.fixture
+def runner():
+    r = CliRunner()
+    try:
+        with r.isolated_filesystem():
+            yield r
+    finally:
+        # Make sure other tests are not affected by the ones with --verbose
+        LOG.setLevel(logging.INFO)
 
 
-def test_parse_argv_no_options(tmpdir):
+@pytest.mark.parametrize('option', ('recipe_file', 'recipe_name', 'build',
+                                    'download', 'branch', 'source_directory'))
+def test_parse_argv_no_options(tmpdir, option):
     """Tests proper default values of the CLI"""
 
     RECIPE_FILE = tmpdir.join('ror.yml')
@@ -25,23 +34,27 @@ def test_parse_argv_no_options(tmpdir):
     # Prepare environment
     RECIPE_FILE.write('')
 
+    current_dir = os.path.abspath(os.getcwd())
+
+    expected = {
+        'recipe_file': str(RECIPE_FILE),
+        'recipe_name': str(RECIPE_NAME),
+        'build': 'dummy',
+        'download': 'none',
+        'branch': None,
+        'source_directory': current_dir,
+    }
+
     # Parse the arguments
     with tmpdir.as_cwd():
         argv = list(map(str, [RECIPE_FILE, RECIPE_NAME]))
         args = run.make_context('rpmlb', argv).params
 
-    current_dir = os.path.abspath(os.getcwd())
-
-    assert args['recipe_file'] == str(RECIPE_FILE), 'Wrong recipe file path'
-    assert args['recipe_name'] == str(RECIPE_NAME), 'Wrong recipe name'
-    assert args['build'] == 'dummy', 'Wrong builder name'
-    assert args['download'] == 'none', 'Wrong downloader name'
-    assert args['branch'] is None, 'Superfluous branch'
-    assert args['source_directory'] == current_dir
+    assert args[option] == expected[option]
 
 
-@runner.isolated_filesystem()
-def test_log_verbosity():
+@pytest.mark.parametrize('verbose', (True, False))
+def test_log_verbosity(runner, verbose):
     """Ensure that the verbosity is set properly on."""
 
     # Initial state – if the test fails here, the app has changed
@@ -51,83 +64,70 @@ def test_log_verbosity():
     recipe = Path('recipe.yml')
     recipe.touch()
 
-    runner.invoke(run, ['--verbose', str(recipe), 'test'])
-    assert LOG.getEffectiveLevel() == logging.DEBUG
+    verbose_args = ['--verbose'] if verbose else []
+    level = logging.DEBUG if verbose else logging.INFO
 
-    runner.invoke(run, [str(recipe), 'test'])
-    assert LOG.getEffectiveLevel() == logging.INFO
+    runner.invoke(run, verbose_args + [str(recipe), 'test'])
+    assert LOG.getEffectiveLevel() == level
 
 
-@runner.isolated_filesystem()
-def test_work_directory_path():
-    """Work directory: -w, --work-directory
+@pytest.fixture(params=('work-directory', 'custom-file'))
+def path_kind(request):
+    return request.param
 
-    Invariants:
-        - Work directory must exist.
-        - The path is always absolute.
-    """
 
-    # Expected environment
+def path_options_arguments(path_kind):
+    """Excepted environment for the path tests"""
+    filename = 'custom.yml' if path_kind == 'custom-file' else path_kind
+
     root = Path.cwd().resolve()
-    work_dir = root/'work-dir'
+    path = root/filename
     recipe_path = root/'recipe.yml'
     recipe_name = 'test'
 
     recipe_path.touch()
 
-    options = ['--work-directory', str(work_dir)]
+    options = ['--' + path_kind, str(path)]
     arguments = [str(recipe_path), recipe_name]
 
-    # Pre-conditions
-    assert not work_dir.exists(), 'Work directory already present'
+    assert not path.exists()
 
-    # Nonexistent parameter
+    return path, options, arguments
+
+
+def test_path_nonexistent(runner, path_kind):
+    path, options, arguments = path_options_arguments(path_kind)
+
     with pytest.raises(click.BadParameter):
-        run.make_context('test-work_dir-nonexistent', options + arguments)
-
-    # Fine parameters
-    work_dir.mkdir()
-    ctx = run.make_context('test-work_dir-ok', options + arguments)
-    result = Path(ctx.params['work_directory'])
-    assert result.is_absolute(), 'Relative work directory path'
-    assert result == work_dir, 'Unexpected work directory'
+        run.make_context('test-{}-nonexistent'.format(path_kind),
+                         options + arguments)
 
 
-@runner.isolated_filesystem()
-def test_custom_file_path():
-    """Custom builder/downloader instructions: -c, --custom-file
+def test_path_expected_and_absolute(runner, path_kind):
+    path, options, arguments = path_options_arguments(path_kind)
 
-    Invariants:
-        - The file must exists and be readable.
-        - The path is always absolute.
-    """
+    if path_kind.endswith('directory'):
+        path.mkdir()
+    else:
+        path.touch(mode=0o600)
 
-    # Expected environment
-    root = Path.cwd().resolve()
-    custom_file = root/'custom.yml'
-    recipe_path = root/'recipe.yml'
-    recipe_name = 'test'
+    ctx = run.make_context('test-{}-ok'.format(path_kind), options + arguments)
+    result = Path(ctx.params[path_kind.replace('-', '_')])
+    assert result == path
+    assert result.is_absolute()
 
-    recipe_path.touch()
 
-    options = ['--custom-file', str(custom_file)]
-    arguments = [str(recipe_path), recipe_name]
+def test_path_bad_permissions(runner, path_kind):
+    path, options, arguments = path_options_arguments(path_kind)
 
-    # Pre-conditions
-    assert not custom_file.exists(), 'Custom file already exists'
+    if path_kind.endswith('directory'):
+        # unwritable directory
+        path.mkdir()
+        path.chmod(0o500)
+    else:
+        # unreadable file
+        path.touch(mode=0o200)
 
-    # Nonexistent file
     with pytest.raises(click.BadParameter):
-        run.make_context('test-custom_file-nonexistent', options + arguments)
-
-    # Unreadable file
-    custom_file.touch(mode=0o200)
-    with pytest.raises(click.BadParameter):
-        run.make_context('test-custom_file-unreadable', options + arguments)
-
-    # Proper result
-    custom_file.chmod(0o600)
-    ctx = run.make_context('test-custom_file-ok', options + arguments)
-    result = Path(ctx.params['custom_file'])
-    assert result.is_absolute(), 'Relative custom file path'
-    assert result == custom_file, 'Unexpected custom file path'
+        run.make_context('test-{}-bad-permissions'.format(path_kind),
+                         options + arguments)
