@@ -81,8 +81,8 @@ python37:
     - python-pygments
     - python-snowballstemmer
     - python-docutils
-    - python-more-itertools # never tested here, new dep after pytest got updated
-    - python-atomicwrites: # untested here
+    - python-more-itertools
+    - python-atomicwrites:
         macros:
           _without_docs: 1
           _without_tests: 1
@@ -233,23 +233,17 @@ python37:
     - python-humanize
     - python-augeas
     - dbus-python
-    - python-qt5
+    - python-qt5 # speed things up by building both pyqts at the same time
     - PyQt4
     - python-pillow
     - python-memcached
     - dnf
-    - libreport
     - fros
-    - python-meh
     - glade
-    - anaconda
-
     - python-kerberos
     - python-requests-kerberos
-    - koji
     - python-dogpile-cache
     - python-editor
-    - python-alembic
     - python-chai
     - python-simplejson
     - python-arrow
@@ -283,7 +277,6 @@ python37:
     - python-enchant
     - python-tox
     - python-distro
-    - dnf-plugins-core
 
     - python-tempita
     - python-paste-deploy
@@ -307,8 +300,8 @@ python37:
     - python-zope-configuration
     - python-zope-deprecation
 
-    - python-attrs  # testfull rebuild
     - python-pytest-capturelog
+    - python-attrs  # testfull rebuild
     - python-scripttest
     - python-pip  # testfull rebuild
     - python-pytest-mock
@@ -334,7 +327,6 @@ python37:
 
     - pylint
     - rpmconf
-    - dnf-plugins-extras
 
     - python-testtools
     - python-extras
@@ -349,6 +341,15 @@ python37:
     - brotli
     - python-raven
     - python-httpbin
+
+    # this was moved down a bit due to libreport ftbfs, but that is now fixed
+    - libreport
+    - python-meh
+    - anaconda
+    - koji
+    - dnf-plugins-core
+    - dnf-plugins-extras
+
     - python-pytest-httpbin
     - python-requests # testfull rebuild
 
@@ -368,6 +369,12 @@ python37:
     - python-transaction
 
     - abrt
+    - python2-jinja  # docfull rebuild
+    - pyxdg
+    - python-keyring
+    - python-SecretStorage
+    - python-wheel  # testfull rebuild
+
     - python-paste
     - python-plaster-pastedeploy
     - python-webtest
@@ -387,6 +394,12 @@ python37:
 
     - createrepo_c
     - kobo
+
+    - python-twisted
+    - pytest # testfull rebuild, in copr without timeout
+    - python-txzmq
+    - python-txws
+
     - python-munch
     - python-productmd
     - python-multilib
@@ -394,6 +407,7 @@ python37:
     - pdc-client
     - python-pytoml
     - python-semantic_version
+    - python-kitchen # https://bugzilla.redhat.com/show_bug.cgi?id=1583600
     - python-gevent
     - meson
     - libgit2-glib
@@ -401,26 +415,20 @@ python37:
     - pungi # --exclude-test=tests.test_config_validate_script.ConfigValidateScriptTest.test_validate_dummy_config
     - python3-py3dns
     - python-pylibravatar
-    - python-kitchen # https://bugzilla.redhat.com/show_bug.cgi?id=1583600
+
     - python-fedora
     - python-moksha-common
 
-    - python-twisted # https://bugzilla.redhat.com/show_bug.cgi?id=1583626
-    - python-txzmq # blocked by twisted
-    - python-txws # blocked by twisted
-    - python-moksha-hub # blocked by twisted
+    - python-moksha-hub
     - fedmsg # https://bugzilla.redhat.com/show_bug.cgi?id=1589868 can use py2-sphinx
     - python-pyroute2 # https://bugzilla.redhat.com/show_bug.cgi?id=1583800 patched
-    - mock # blocked by pyroute2
-    - rpkg # (mock)
+    - mock
+    - rpkg
     - python-flake8
 
-    - pytest # testfull rebuild (blocked by twisted), in copr, without timeout
+    #- python-alembic # https://bugzilla.redhat.com/show_bug.cgi?id=1592127
     - bodhi
     - fedpkg # (bodhi, rpkg)
-
-    # WE ARE HERE
-
 
     #- python-asttokens # https://bugzilla.redhat.com/show_bug.cgi?id=1586009 NOT IMPORTANT
     #- python-flake8-import-order # asttokens NOT IMPORTANT
