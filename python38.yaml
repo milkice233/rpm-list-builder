@@ -1,28 +1,33 @@
 python38:
   packages:
-    - gdb:
-        macros:
-          _without_python: 1
-    - python2: # just start before py3 is built. not blocking yet
-        macros:
-          _with_python3_bootstrap: 1
+    #- gdb:
+    #    macros:
+    #      _without_python: 1
+    #- python2: # just start before py3 is built. not blocking yet
+    #    macros:
+    #      _with_python3_bootstrap: 1
     #- python3:
     #    macros:
+    #      _with_bootstrap: 1
     #      _without_tests: 1
     #      _without_optimizations: 1
     #- gdb # not blocking
-    #- python-setuptools: # python2 from above must be in the repo
-    #    macros:
-    #      _with_bootstrap: 1
-    #      _without_tests: 1
-    #- python-pip:
-    #    macros:
-    #      _with_bootstrap: 1
-    #      _without_tests: 1
-    #      _without_doc: 1
-    #- python-wheel:
-    #    macros:
-    #      _with_bootstrap: 1
+    - python-setuptools: # python2 from above must be in the repo
+        macros:
+          _with_bootstrap: 1
+          _without_tests: 1
+    - python-pip:
+        macros:
+          _with_bootstrap: 1
+          _without_tests: 1
+          _without_doc: 1
+    - python-wheel:
+        macros:
+          _with_bootstrap: 1
+    - python3: # in rpmlb, bump the release manually!
+        macros:
+          _without_tests: 1
+          _without_optimizations: 1
     #- python-setuptools:
     #    macros:
     #      _without_tests: 1
