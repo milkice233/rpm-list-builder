@@ -1,18 +1,17 @@
 python38:
   packages:
-    #- gdb:
-    #    macros:
-    #      _without_python: 1
-    #- python2: # just start before py3 is built. not blocking yet
-    #    macros:
-    #      _with_python3_bootstrap: 1
-    #- python3:
-    #    macros:
-    #      _with_bootstrap: 1
-    #      _without_tests: 1
-    #      _without_optimizations: 1
-    #- gdb # not blocking
-    - python-setuptools: # python2 from above must be in the repo
+    - python2: # just start before py3 is built. not blocking yet
+        macros:
+          _with_python3_bootstrap: 1
+          _without_rpmwheels: 1
+    - python3:
+        macros:
+          _with_bootstrap: 1
+          _without_tests: 1
+          _without_optimizations: 1
+          _without_rpmwheels: 1
+    - gdb # not blocking
+    - python-setuptools: # python2 from above must be in the repo, bump manually
         macros:
           _with_bootstrap: 1
           _without_tests: 1
@@ -24,412 +23,556 @@ python38:
     - python-wheel:
         macros:
           _with_bootstrap: 1
-    - python3: # in rpmlb, bump the release manually!
+    - python-setuptools:
         macros:
           _without_tests: 1
-          _without_optimizations: 1
-    #- python-setuptools:
-    #    macros:
-    #      _without_tests: 1
-    #- python-pip:
-    #    macros:
-    #      _without_tests: 1
-    #      _without_doc: 1
-    #- pyparsing
-    #- python2 # not blocking, just get it there at some point
-    #- asciidoc
-    #- python-six:
-    #    macros:
-    #      _without_tests: 1
-    #- python-setuptools_scm:
-    #    macros:
-    #      _without_tests: 1
-    #- python-py:
-    #    macros:
-    #      _without_tests: 1
-    #      _without_docs: 1
-    #- python-unittest2:
-    #    replaced_macros:
-    #      bootstrap_traceback2: 1
-    #- python-iniparse
-    #- python-chardet
-    #- python-pbr
-    #- python-linecache2:
-    #    macros:
-    #      _without_tests: 1
-    #- python-traceback2:
-    #    macros:
-    #      _without_tests: 1
-    #- python-unittest2
-    #- python-contextlib2
-    #- python-funcsigs
-    #- python-mock
-    #- python-mimeparse
-    #- python-extras:
-    #    macros:
-    #      _without_check: 1
-    #- python-testscenarios
-    #- python-coverage
-    #- python-nose
-    #- python-attrs:
-    #    macros:
-    #      _without_tests: 1
-    #- python-pluggy:
-    #    macros:
-    #      _without_tests: 1
-    #- python-hypothesis
-    #- python-decorator
-    #- python-markupsafe
-    #- python-pysocks
-    #- python-pygments
-    #- python-snowballstemmer
-    #- python-docutils
-    #- python-more-itertools
-    #- python-atomicwrites:
-    #    macros:
-    #      _without_docs: 1
-    #      _without_tests: 1
-    #- pytest:
-    #    macros:
-    #      _without_timeout: 1
-    #      _without_optional_tests: 1
-    #      _without_docs: 1
-    #- python-wheel  # testfull rebuild
-    #- python-pluggy
-    #- pytz
-    #- babel:
-    #    replaced_macros:
-    #      bootstrap: 1
-    #- python-imagesize
-    #- python-jinja2:
-    #    macros:
-    #      _without_docs: 1
-    #- python-process-tests
-    #- python-pretend
-    #- python-packaging:
-    #    macros:
-    #      _with_bootstrap: 1
-    #- python-sphinx_rtd_theme  # apparently those themes don't (build)require sphinx, \o/
-    #- python-sphinx-theme-alabaster
-    #- python-idna
-    #- python-urllib3:
-    #    macros:
-    #      _without_tests: 1
-    #- python-requests:
-    #    macros:
-    #      _without_tests: 1
-    #- python-sphinx:
-    #    macros:
-    #      _without_websupport: 1
-    #      _without_tests: 1
-    #- python-sqlalchemy
-    #- xapian-bindings
-    #- python-whoosh:
-    #    macros:
-    #      _without_docs: 1
-    #- python-sphinxcontrib-websupport
-    #- python-sphinx:
-    #    macros:
-    #      _without_tests: 1
-    #- python-sphinxcontrib-trio # untested here
-    #- python-atomicwrites # docsfull and testfull, untested here
-    #- python-whoosh
+    - python-pip:
+        macros:
+          _without_tests: 1
+          _without_doc: 1
+    - python3 # not blocking, just get it there at some point
+    - python2 # not blocking, just get it there at some point
+    - asciidoc
+    - python-pytoml
+    - python-six:
+        macros:
+          _without_tests: 1
+    - python-setuptools_scm:
+        macros:
+          _without_tests: 1
+    - python-py:
+        macros:
+          _without_tests: 1
+          _without_docs: 1
+    - python-unittest2:
+        replaced_macros:
+          bootstrap_traceback2: 1
+    - python-iniparse
+    - python-chardet:
+        macros:
+          _without_tests: 1
+    - python-pbr:
+        macros:
+          _with_bootstrap: 1
+    - python-linecache2:
+        macros:
+          _without_tests: 1
+    - python-traceback2:
+        macros:
+          _without_tests: 1
+    - python-unittest2  # bump
+    - python-contextlib2
+    - python-funcsigs
+    - python-mock
+    - python-mimeparse
+    - python-extras:
+        macros:
+          _without_check: 1
+    - python-coverage
+    - python-nose
+    - python-attrs:
+        macros:
+          _without_tests: 1
+    - python-pluggy:
+        macros:
+          _without_tests: 1
+    - python-hypothesis:
+        macros:
+          _without_tests: 1
+    - python-decorator
+    - python-markupsafe
+    - python-pysocks:
+        replaced_macros:
+         with_python3_tests: 0
+    - python-pygments:
+       macros:
+          _without_docs: 1
+    - python-snowballstemmer
+    - python-more-itertools
+    - python-atomicwrites:
+        macros:
+          _without_docs: 1
+          _without_tests: 1
+    - python-testtools:
+        macros:
+          _without_tests: 1
+          _without_docs: 1
+    - python-fixtures:
+        macros:
+          _without_tests: 1
+    - python-testscenarios
+    - python-fixtures
+    - pytest:
+        macros:
+          _without_timeout: 1
+          _without_optional_tests: 1
+          _without_docs: 1
+    - python-wheel
+    - python-chardet
+    - python-pluggy
+    - pytz  # https://bugzilla.redhat.com/show_bug.cgi?id=1687959
+    - babel:
+        replaced_macros:
+          bootstrap: 1
+    - python-imagesize
+    - python-docutils
+    - python-jinja2:
+        macros:
+          _without_docs: 1
+    - python-process-tests
+    - python-pretend
+    - python-packaging:
+        macros:
+          _without_docs: 1
+    - python-sphinx_rtd_theme:
+        macros:
+          _with_bootstrap: 1
+    - python-sphinx-theme-alabaster
+    - python-idna
+    - python-urllib3:
+        macros:
+          _without_tests: 1
+    - python-requests:
+        macros:
+          _without_tests: 1
+    - python-sphinxcontrib-applehelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-devhelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-htmlhelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-jsmath:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-qthelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-serializinghtml:
+        macros:
+          _without_check: 1
+    - python-sphinx:
+        macros:
+          _without_websupport: 1
+          _without_tests: 1
+    - pyparsing
+    - python-sqlalchemy
+    - python-whoosh
+    - python-sphinxcontrib-trio
+    - python-atomicwrites # docsfull and testfull
+    - python-pygments # docsfull
+    - python-testtools # docsfull and testfull
+    - rpm
+    - libdnf  # python3-hawkey
+    - libcomps
+    - pyxattr  # tests fail in copr (operation not permitted), commented out
+    - python-mako
+    - unbound
+    - gpgme
+    - librepo:
+        macros:
+          _without_pythontests: 1
+    - pycairo
+    - meson
+    - python-pytest-runner
+    - python-parso
+    - python-jedi
+    - Cython:
+        macros:
+          _without_tests: 1
+    - numpy
+    - Cython  # testfull, not blocking
+    - PyYAML
+    - python-tidy
+    - python-markdown
+    - gobject-introspection
+    - pygobject3
+    - python-itsdangerous
+    - python-click
+    - python-configobj
+    - python-httplib2
+    - python-sure
+    - python-bottle # py2 tests fail in copr only, so || :
+    - pyflakes
+    - python-pycurl
+    - python-tornado
+    - python-jsonpointer
+    - python-jsonpatch
+    - python-jsonschema:
+        macros:
+          _without_tests: 1
+    - python-blinker
+    - python-iso8601
+    - python-cryptography-vectors
+    - python-asn1crypto
+    - python-ply
+    - python-pycparser
+    - python-cffi
+    - python-cryptography
+    - python-jwt
+    - python-oauthlib
+    - python-prettytable
+    - pyserial
+    - libselinux
+    - policycoreutils
+    - python-ordered-set
+    - pykickstart
+    - python-pyudev
+    - pyparted
+    - libblockdev
+    - libbytesize
+    - python-blivet
+    - python-requests-file
+    - python-requests-ftp
+    - libpwquality
+    - python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
+    - python-pydbus
+    - python-ntplib
+    - python-pid
+    - python-wrapt
+    - python-polib
+    - python-lazy-object-proxy
+    - python-ptyprocess
+    - python-pexpect
+    - python-argcomplete
 
-    #- rpm
-    #- python-mako
-    #- libdnf
-    #- libcomps
-    #- pyxattr  # tests fail in copr (operation not permitted), commented out
-    #- python-pygpgme
-    #- gpgme
-    #- librepo:
-    #    macros:
-    #      _without_tests: 1
-    #- pycairo
-    #- pygobject3
-    #- python-pytest-runner
-    #- python-parso
-    #- python-jedi
-    #- numpy  # BRs just Cython, not py3-Cython, weird but if it works...
-    #- Cython
-    #- python-smartcols
-
-    #- python-itsdangerous
-    #- python-click
-
-    #- python-configobj
-    #- python-httplib2
-    #- python-sure
-    #- python-bottle # py2 tests fail in copr only, so || :
-    #- pyflakes
-    #- python-pycurl
-    #- python-tornado
-    #- python-jsonpointer
-    #- python-jsonpatch
-    #- python-jsonschema
-    #- python-blinker
-    #- python-iso8601
-    #- python-cryptography-vectors
-    #- python-asn1crypto
-    #- python-ply
-    #- python-pycparser
-    #- python-cffi
-    #- python-cryptography
-    #- python-jwt
-    #- python-oauthlib
-    #- python-prettytable
-    #- pyserial
-    #- PyYAML
-    #- libselinux
-    #- policycoreutils
-
-    #- python-ordered-set
-    #- pykickstart
-    #- python-pyudev
-    #- pyparted
-    #- libblockdev
-    #- libbytesize
-    #- python-blivet
-    #- python-requests-file
-    #- python-requests-ftp
-    #- libpwquality
-    #- python-systemd  # test_notify_no_socket fails in copr, used -k
-    #- python-pydbus
-    #- python-ntplib
-    #- python-pid
-    #- python-wrapt
-    #- python-polib
-    #- python-lazy-object-proxy
-    #- python-ptyprocess
-    #- python-pexpect
-    #- python-argcomplete
+    # sphinx stuff rebuilds:
+    - python-webencodings
+    - python-u-msgpack-python
+    - python-pytest-expect
+    - python-lxml
+    - python-genshi
+    - python-html5lib # https://bugzilla.redhat.com/show_bug.cgi?id=1693486 tests skipped, upstream PR available
+    - python-sphinxcontrib-websupport
+    - python-sphinx
+    - python-sphinxcontrib-applehelp # all of those can be parallel
+    - python-sphinxcontrib-devhelp
+    - python-sphinxcontrib-htmlhelp
+    - python-sphinxcontrib-jsmath
+    - python-sphinxcontrib-qthelp
+    - python-sphinxcontrib-serializinghtml
+    - python-sphinxcontrib-httpdomain # to here
+    - python-sphinx_rtd_theme
 
     # docs rebuilds:
-    #- python-packaging
+    - python-packaging
 
     # testfull rebuilds:
-    #- python-py
-    #- python-six
-    #- python-setuptools_scm
+    - python-py
+    - python-six
+    - python-setuptools_scm
 
-    #- python-dateutil
-    #- python-freezegun
+    - python-dateutil:
+        macros:
+          _without_tests: 1
+    - python-freezegun  # XXX skip test_uuid https://bugzilla.redhat.com/show_bug.cgi?id=1693603
+    - python-dateutil
 
-    #- babel
+    - babel
+    - pyOpenSSL
+    - python-greenlet
+    - python-redis
+    - python-bcrypt
+    - python-olefile
 
-    #- pyOpenSSL
-    #- python-greenlet
-    #- python-redis
+    - python-isodate
+    - python-rdflib
+    - python-selenium
+    - python-virtualenv
+    - python-sqlparse  # needs python3-pytest-cov but tests are disabled by default
+    - sip
+    - python-psycopg2
+    - python-humanize
+    - python-augeas
+    - dbus-python
+    - python-qt5 # speed things up by building both pyqts at the same time
+    - PyQt4
+    - python-pillow
+    - python-memcached
+    - dnf
+    - fros
+    - libxml2
+    - glade
+    - python-kerberos
+    - python-requests-kerberos
+    - python-editor
+    - python-chai
+    - python-simplejson
+    - python-arrow
+    - python-bleach
+    - python-translationstring
+    - python-colander
+    - python-zope-event
+    - python-zope-interface
+    - python-pyasn1
+    - python-service-identity
+    - python-zmq
+    - python-stomper
+    - python-lockfile
+    - python-websocket-client
+    - python-psutil
+    - python-pysocks
+    - python-vcrpy
+    - python-multidict
+    - python-yarl
+    - python-bugzilla
+    - python-simplemediawiki
+    - python-smmap
+    - python-gitdb
+    - GitPython
+    - python-cccolutils
+    - python-openidc-client
+    - python-rpmfluff
+    - python-isort
+    - file # python3-magic
+    - python-enchant
+    - python-tox
+    - python-distro
+    - python-tempita
+    - python-paste-deploy
+    - python-plaster
+    - python-repoze-lru
+    - python-nose-exclude
+    - python-venusian
+    - python-beautifulsoup4
+    - python-cssselect
+    - python-webob
+    - python-waitress
+    - python-WSGIProxy2
+    - python-pyquery:  # this fails in rpmlb https://github.com/sclorg/rpm-list-builder/issues/109
+        replaced_macros:
+          with_tests: 0
 
-    #- python-bcrypt
-    #- python-olefile
+    - python-zope-component
+    - python-zope-exceptions
+    - python-zope-testing
+    - python-zope-schema
+    - python-zope-i18nmessageid
+    - python-zope-configuration
+    - python-zope-deprecation
 
-    #- python-webencodings
-    #- python-html5lib
-    #- python-isodate
-    #- python-rdflib
-    #- python-selenium
-    #- python-virtualenv
-    #- python-pytest-cov
-    #- python-sqlparse
-    #- sip
-    #- python-psycopg2
-    #- python-humanize
-    #- python-augeas
-    #- dbus-python
-    #- python-qt5 # speed things up by building both pyqts at the same time
-    #- PyQt4
-    #- python-pillow
-    #- python-memcached
-    #- dnf
-    #- fros
-    #- glade
-    #- python-kerberos
-    #- python-requests-kerberos
-    #- python-dogpile-cache
-    #- python-editor
-    #- python-chai
-    #- python-simplejson
-    #- python-arrow
-    #- python-bleach
-    #- python-translationstring
-    #- python-colander
-    #- python-zope-event
-    #- python-zope-interface
-    #- python-lxml
-    #- python-chameleon
-    #- python-pyasn1
-    #- python-service-identity
-    #- python-zmq
-    #- python-stomper
-    #- python-lockfile
-    #- python-websocket-client
-    #- python-psutil
-    #- python-vcrpy
-    #- python-tidy
-    #- python-markdown
-    #- python-bugzilla
-    #- python-simplemediawiki
-    #- python-smmap
-    #- python-gitdb
-    #- GitPython
-    #- python-cccolutils
-    #- python-openidc-client
-    #- python-rpmfluff
-    #- python-isort
-    #- file # python3-magic
-    #- python-enchant
-    #- python-tox
-    #- python-distro
+    - python-pytest-capturelog
+    - python-attrs  # testfull rebuild
+    - python-scripttest
+    - python-setuptools_git
+    - python-apipkg
+    - python-pip  # testfull rebuild https://github.com/pyparsing/pyparsing/commit/fa741190622e2149e1dfd6c9e2565d87fcd484a6
+    - python-execnet
+    - python-pytest-forked
+    - python-filelock
+    - python-pytest-xdist
+    - python-sphinx-theme-py3doc-enhanced
+    - python-cpuinfo
+    - python-pytest-benchmark
+    - python-fields
+    - python-pytest-cov
+    - python-dogpile-cache
+    - python-path
+    - python-termcolor
+    - python-pytest-shutil
+    - python-dulwich
+    - python-certifi
+    - python-openstackdocstheme
+    - python-pbr
 
-    #- python-tempita
-    #- python-paste-deploy
-    #- python-plaster
-    #- python-repoze-lru
-    #- python-nose-exclude
-    #- python-venusian
-    #- python-beautifulsoup4
-    #- python-cssselect
-    #- python-webob
-    #- python-waitress
-    #- python-WSGIProxy2
-    #- python-pyquery:  # this fails in rpmlb https://github.com/sclorg/rpm-list-builder/issues/109
+    - python-toml  # maybe try to move this just after/before tox next time
+    - python-ldap
+    - python-mccabe
+    - python-pycodestyle
+    - python3-typed_ast
+    - python-astroid
+    - python-isort
+    - rpmconf
+    - python-testtools
+    - python-extras
+    - python-linecache2
+    - python-traceback2
+
+    - python-daemon  # https://bugzilla.redhat.com/show_bug.cgi?id=1734773
+    - python-werkzeug
+    - python-flask
+    - librepo # testfull rebuild
+    - brotli
+    - python-raven
+    - python-httpbin
+    - libreport
+    - python-meh
+    - anaconda
+    - koji
+    - dnf-plugins-core
+    - dnf-plugins-extras
+    - python-pytest-httpbin
+    - python-pyrsistent
+    - python-simpleline
+    - python-feedgen
+    - python-argh
+    - python-pytest-timeout
+    - python-flask-sphinx-themes
+    - python-pathtools
+    - python-watchdog
+    - python-hupper
+    - python-transaction
+    - abrt
+    - python-jinja2
+    - pyxdg
+    - python-paste
+    - python-plaster-pastedeploy
+    - python-webtest
+    - python-pyquery  # testfull rebuild after webtest
+    - rpmlint
+    - createrepo_c
+
+    - python-hyperlink
+    - python-hamcrest
+    - python-hpack
+    - python-mistune
+    - python-m2r
+
+    - python-pytest-mock
+    - python-graphviz
+    - python-Automat:
+        macros:
+          _without_tests: 1
+    - python-incremental
+    - python-constantly
+    - python-hyperframe
+    - python-h2
+    - python-priority  # test_period_of_repetition flaky in copr (timeouts)
+    - python-appdirs
+    - python-twisted
+    - python-Automat  # testfull rebuild
+    - python-nose-cov
+    - python-cov-core
+    - python-sphinx-testing
+    - python-sphinx-removed-in
+    - python-pygments-pytest  # tests were disabled during 3.8 bootstrap (pygments-ansi-color missing)
+    - pytest # testfull rebuild
+    - kernel-tools  # python3-perf
+    - python-jsonschema  # testfull, not checked here
+    - python-txzmq
+    - python-txws
+    - python-munch
+    - python-productmd
+    - python-multilib
+    - python-beanbag
+    - pdc-client
+    - python-pytoml
+    - python-semantic_version
+    - python-kitchen
+    - python-gevent
+    - libgit2-glib
+    - lorax
+    - python3-py3dns
+    - python-pylibravatar
+    - python-nose2
+    - python-parameterized
+    - python-pyroute2
+    - mock
+    - rpkg
+    - python-flit
+    - python-entrypoints
+    - python-flake8
+    - python-alembic
+    - python-defusedxml
+    - python-pytest-fixture-config
+    - python-pytest-virtualenv
+    - python-setuptools  # testfull rebuild
+    - python-urllib3  # testfull rebuild
+
+    - python-simplegeneric
+    - python-wcwidth
+    - python-prompt-toolkit
+    - python-ipython_genutils
+    - python-traitlets
+    - python-pickleshare
+    - python-backcall
+    - ipython:
+        macros:
+          _without_doc: 1
+          _without_check: 1
+    - python-jupyter-client:
+        macros:
+          _without_doc: 1
+    - python-nose_warnings_filters
+    - python-sphinxcontrib-github-alt
+    - python-jupyter-core
+    - python-ipykernel
+    - python-jupyter-client  # docsfull
+    - python-cycler
+    - python-pymongo
+    - python-testpath
+    - python-nbformat
+    - python-pandocfilters
+    - python-latexcodec
+    - python-orderedset
+    - python-prometheus_client
+    - python-send2trash
+    - python-pyglet
+    - future
+    - python-terminado
+    - python-pybtex
+    - python-pybtex-docutils
+    - python-kiwisolver
+    - python-PyPDF2
+    - python-wxpython4
+    - python-sphinxcontrib-bibtex
+    - python-nbconvert:
+        macros:
+          _without_doc: 1
+    - python-nbsphinx # docsfull
+    - python-nbconvert
+    - python-notebook
+    - python-matplotlib
+    - ipython  # docsfull, testfull
+
+    - python-chameleon
+    - python-pyramid
+    - python-cornice
+    - python-cornice-sphinx
+    - python-django
+    - python3-openid
+    - python-openid-cla
+    - python-openid-teams
+    - python-pyramid-fas-openid
+    - kobo
+    - python-fedora
+    - python-moksha-common
+    - python-moksha-hub
+    - fedmsg
+    - python-mako
+    - python-pyramid-mako
+    - pydot
+    - python-sqlalchemy_schemadisplay
+    - python-responses
+    - python-pika
+    - fedora-messaging
+    - pungi
+    - python-dict-sorted
+    - bodhi
+    - fedpkg
+    - cloud-init
+    - libmodulemd
+    - python-smartcols
+    - python-aiohttp
+    - python-async-timeout
+    - python-click-completion
+    - python-shellingham
+    - python-betamax
+    - python-requests-toolbelt
+    - libsolv  # python3-solv
+    - fedmod
+    - boost
+    - python-requests
+    - python-hypothesis  # testfull, untested here
+
+    # oslo notes (no previous deps listed)
+    #- python-oslotest:
     #    replaced_macros:
-    #      with_tests: 0
-    #- python-zope-component
-    #- python-zope-exceptions
-    #- python-zope-testing
-    #- python-zope-schema
-    #- python-zope-i18nmessageid
-    #- python-zope-configuration
-    #- python-zope-deprecation
+    #      repo_bootstrap: 1
 
-    #- python-pytest-capturelog
-    #- python-attrs  # testfull rebuild
-    #- python-scripttest
-    #- python-pip  # testfull rebuild
-    #- python-pytest-mock
-    #- python-setuptools_git
-    #- python-pytest-fixture-config
-    #- python-apipkg
-    #- python-execnet
-    #- python-path
-    #- python-pytest-shutil
-    #- python-pytest-virtualenv
-    #- python-setuptools  # testfull rebuild
-    #- python-sphinx  # testfull rebuild
-    #- python-urllib3  # testfull rebuild
 
-    #- python-ldap
-    #- python-defusedxml
-
-    #- python-mccabe
-    #- python-pycodestyle
-
-    #- python-astroid
-    #- python-isort
-
-    #- pylint
-    #- rpmconf
-
-    #- python-testtools
-    #- python-extras
-    #- python-fixtures
-    #- python-linecache2
-    #- python-traceback2
-    #- python-daemon
-
-    #- python-werkzeug
-    #- python-flask
-    #- librepo # testfull rebuild
-    #- brotli
-    #- python-raven
-    #- python-httpbin
-
-    # this was moved down a bit due to libreport ftbfs, but that is now fixed
-    #- libreport
-    #- python-meh
-    #- anaconda
-    #- koji
-    #- dnf-plugins-core
-    #- dnf-plugins-extras
-
-    #- python-pytest-httpbin
-    #- python-requests # testfull rebuild
-
-    #- python-httpretty
-    #- cloud-init
-
-    #- python-pocketlint
-    #- python-simpleline
-    #- python-feedgen
-
-    #- python-argh
-    #- python-pytest-timeout # test fail in copr, commented out
-    #- python-sphinx-theme-flask
-    #- python-pathtools
-    #- python-watchdog
-    #- python-hupper
-    #- python-transaction
-
-    #- abrt
-    #- python2-jinja  # docfull rebuild
-    #- pyxdg
-
-    #- python-paste
-    #- python-plaster-pastedeploy
-    #- python-webtest
-    #- python-pyquery  # testfull rebuild after webtest
-    #- python-pyramid
-    #- python-cornice
-    #- python-cornice-sphinx
-    #- python-pyramid-mako
-    #- python-pyramid-tm
-
-    #- rpmlint
-    #- python-django
-    #- python3-openid
-    #- python-openid-cla
-    #- python-openid-teams
-    #- python-pyramid-fas-openid
-
-    #- createrepo_c
-    #- kobo
-
-    #- python-twisted
-    #- pytest # testfull rebuild, in copr without timeout
-    #- python-txzmq
-    #- python-txws
-
-    #- python-munch
-    #- python-productmd
-    #- python-multilib
-    #- python-beanbag
-    #- pdc-client
-    #- python-pytoml
-    #- python-semantic_version
-    #- python-kitchen # https://bugzilla.redhat.com/show_bug.cgi?id=1583600
-    #- python-gevent
-    #- meson
-    #- libgit2-glib
-    #- lorax
-    #- pungi # --exclude-test=tests.test_config_validate_script.ConfigValidateScriptTest.test_validate_dummy_config
-    #- python3-py3dns
-    #- python-pylibravatar
-
-    #- python-fedora
-    #- python-moksha-common
-
-    #- python-moksha-hub
-    #- fedmsg # https://bugzilla.redhat.com/show_bug.cgi?id=1589868 can use py2-sphinx
-    #- python-pyroute2 # https://bugzilla.redhat.com/show_bug.cgi?id=1583800 patched
-    #- mock
-    #- rpkg
-    #- python-flake8
-
-    #- python-alembic # https://bugzilla.redhat.com/show_bug.cgi?id=1592127
-    #- bodhi
-    #- fedpkg # (bodhi, rpkg)
-
-    #- python-asttokens # https://bugzilla.redhat.com/show_bug.cgi?id=1586009 NOT IMPORTANT
-    #- python-flake8-import-order # asttokens NOT IMPORTANT
+    #### DEAD ZONE:
+    #- python-asttokens  # XXX https://bugzilla.redhat.com/show_bug.cgi?id=1697503
+    #- python-flake8-import-order
