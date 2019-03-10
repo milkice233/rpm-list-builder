@@ -95,6 +95,7 @@ python38:
     #      _without_timeout: 1
     #      _without_optional_tests: 1
     #      _without_docs: 1
+    #- python-wheel  # testfull rebuild
     #- python-pluggy
     #- pytz
     #- babel:
@@ -375,9 +376,6 @@ python38:
     #- abrt
     #- python2-jinja  # docfull rebuild
     #- pyxdg
-    #- python-keyring
-    #- python-SecretStorage
-    #- python-wheel  # testfull rebuild
 
     #- python-paste
     #- python-plaster-pastedeploy
