@@ -37,7 +37,6 @@ python38:
     #      _without_doc: 1
     #- pyparsing
     #- python2 # not blocking, just get it there at some point
-    #- python3
     #- asciidoc
     #- python-six:
     #    macros:
