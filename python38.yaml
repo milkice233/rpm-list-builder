@@ -4,12 +4,13 @@ python38:
         macros:
           _with_python3_bootstrap: 1
           _without_rpmwheels: 1
+          _without_tests: 1
     - python3:
         macros:
           _with_bootstrap: 1
+          _without_rpmwheels: 1
           _without_tests: 1
           _without_optimizations: 1
-          _without_rpmwheels: 1
     - gdb # not blocking
     - python-setuptools: # python2 from above must be in the repo, bump manually
         macros:
