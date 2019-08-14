@@ -69,7 +69,9 @@ python38:
     - python-funcsigs:
         macros:
           _without_doc: 1
-    - python-mock
+    - python-mock:
+        macros:
+          _without_tests: 1
     - python-mimeparse
     - python-extras:
         macros:
@@ -114,6 +116,7 @@ python38:
           _without_optional_tests: 1
           _without_docs: 1
     - python-wheel
+    - python-mock
     - python-chardet
     - python-pluggy
     - pytz  # https://bugzilla.redhat.com/show_bug.cgi?id=1687959
