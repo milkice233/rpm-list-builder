@@ -42,7 +42,7 @@ for pkg in pkgs:
     r(f'git push')
     r(f'fedpkg build --target=f32-python || :')
     r(f'while ! /usr/bin/koji wait-repo f32-python --build='
-      f'$(rpm --define \'_sourcedir .\'  --define \'dist .fc32\' -q '
+      f'$(rpm --define \'_sourcedir .\'  --define \'dist %{{?distprefix}}.fc32%{{?with_bootstrap:~bootstrap}}\' -q '
       f'--qf "%{{NAME}}-%{{VERSION}}-'
       f'%{{RELEASE}}\\n" --specfile {pkg}.spec | head -n1); '
       f'do sleep 15; done')
