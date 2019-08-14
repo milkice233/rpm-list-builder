@@ -66,7 +66,9 @@ python38:
           _without_tests: 1
     - python-unittest2  # bump
     - python-contextlib2
-    - python-funcsigs
+    - python-funcsigs:
+        macros:
+          _without_doc: 1
     - python-mock
     - python-mimeparse
     - python-extras:
@@ -262,6 +264,7 @@ python38:
 
     # docs rebuilds:
     - python-packaging
+    - python-funcsigs
 
     # testfull rebuilds:
     - python-py
