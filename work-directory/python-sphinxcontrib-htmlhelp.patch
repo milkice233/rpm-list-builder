@@ -1,0 +1,9 @@
+diff --git a/python-sphinxcontrib-htmlhelp.spec b/python-sphinxcontrib-htmlhelp.spec
+index 650ca3d..1003956 100644
+--- a/python-sphinxcontrib-htmlhelp.spec
++++ b/python-sphinxcontrib-htmlhelp.spec
+@@ -1,3 +1,4 @@
++%global _without_check 1
+ %global pypi_name sphinxcontrib-htmlhelp
+ 
+ # when bootstrapping sphinx, we cannot run tests yet
