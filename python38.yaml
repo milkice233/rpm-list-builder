@@ -36,6 +36,9 @@ python38:
           _without_doc: 1
     - python2 # not blocking, just get it there at some point
     - python3 # very blocking. do not proceed further, or the pkgs won't have automatic requires (not even on python(abi))
+    - pyparsing: # again, to have automatic provides
+        macros:
+          _without_doc: 1
     - asciidoc
     - python-pytoml
     - python-six:
