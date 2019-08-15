@@ -550,7 +550,7 @@ python38:
     - python-chameleon
     - python-pyramid
     - python-cornice
-    - python-cornice-sphinx
+    #- python-cornice-sphinx  # https://bugzilla.redhat.com/show_bug.cgi?id=1728071
     - python-django
     - python3-openid
     - python-openid-cla
@@ -560,7 +560,7 @@ python38:
     - python-fedora
     - python-moksha-common
     - python-moksha-hub
-    - fedmsg
+    #- fedmsg  # https://bugzilla.redhat.com/show_bug.cgi?id=1735201
     - python-mako
     - python-pyramid-mako
     - pydot
