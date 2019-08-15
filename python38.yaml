@@ -110,6 +110,9 @@ python38:
           _without_tests: 1
     - python-testscenarios
     - python-fixtures
+    - python-wcwidth:
+        macros:
+          _without_tests: 1
     - pytest:
         macros:
           _without_timeout: 1
