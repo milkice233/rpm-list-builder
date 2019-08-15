@@ -1,0 +1,13 @@
+diff --git a/python-pysocks.spec b/python-pysocks.spec
+index 82b893f..c3919f8 100644
+--- a/python-pysocks.spec
++++ b/python-pysocks.spec
+@@ -14,7 +14,7 @@
+ %endif
+ %if 0%{?fedora}
+ %global with_python3 1
+-%global with_python3_tests 1
++%global with_python3_tests 0
+ %endif
+ 
+ 
