@@ -113,6 +113,10 @@ python38:
     - python-wcwidth:
         macros:
           _without_tests: 1
+    - python-packaging:
+        macros:
+          _without_docs: 1
+          _without_tests: 1
     - pytest:
         macros:
           _without_timeout: 1
@@ -133,9 +137,6 @@ python38:
           _without_docs: 1
     - python-process-tests
     - python-pretend
-    - python-packaging:
-        macros:
-          _without_docs: 1
     - python-sphinx_rtd_theme:
         macros:
           _with_bootstrap: 1
