@@ -174,7 +174,9 @@ python38:
           _without_websupport: 1
           _without_tests: 1
     - pyparsing
-    - python-sqlalchemy
+    - python-sqlalchemy:
+        macros:
+          _without_xdist: 1
     - python-whoosh
     - python-sphinxcontrib-trio
     - python-atomicwrites # docsfull and testfull
@@ -380,6 +382,7 @@ python38:
     - python-pytest-forked
     - python-filelock
     - python-pytest-xdist
+    - python-sqlalchemy  # xdist enabled tests, no need to build
     - python-sphinx-theme-py3doc-enhanced
     - python-cpuinfo
     - python-pytest-benchmark
