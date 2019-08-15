@@ -129,7 +129,7 @@ python38:
     - python-mock
     - python-chardet
     - python-pluggy
-    - pytz  # https://bugzilla.redhat.com/show_bug.cgi?id=1687959
+    - pytz
     - babel:
         replaced_macros:
           bootstrap: 1
@@ -262,7 +262,7 @@ python38:
     - python-pytest-expect
     - python-lxml
     - python-genshi
-    - python-html5lib # https://bugzilla.redhat.com/show_bug.cgi?id=1693486 tests skipped, upstream PR available
+    - python-html5lib
     - python-sphinxcontrib-websupport
     - python-sphinx
     - python-sphinxcontrib-applehelp # all of those can be parallel
@@ -286,7 +286,7 @@ python38:
     - python-dateutil:
         macros:
           _without_tests: 1
-    - python-freezegun  # XXX skip test_uuid https://bugzilla.redhat.com/show_bug.cgi?id=1693603
+    - python-freezegun
     - python-dateutil
 
     - babel
