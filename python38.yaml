@@ -541,8 +541,8 @@ python38:
     - python-nbconvert:
         macros:
           _without_doc: 1
-    - python-nbsphinx # docsfull
-    - python-nbconvert
+    - python-nbsphinx
+    - python-nbconvert # docsfull
     - python-notebook
     - python-matplotlib
     - ipython  # docsfull, testfull
