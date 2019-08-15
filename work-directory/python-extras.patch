@@ -1,0 +1,9 @@
+diff --git a/python-extras.spec b/python-extras.spec
+index 6d0fe67..0b7fa4b 100644
+--- a/python-extras.spec
++++ b/python-extras.spec
+@@ -1,3 +1,4 @@
++%global _without_check 1
+ %bcond_without check
+ 
+ # NOTE(hguemar): discussed with maintainer to allow rebuild on RHEL/CentOS
