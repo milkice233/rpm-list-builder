@@ -559,7 +559,7 @@ python38:
     - python-fedora
     - python-moksha-common
     - python-moksha-hub
-    #- fedmsg  # https://bugzilla.redhat.com/show_bug.cgi?id=1735201
+    - fedmsg  # https://bugzilla.redhat.com/show_bug.cgi?id=1735201
     - python-mako
     - python-pyramid-mako
     - pydot
