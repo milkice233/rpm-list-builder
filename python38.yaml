@@ -403,7 +403,6 @@ python38:
     - python-pycodestyle
     - python3-typed_ast
     - python-astroid
-    - python-isort
     - rpmconf
     - python-testtools
     - python-extras
