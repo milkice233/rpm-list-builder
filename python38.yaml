@@ -299,6 +299,8 @@ python38:
     - python-isodate
     - python-rdflib
     - python-selenium
+    - python-incremental
+    - python-towncrier
     - python-virtualenv
     - python-sqlparse  # needs python3-pytest-cov but tests are disabled by default
     - sip
@@ -454,7 +456,6 @@ python38:
     - python-Automat:
         macros:
           _without_tests: 1
-    - python-incremental
     - python-constantly
     - python-hyperframe
     - python-h2
