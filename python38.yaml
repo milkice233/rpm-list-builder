@@ -382,7 +382,7 @@ python38:
     - python-scripttest
     - python-setuptools_git
     - python-apipkg
-    - python-pip  # testfull rebuild https://github.com/pyparsing/pyparsing/commit/fa741190622e2149e1dfd6c9e2565d87fcd484a6
+    - python-pip  # testfull rebuild
     - python-execnet
     - python-pytest-forked
     - python-filelock
