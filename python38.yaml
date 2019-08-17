@@ -365,9 +365,9 @@ python38:
     - python-webob
     - python-waitress
     - python-WSGIProxy2
-    - python-pyquery:  # this fails in rpmlb https://github.com/sclorg/rpm-list-builder/issues/109
-        replaced_macros:
-          with_tests: 0
+    - python-pyquery:
+        macros:
+          _without_tests: 1
 
     - python-zope-component
     - python-zope-exceptions
