@@ -585,6 +585,8 @@ python38:
     - python-requests-toolbelt
     - libsolv  # python3-solv
     - fedmod
+    - openmpi
+    - mpich
     - boost
     - python-requests
     - python-hypothesis  # testfull, untested here
