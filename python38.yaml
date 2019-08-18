@@ -537,6 +537,8 @@ python38:
     - python-pybtex-docutils
     - python-kiwisolver
     - python-PyPDF2
+    - python-scandir
+    - python-pathlib2
     - python-wxpython4
     - python-sphinxcontrib-bibtex
     - python-nbconvert:
