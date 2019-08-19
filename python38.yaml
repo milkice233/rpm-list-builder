@@ -578,6 +578,9 @@ python38:
     - cloud-init
     - libmodulemd
     - python-smartcols
+    - python-async-timeout:
+        macros:
+          _without_tests: 1
     - python-aiohttp
     - python-pytest-aiohttp
     - python-async-timeout
