@@ -574,6 +574,7 @@ python38:
     - python-dict-sorted
     - bodhi
     - fedpkg
+    - python-httpretty
     - cloud-init
     - libmodulemd
     - python-smartcols
