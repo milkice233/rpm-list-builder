@@ -596,7 +596,15 @@ python38:
     - python-requests
     - python-hypothesis  # testfull, untested here
 
-    # oslo notes (no previous deps listed)
+    # additional bootstrap loops
+
+    #- python-zbase32:
+    #    macros:
+    #      _with_bootstrap: 1
+    #- pyutil
+    #- python-zbase32
+
+    # oslo notes
     #- python-oslotest:
     #    replaced_macros:
     #      repo_bootstrap: 1
