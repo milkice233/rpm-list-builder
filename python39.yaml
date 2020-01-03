@@ -1,0 +1,35 @@
+python39:
+  packages:
+    - python3:
+        macros:
+          _with_bootstrap: 1
+          _without_rpmwheels: 1
+          _without_tests: 1
+          _without_optimizations: 1
+    - gdb # not blocking
+    - python-setuptools:
+        macros:
+          _with_bootstrap: 1
+          _without_tests: 1
+    - python-pip:
+        macros:
+          _with_bootstrap: 1
+          _without_tests: 1
+          _without_doc: 1
+    - python-wheel:
+        macros:
+          _with_bootstrap: 1
+    - python-setuptools:
+        macros:
+          _without_tests: 1
+    - python-pip:
+        macros:
+          _without_tests: 1
+          _without_doc: 1
+    - pyparsing:
+        macros:
+          _without_doc: 1
+    - python3 # very blocking. do not proceed further, or the pkgs won't have automatic requires (not even on python(abi))
+    - pyparsing: # again, to have automatic provides
+        macros:
+          _without_doc: 1
