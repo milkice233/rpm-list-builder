@@ -25,36 +25,36 @@ python39:
     #    macros:
     #      _without_doc: 1
     #- python3 # very blocking. do not proceed further, or the pkgs won't have automatic requires (not even on python(abi))
-    - dblatex
-    - asciidoc
-    - python-pytoml
-    - python-six:
-        macros:
-          _without_tests: 1
-    - python-setuptools_scm:
-        macros:
-          _without_tests: 1
-    - python-py:
-        macros:
-          _without_tests: 1
-          _without_docs: 1
-    - python-unittest2:
-        replaced_macros:
-          bootstrap_traceback2: 1
-    - python-iniparse
-    - python-chardet:
-        macros:
-          _without_tests: 1
-    - python-pbr:
-        macros:
-          _with_bootstrap: 1
-    - python-linecache2:
-        macros:
-          _without_tests: 1
-    - python-traceback2:
-        macros:
-          _without_tests: 1
-    #- python-unittest2  # bump
+    #- dblatex
+    #- asciidoc
+    #- python-pytoml
+    #- python-six:
+    #    macros:
+    #      _without_tests: 1
+    #- python-setuptools_scm:
+    #    macros:
+    #      _without_tests: 1
+    #- python-py:
+    #    macros:
+    #      _without_tests: 1
+    #      _without_docs: 1
+    #- python-unittest2:
+    #    replaced_macros:
+    #      bootstrap_traceback2: 1
+    #- python-iniparse
+    #- python-chardet:
+    #    macros:
+    #      _without_tests: 1
+    #- python-pbr:
+    #    macros:
+    #      _with_bootstrap: 1
+    #- python-linecache2:
+    #    macros:
+    #      _without_tests: 1
+    #- python-traceback2:
+    #    macros:
+    #      _without_tests: 1
+    #- python-unittest2  # bump and fix the collections imports
     #- python-contextlib2
     #- python-funcsigs:
     #    macros:
@@ -74,31 +74,32 @@ python39:
     #- python-pluggy:
     #    macros:
     #      _without_tests: 1
-    #- python-hypothesis:
+    #- python-hypothesis: #need to fix the doc macro to plural for consistency
     #    macros:
     #      _without_tests: 1
-    #- python-decorator
-    #- python-markupsafe
-    #- python-pysocks:
-    #    replaced_macros:
-    #     with_python3_tests: 0
-    #- python-pygments:
-    #   macros:
-    #      _without_docs: 1
-    #- python-snowballstemmer
-    #- python-more-itertools
-    #- python-atomicwrites:
-    #    macros:
-    #      _without_docs: 1
-    #      _without_tests: 1
-    #- python-testtools:
-    #    macros:
-    #      _without_tests: 1
-    #      _without_docs: 1
-    #- python-fixtures:
-    #    macros:
-    #      _without_tests: 1
-    #- python-testscenarios
+    #      _without_doc: 1
+    - python-decorator # need to fix the collections import and the thread.isAlive. Still an issue with a slow test
+    - python-markupsafe
+    - python-pysocks:
+        replaced_macros:
+         with_python3_tests: 0
+    - python-pygments:
+       macros:
+          _without_docs: 1
+    - python-snowballstemmer
+    - python-more-itertools
+    - python-atomicwrites:
+        macros:
+          _without_docs: 1
+          _without_tests: 1
+    - python-testtools:
+        macros:
+          _without_tests: 1
+          _without_docs: 1
+    - python-fixtures:
+        macros:
+          _without_tests: 1
+    - python-testscenarios
     #- python-fixtures
     #- python-wcwidth:
     #    macros:
