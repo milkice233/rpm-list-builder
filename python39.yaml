@@ -78,7 +78,7 @@ python39:
     #    macros:
     #      _without_tests: 1
     #      _without_doc: 1
-    - python-decorator # need to fix the collections import and the thread.isAlive. Still an issue with a slow test
+    #- python-decorator # https://src.fedoraproject.org/rpms/python-decorator/pull-request/2
     - python-markupsafe
     - python-pysocks:
         replaced_macros:
