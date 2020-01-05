@@ -79,97 +79,97 @@ python39:
     #      _without_tests: 1
     #      _without_doc: 1
     #- python-decorator # https://src.fedoraproject.org/rpms/python-decorator/pull-request/2
-    - python-markupsafe
-    - python-pysocks:
-        replaced_macros:
-         with_python3_tests: 0
-    - python-pygments:
-       macros:
-          _without_docs: 1
-    - python-snowballstemmer
-    - python-more-itertools
-    - python-atomicwrites:
-        macros:
-          _without_docs: 1
-          _without_tests: 1
-    - python-testtools:
-        macros:
-          _without_tests: 1
-          _without_docs: 1
-    - python-fixtures:
-        macros:
-          _without_tests: 1
-    - python-testscenarios
-    #- python-fixtures
-    #- python-wcwidth:
-    #    macros:
-    #      _without_tests: 1
-    #- python-packaging:
-    #    macros:
-    #      _without_docs: 1
-    #      _without_tests: 1
-    #- pytest:
-    #    macros:
-    #      _without_timeout: 1
-    #      _without_optional_tests: 1
-    #      _without_docs: 1
-    #- python-wheel
-    #- python-mock
-    #- python-chardet
-    #- python-pluggy
-    #- pytz
-    #- babel:
+    #- python-markupsafe
+    #- python-pysocks:
     #    replaced_macros:
-    #      bootstrap: 1
-    #- python-imagesize
-    #- python-docutils
-    #- python-jinja2:
+    #     with_python3_tests: 0
+    #- python-pygments:
+    #   macros:
+    #      _without_docs: 1
+    #- python-snowballstemmer
+    #- python-more-itertools
+    #- python-atomicwrites:
     #    macros:
     #      _without_docs: 1
-    #- python-process-tests
-    #- python-pretend
-    #- python-sphinx_rtd_theme:
-    #    macros:
-    #      _with_bootstrap: 1
-    #- python-sphinx-theme-alabaster
-    #- python-idna
-    #- python-urllib3:
+    #      _without_tests: 1
+    #- python-testtools:
     #    macros:
     #      _without_tests: 1
-    #- python-requests:
+    #      _without_docs: 1
+    #- python-fixtures:
     #    macros:
     #      _without_tests: 1
-    #- python-sphinxcontrib-applehelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-devhelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-htmlhelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-jsmath:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-qthelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-serializinghtml:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinx:
-    #    macros:
-    #      _without_websupport: 1
-    #      _without_tests: 1
-    #- pyparsing
-    #- python-sqlalchemy:
-    #    macros:
-    #      _without_xdist: 1
-    #- python-whoosh
-    #- python-sphinxcontrib-trio
-    #- python-atomicwrites # docsfull and testfull
-    #- python-pygments # docsfull
-    #- python-testtools # docsfull and testfull
+    #- python-testscenarios
+    #- python-fixtures  # with tests FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1787753
+    - python-wcwidth:
+        macros:
+          _without_tests: 1
+    - python-packaging:
+        macros:
+          _without_docs: 1
+          _without_tests: 1
+    - pytest:
+        macros:
+          _without_timeout: 1
+          _without_optional_tests: 1
+          _without_docs: 1
+    - python-wheel
+    - python-mock
+    - python-chardet
+    - python-pluggy
+    - pytz
+    - babel:
+        replaced_macros:
+          bootstrap: 1
+    - python-imagesize
+    - python-docutils
+    - python-jinja2:
+        macros:
+          _without_docs: 1
+    - python-process-tests
+    - python-pretend
+    - python-sphinx_rtd_theme:
+        macros:
+          _with_bootstrap: 1
+    - python-sphinx-theme-alabaster
+    - python-idna
+    - python-urllib3:
+        macros:
+          _without_tests: 1
+    - python-requests:
+        macros:
+          _without_tests: 1
+    - python-sphinxcontrib-applehelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-devhelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-htmlhelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-jsmath:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-qthelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-serializinghtml:
+        macros:
+          _without_check: 1
+    - python-sphinx:
+        macros:
+          _without_websupport: 1
+          _without_tests: 1
+    - pyparsing
+    - python-sqlalchemy:
+        macros:
+          _without_xdist: 1
+    - python-whoosh
+    - python-sphinxcontrib-trio
+    - python-atomicwrites # docsfull and testfull
+    - python-pygments # docsfull
+    - python-testtools # docsfull and testfull
     #- rpm
     #- libdnf  # python3-hawkey
     #- libcomps
