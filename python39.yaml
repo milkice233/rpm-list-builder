@@ -101,14 +101,14 @@ python39:
     #      _without_tests: 1
     #- python-testscenarios
     #- python-fixtures  # with tests FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1787753
-    - python-wcwidth:
-        macros:
-          _without_tests: 1
-    - python-packaging:
-        macros:
-          _without_docs: 1
-          _without_tests: 1
-    - pytest:
+    #- python-wcwidth:
+    #    macros:
+    #      _without_tests: 1
+    #- python-packaging:
+    #    macros:
+    #      _without_docs: 1
+    #      _without_tests: 1
+    - pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
         macros:
           _without_timeout: 1
           _without_optional_tests: 1
