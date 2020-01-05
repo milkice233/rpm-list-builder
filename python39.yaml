@@ -117,10 +117,10 @@ python39:
     #- python-mock
     #- python-chardet
     #- python-pluggy
-    - pytz
+    #- pytz
     - babel:
-        replaced_macros:
-          bootstrap: 1
+        macros:
+          _with_bootstrap: 1
     - python-imagesize
     - python-docutils
     - python-jinja2:
