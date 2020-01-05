@@ -108,15 +108,15 @@ python39:
     #    macros:
     #      _without_docs: 1
     #      _without_tests: 1
-    - pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
-        macros:
-          _without_timeout: 1
-          _without_optional_tests: 1
-          _without_docs: 1
-    - python-wheel
-    - python-mock
-    - python-chardet
-    - python-pluggy
+    #- pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
+    #    macros:
+    #      _without_timeout: 1
+    #      _without_optional_tests: 1
+    #      _without_docs: 1
+    #- python-wheel
+    #- python-mock
+    #- python-chardet
+    #- python-pluggy
     - pytz
     - babel:
         replaced_macros:
