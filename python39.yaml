@@ -174,7 +174,7 @@ python39:
     #- python-nose-cov
     #- python-cov-core
     #- python-nose2  # https://bugzilla.redhat.com/show_bug.cgi?id=1787946
-    - python-parameterized
+    #- python-parameterized  # https://bugzilla.redhat.com/show_bug.cgi?id=1787948
     - libdnf  # python3-hawkey
     - libcomps
     - pyxattr  # tests fail in copr (operation not permitted), commented out
