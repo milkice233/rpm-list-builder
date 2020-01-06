@@ -178,16 +178,18 @@ python39:
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
     #- unbound
-    - pycairo
-    - meson
-    - python-pytest-runner
-    - python-parso
-    - python-jedi
+    #- pycairo
+    #- meson
+    #- python-pytest-runner
+
+    #- python-parso  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788073
+    #- python-jedi  # waits for parso
     - Cython:
         macros:
           _without_tests: 1
     - numpy
-    - Cython  # testfull, not blocking
+    #- Cython  # testfull, not blocking, waits for jedi
+
     - PyYAML
     - python-tidy
     - python-markdown
@@ -534,7 +536,7 @@ python39:
     #- python-nbconvert # docsfull
     #- python-notebook
     #- python-matplotlib
-    #- ipython  # docsfull, testfull
+    #- ipython  # docsfull, testfull, waits for jedi
 
     #- python-chameleon
     #- python-pyramid
