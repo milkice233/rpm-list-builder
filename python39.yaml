@@ -182,13 +182,13 @@ python39:
     #- meson
     #- python-pytest-runner
 
-    #- python-parso  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788073
-    #- python-jedi  # waits for parso
+    #- python-parso
+    #- python-jedi
     #- Cython:
     #    macros:
     #      _without_tests: 1
     #- numpy
-    #- Cython  # testfull, not blocking, waits for jedi
+    #- Cython  # testfull, not blocking
 
     #- PyYAML
     #- python-tidy
@@ -540,7 +540,7 @@ python39:
     #- python-nbconvert # docsfull
     #- python-notebook
     #- python-matplotlib
-    #- ipython  # docsfull, testfull, waits for jedi
+    #- ipython  # docsfull, testfull
 
     #- python-chameleon
     #- python-pyramid
