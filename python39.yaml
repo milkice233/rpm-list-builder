@@ -226,49 +226,49 @@ python39:
     #- python-asn1crypto
     #- python-ply
     #- python-pycparser
-    - python-cffi
-    - python-cryptography
-    - python-jwt
-    - python-oauthlib
-    - python-prettytable
-    - pyserial
-    - libselinux
-    - policycoreutils
-    - python-ordered-set
-    - pykickstart
-    - python-pyudev
-    - pyparted
-    - libblockdev
-    - libbytesize
-    - python-blivet
-    - python-requests-file
-    - python-requests-ftp
-    - libpwquality
-    - python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
-    - python-pydbus
-    - python-ntplib
-    - python-pid
-    - python-wrapt
-    - python-polib
-    - python-lazy-object-proxy
-    - python-ptyprocess
-    - python-pexpect
-    - python-argcomplete
-    - python-webencodings
-    - python-u-msgpack-python
-    - python-pytest-expect
-    - python-genshi
-    - python-html5lib
-    - python-sphinxcontrib-websupport
-    - python-sphinx
-    - python-sphinxcontrib-applehelp # all of those can be parallel
-    - python-sphinxcontrib-devhelp
-    - python-sphinxcontrib-htmlhelp
-    - python-sphinxcontrib-jsmath
-    - python-sphinxcontrib-qthelp
-    - python-sphinxcontrib-serializinghtml
-    - python-sphinxcontrib-httpdomain # to here
-    - python-sphinx_rtd_theme
+    #- python-cffi # need to fix the tostring calls to tobytes and also the unpack args test fails
+    #- python-cryptography
+    #- python-jwt
+    #- python-oauthlib
+    #- python-prettytable
+    #- pyserial
+    #- libselinux
+    #- policycoreutils
+    #- python-ordered-set
+    #- pykickstart
+    #- python-pyudev
+    #- pyparted
+    #- libblockdev
+    #- libbytesize
+    #- python-blivet
+    #- python-requests-file
+    #- python-requests-ftp
+    #- libpwquality
+    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
+    #- python-pydbus
+    #- python-ntplib
+    #- python-pid
+    #- python-wrapt
+    #- python-polib
+    #- python-lazy-object-proxy
+    #- python-ptyprocess
+    #- python-pexpect
+    #- python-argcomplete
+    #- python-webencodings
+    #- python-u-msgpack-python # needs collections module fix
+    #- python-pytest-expect
+    #- python-genshi
+    #- python-html5lib
+    #- python-sphinxcontrib-websupport
+    #- python-sphinx
+    #- python-sphinxcontrib-applehelp # all of those can be parallel
+    #- python-sphinxcontrib-devhelp
+    #- python-sphinxcontrib-htmlhelp
+    #- python-sphinxcontrib-jsmath
+    #- python-sphinxcontrib-qthelp
+    #- python-sphinxcontrib-serializinghtml
+    #- python-sphinxcontrib-httpdomain # to here
+    #- python-sphinx_rtd_theme
 
     ## docs rebuilds:
     #- python-packaging
@@ -279,11 +279,11 @@ python39:
     #- python-six
     #- python-setuptools_scm
 
-    #- python-dateutil:
-    #    macros:
-    #      _without_tests: 1
-    #- python-freezegun
-    #- python-dateutil
+    - python-dateutil:
+        macros:
+          _without_tests: 1
+    - python-freezegun
+    - python-dateutil
 
     #- babel
     #- pyOpenSSL
