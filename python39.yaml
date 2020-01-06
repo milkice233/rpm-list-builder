@@ -196,8 +196,8 @@ python39:
     #- python-lxml
     #- python-anytree
 
-    - libdnf  # python3-hawkey
-    - libcomps
+    #- libdnf  # python3-hawkey
+    #- libcomps  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788100
     - gpgme  # https://bugzilla.redhat.com/show_bug.cgi?id=1787966
     - librepo:
         macros:
