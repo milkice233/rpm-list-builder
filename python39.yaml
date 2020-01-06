@@ -176,12 +176,8 @@ python39:
     #- python-nose2  # https://bugzilla.redhat.com/show_bug.cgi?id=1787946
     #- python-parameterized  # https://bugzilla.redhat.com/show_bug.cgi?id=1787948
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
-    - python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
-    - unbound
-    - gpgme
-    - librepo:
-        macros:
-          _without_pythontests: 1
+    #- python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
+    #- unbound
     - pycairo
     - meson
     - python-pytest-runner
@@ -251,6 +247,10 @@ python39:
     #- python-lxml
     #- libdnf  # python3-hawkey
     #- libcomps
+    #- gpgme  # https://bugzilla.redhat.com/show_bug.cgi?id=1787966
+    #- librepo:
+    #    macros:
+    #      _without_pythontests: 1
     #- python-genshi
     #- python-html5lib
     #- python-sphinxcontrib-websupport
