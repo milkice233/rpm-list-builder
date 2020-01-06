@@ -220,12 +220,12 @@ python39:
     #    macros:
     #      _without_tests: 1
 
-    - python-blinker
-    - python-iso8601
-    - python-cryptography-vectors
-    - python-asn1crypto
-    - python-ply
-    - python-pycparser
+    #- python-blinker
+    #- python-iso8601
+    #- python-cryptography-vectors
+    #- python-asn1crypto
+    #- python-ply
+    #- python-pycparser
     - python-cffi
     - python-cryptography
     - python-jwt
@@ -484,7 +484,7 @@ python39:
     #- python-pyroute2
     #- mock
     #- rpkg
-    #- python-flit
+    #- python-flit  # this has a new bootstrap sequence with requests-download, see specs
     #- python-entrypoints
     #- python-flake8
     #- python-alembic
