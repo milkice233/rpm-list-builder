@@ -198,17 +198,19 @@ python39:
 
     #- libdnf  # python3-hawkey
     #- libcomps  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788100
-    - gpgme  # https://bugzilla.redhat.com/show_bug.cgi?id=1787966
-    - librepo:
-        macros:
-          _without_pythontests: 1
+    #- gpgme  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1787966
+    #- librepo:
+    #    macros:
+    #      _without_pythontests: 1
 
-    - python-itsdangerous
-    - python-click
-    - python-configobj
-    - python-httplib2
-    - python-sure
-    - python-bottle # py2 tests fail in copr only, so || :
+    #- gobject-introspection  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1788092
+    #- pygobject3
+    #- python-itsdangerous
+    #- python-click
+    #- python-configobj
+    #- python-httplib2
+    #- python-sure
+    #- python-bottle  # https://bugzilla.redhat.com/show_bug.cgi?id=1788121 https://src.fedoraproject.org/rpms/python-bottle/pull-request/3
     - pyflakes
     - python-pycurl
     - python-tornado
@@ -218,8 +220,6 @@ python39:
         macros:
           _without_tests: 1
 
-    #- gobject-introspection  # https://bugzilla.redhat.com/show_bug.cgi?id=1788092
-    #- pygobject3
 
     #- python-blinker
     #- python-iso8601
