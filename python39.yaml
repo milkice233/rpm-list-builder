@@ -314,56 +314,56 @@ python39:
     #- dnf
     #- fros
     #- libxml2
-    - glade
-    - python-kerberos
-    - python-requests-kerberos
-    - python-editor
-    - python-chai
-    #- python-simplejson
-    #- python-arrow
-    #- python-bleach
-    #- python-translationstring
-    #- python-colander
-    #- python-zope-event
-    #- python-zope-interface
-    #- python-pyasn1
-    #- python-service-identity
-    #- python-zmq
-    #- python-stomper
-    #- python-lockfile
-    #- python-websocket-client
-    #- python-psutil
-    #- python-pysocks
-    #- python-vcrpy
-    #- python-multidict
-    #- python-yarl
-    #- python-bugzilla
-    #- python-simplemediawiki
-    #- python-smmap
-    #- python-gitdb
-    #- GitPython
-    #- python-cccolutils
-    #- python-openidc-client
-    #- python-rpmfluff
-    #- python-isort
-    #- file # python3-magic
-    #- python-enchant
-    #- python-tox
-    #- python-distro
-    #- python-tempita
-    #- python-paste-deploy
-    #- python-plaster
-    #- python-repoze-lru
-    #- python-nose-exclude
-    #- python-venusian
-    #- python-beautifulsoup4
-    #- python-cssselect
-    #- python-webob
-    #- python-waitress
-    #- python-WSGIProxy2
-    #- python-pyquery:
-    #    macros:
-    #      _without_tests: 1
+    #- glade
+    #- python-kerberos
+    #- python-requests-kerberos
+    #- python-editor
+    #- python-chai
+    - python-simplejson
+    - python-arrow
+    - python-bleach
+    - python-translationstring
+    - python-colander
+    - python-zope-event
+    - python-zope-interface
+    - python-pyasn1
+    - python-service-identity
+    - python-zmq
+    - python-stomper
+    - python-lockfile
+    - python-websocket-client
+    - python-psutil
+    - python-pysocks
+    - python-vcrpy
+    - python-multidict
+    - python-yarl
+    - python-bugzilla
+    - python-simplemediawiki
+    - python-smmap
+    - python-gitdb
+    - GitPython
+    - python-cccolutils
+    - python-openidc-client
+    - python-rpmfluff
+    - python-isort
+    - file # python3-magic
+    - python-enchant
+    - python-tox
+    - python-distro
+    - python-tempita
+    - python-paste-deploy
+    - python-plaster
+    - python-repoze-lru
+    - python-nose-exclude
+    - python-venusian
+    - python-beautifulsoup4
+    - python-cssselect
+    - python-webob
+    - python-waitress
+    - python-WSGIProxy2
+    - python-pyquery:
+        macros:
+          _without_tests: 1
 
     #- python-zope-component
     #- python-zope-exceptions
