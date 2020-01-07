@@ -197,7 +197,7 @@ python39:
     #- python-anytree
 
     #- libdnf  # python3-hawkey
-    #- libcomps  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788100
+    #- libcomps  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1788100
     #- gpgme  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1787966
     #- librepo:
     #    macros:
@@ -255,7 +255,7 @@ python39:
     #- python-pexpect
     #- python-argcomplete
     #- python-webencodings
-    #- python-u-msgpack-python # https://github.com/vsergeev/u-msgpack-python/issues/44
+    #- python-u-msgpack-python
     #- python-pytest-expect
     #- python-genshi
     #- python-html5lib
@@ -307,13 +307,13 @@ python39:
     #- python-humanize
     #- python-augeas
     #- dbus-python # needs the collections.abc fix in dbus/service.py but conditionalized for py3 only
-    - python-qt5 # speed things up by building both pyqts at the same time
-    - PyQt4
-    - python-pillow
-    - python-memcached
-    - dnf
-    - fros
-    - libxml2
+    #- python-qt5 # speed things up by building both pyqts at the same time
+    #- PyQt4
+    #- python-pillow
+    #- python-memcached
+    #- dnf
+    #- fros
+    #- libxml2
     - glade
     - python-kerberos
     - python-requests-kerberos
