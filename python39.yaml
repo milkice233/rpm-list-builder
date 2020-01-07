@@ -335,12 +335,7 @@ python39:
     #- python-psutil
     #- python-pysocks
     #- python-daemon
-    - python-werkzeug  # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1788565
-    - brotli
-    - python-raven
-    - python-httpbin
-    - python-pytest-httpbin
-    - python-vcrpy
+    #- brotli
     - python-multidict
     - python-yarl
     - python-bugzilla
@@ -376,6 +371,11 @@ python39:
     - python-pyquery:
         macros:
           _without_tests: 1
+    - python-werkzeug  # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1788565
+    - python-raven
+    - python-httpbin
+    - python-pytest-httpbin
+    - python-vcrpy
 
     #- python-zope-component
     #- python-zope-exceptions
