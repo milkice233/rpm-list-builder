@@ -347,11 +347,12 @@ python39:
     #- python-isort
     #- file # python3-magic
     #- python-enchant
-    - python-tox
-    - python-tox-current-env
-    - python-elementpath:
-        macros:
-          _without_tests: 1
+    #- python-tox
+    #- python-tox-current-env
+    #- python-filelock
+    #- python-elementpath:
+    #    macros:
+    #      _without_tests: 1
     - python-xmlschema
     - python-elementpath
     - python-distro
@@ -396,7 +397,6 @@ python39:
     #- python-pip  # testfull rebuild
     #- python-execnet
     #- python-pytest-forked
-    #- python-filelock
     #- python-pytest-xdist
     #- python-sqlalchemy  # xdist enabled tests, no need to build
     #- python-sphinx-theme-py3doc-enhanced
