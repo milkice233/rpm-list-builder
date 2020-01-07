@@ -255,7 +255,7 @@ python39:
     #- python-pexpect
     #- python-argcomplete
     #- python-webencodings
-    #- python-u-msgpack-python # needs collections module fix
+    #- python-u-msgpack-python # https://github.com/vsergeev/u-msgpack-python/issues/44
     #- python-pytest-expect
     #- python-genshi
     #- python-html5lib
