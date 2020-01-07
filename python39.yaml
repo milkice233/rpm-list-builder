@@ -330,9 +330,9 @@ python39:
     #- python-service-identity
     #- python-zmq
     #- python-stomper
-    - python-lockfile
-    - python-websocket-client
-    - python-psutil
+    #- python-lockfile
+    #- python-websocket-client
+    #- python-psutil
     - python-pysocks
     - python-vcrpy
     - python-multidict
@@ -349,6 +349,12 @@ python39:
     - file # python3-magic
     - python-enchant
     - python-tox
+    - python-tox-current-env
+    - python-elementpath:
+        macros:
+          _without_tests: 1
+    - python-xmlschema
+    - python-elementpath
     - python-distro
     - python-tempita
     - python-paste-deploy
