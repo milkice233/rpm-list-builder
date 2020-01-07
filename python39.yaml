@@ -371,7 +371,7 @@ python39:
           _without_tests: 1
     - python-sphinx-issues
     - python-Pallets-Sphinx-Themes
-    - python-werkzeug  # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1788565
+    - python-werkzeug  # https://bugzilla.redhat.com/show_bug.cgi?id=1788565 https://src.fedoraproject.org/rpms/python-werkzeug/pull-request/6
     - python-raven
     - python-httpbin
     - python-pytest-httpbin
@@ -423,7 +423,7 @@ python39:
     #- python-linecache2
     #- python-traceback2
 
-    #- python-flask
+    #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6
     #- librepo # testfull rebuild
     #- libreport
     #- python-meh
