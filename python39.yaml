@@ -319,9 +319,9 @@ python39:
     #- python-requests-kerberos
     #- python-editor
     #- python-chai
-    - python-simplejson
-    - python-arrow
-    - python-bleach
+    #- python-simplejson
+    #- python-arrow
+    #- python-bleach  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788512
     - python-translationstring
     - python-colander
     - python-zope-event
