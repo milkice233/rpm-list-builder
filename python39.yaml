@@ -111,7 +111,7 @@ python39:
     #- pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
     #    macros:
     #      _without_timeout: 1
-    #      _without_optional_tests: 1
+    #      _without_optional_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
     #      _without_docs: 1
     #- python-wheel
     #- python-mock
@@ -333,7 +333,7 @@ python39:
     #- python-lockfile
     #- python-websocket-client
     #- python-psutil
-    - python-pysocks
+    #- python-pysocks
     - python-vcrpy
     - python-multidict
     - python-yarl
