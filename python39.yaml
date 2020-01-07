@@ -371,6 +371,8 @@ python39:
     - python-pyquery:
         macros:
           _without_tests: 1
+    - python-sphinx-issues
+    - python-Pallets-Sphinx-Themes
     - python-werkzeug  # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1788565
     - python-raven
     - python-httpbin
