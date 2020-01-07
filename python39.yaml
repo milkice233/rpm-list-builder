@@ -322,14 +322,14 @@ python39:
     #- python-simplejson
     #- python-arrow
     #- python-bleach  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788512
-    - python-translationstring
-    - python-colander
-    - python-zope-event
-    - python-zope-interface
-    - python-pyasn1
-    - python-service-identity
-    - python-zmq
-    - python-stomper
+    #- python-translationstring
+    #- python-colander
+    #- python-zope-event
+    #- python-zope-interface
+    #- python-pyasn1
+    #- python-service-identity
+    #- python-zmq
+    #- python-stomper
     - python-lockfile
     - python-websocket-client
     - python-psutil
