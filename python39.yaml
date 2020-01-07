@@ -334,8 +334,8 @@ python39:
     #- python-websocket-client
     #- python-psutil
     #- python-pysocks
-    - python-daemon
-    - python-werkzeug
+    #- python-daemon
+    - python-werkzeug  # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1788565
     - brotli
     - python-raven
     - python-httpbin
