@@ -276,7 +276,7 @@ python39:
 
     ## testfull rebuilds:
     #- python-py
-    #- python-six
+    #- python-six # https://github.com/benjaminp/six/issues/317
     #- python-setuptools_scm
 
     - python-dateutil:
