@@ -334,6 +334,12 @@ python39:
     #- python-websocket-client
     #- python-psutil
     #- python-pysocks
+    - python-daemon
+    - python-werkzeug
+    - brotli
+    - python-raven
+    - python-httpbin
+    - python-pytest-httpbin
     - python-vcrpy
     - python-multidict
     - python-yarl
@@ -414,20 +420,14 @@ python39:
     #- python-linecache2
     #- python-traceback2
 
-    #- python-daemon
-    #- python-werkzeug
     #- python-flask
     #- librepo # testfull rebuild
-    #- brotli
-    #- python-raven
-    #- python-httpbin
     #- libreport
     #- python-meh
     #- anaconda
     #- koji
     #- dnf-plugins-core
     #- dnf-plugins-extras
-    #- python-pytest-httpbin
     #- python-pyrsistent
     #- python-simpleline
     #- python-feedgen
