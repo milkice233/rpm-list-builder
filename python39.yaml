@@ -368,7 +368,7 @@ python39:
     #- python-beautifulsoup4
     #- python-soupsieve
     #- python-cssselect
-    - python-webob
+    #- python-webob  # https://bugzilla.redhat.com/show_bug.cgi?id=1788703
     - python-waitress
     - python-WSGIProxy2
     - python-pyquery:
