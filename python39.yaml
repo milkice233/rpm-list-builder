@@ -353,16 +353,20 @@ python39:
     #- python-elementpath:
     #    macros:
     #      _without_tests: 1
-    - python-xmlschema
-    - python-elementpath
-    - python-distro
-    - python-tempita
-    - python-paste-deploy
-    - python-plaster
-    - python-repoze-lru
-    - python-nose-exclude
-    - python-venusian
+    #- python-xmlschema
+    #- python-elementpath
+    #- python-distro
+    #- python-tempita
+    #- python-paste-deploy
+    #- python-plaster
+    #- python-repoze-lru
+    #- python-nose-exclude
+    #- python-venusian
+    - python-soupsieve:
+        macros:
+          _without_tests: 1
     - python-beautifulsoup4
+    - python-soupsieve
     - python-cssselect
     - python-webob
     - python-waitress
