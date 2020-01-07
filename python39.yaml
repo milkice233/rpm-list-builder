@@ -368,12 +368,8 @@ python39:
     #- python-beautifulsoup4
     #- python-soupsieve
     #- python-cssselect
-    #- python-webob  # https://bugzilla.redhat.com/show_bug.cgi?id=1788703
-    - python-waitress
-    - python-WSGIProxy2
-    - python-pyquery:
-        macros:
-          _without_tests: 1
+    #- python-waitress
+    #- python-WSGIProxy2
     - python-sphinx-issues
     - python-Pallets-Sphinx-Themes
     - python-werkzeug  # https://bugzilla.redhat.com/show_bug.cgi?id=1788565 https://src.fedoraproject.org/rpms/python-werkzeug/pull-request/6
@@ -382,6 +378,10 @@ python39:
     - python-pytest-httpbin
     - python-vcrpy
 
+    #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
+    #- python-pyquery:  # waits for webob
+    #    macros:
+    #      _without_tests: 1
     #- python-gitdb  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788660
     #- GitPython
 
