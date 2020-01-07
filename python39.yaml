@@ -279,11 +279,11 @@ python39:
     #- python-six # https://github.com/benjaminp/six/issues/317
     #- python-setuptools_scm
 
-    - python-dateutil:
-        macros:
-          _without_tests: 1
-    - python-freezegun
-    - python-dateutil
+    #- python-dateutil:
+    #    macros:
+    #      _without_tests: 1
+    #- python-freezegun
+    #- python-dateutil
 
     #- babel
     #- pyOpenSSL
@@ -306,19 +306,19 @@ python39:
     #- python-psycopg2
     #- python-humanize
     #- python-augeas
-    #- dbus-python
-    #- python-qt5 # speed things up by building both pyqts at the same time
-    #- PyQt4
-    #- python-pillow
-    #- python-memcached
-    #- dnf
-    #- fros
-    #- libxml2
-    #- glade
-    #- python-kerberos
-    #- python-requests-kerberos
-    #- python-editor
-    #- python-chai
+    #- dbus-python # needs the collections.abc fix in dbus/service.py but conditionalized for py3 only
+    - python-qt5 # speed things up by building both pyqts at the same time
+    - PyQt4
+    - python-pillow
+    - python-memcached
+    - dnf
+    - fros
+    - libxml2
+    - glade
+    - python-kerberos
+    - python-requests-kerberos
+    - python-editor
+    - python-chai
     #- python-simplejson
     #- python-arrow
     #- python-bleach
