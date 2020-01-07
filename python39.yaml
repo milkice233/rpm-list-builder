@@ -336,13 +336,11 @@ python39:
     #- python-pysocks
     #- python-daemon
     #- brotli
-    - python-multidict
-    - python-yarl
-    - python-bugzilla
-    - python-simplemediawiki
-    - python-smmap
-    - python-gitdb
-    - GitPython
+    #- python-multidict
+    #- python-yarl
+    #- python-bugzilla
+    #- python-simplemediawiki
+    #- python-smmap
     - python-cccolutils
     - python-openidc-client
     - python-rpmfluff
@@ -378,6 +376,9 @@ python39:
     - python-httpbin
     - python-pytest-httpbin
     - python-vcrpy
+
+    #- python-gitdb  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788660
+    #- GitPython
 
     #- python-zope-component
     #- python-zope-exceptions
