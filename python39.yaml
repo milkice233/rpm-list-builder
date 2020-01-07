@@ -341,12 +341,12 @@ python39:
     #- python-bugzilla
     #- python-simplemediawiki
     #- python-smmap
-    - python-cccolutils
-    - python-openidc-client
-    - python-rpmfluff
-    - python-isort
-    - file # python3-magic
-    - python-enchant
+    #- python-cccolutils
+    #- python-openidc-client
+    #- python-rpmfluff
+    #- python-isort
+    #- file # python3-magic
+    #- python-enchant
     - python-tox
     - python-tox-current-env
     - python-elementpath:
