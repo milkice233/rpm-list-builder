@@ -362,12 +362,12 @@ python39:
     #- python-repoze-lru
     #- python-nose-exclude
     #- python-venusian
-    - python-soupsieve:
-        macros:
-          _without_tests: 1
-    - python-beautifulsoup4
-    - python-soupsieve
-    - python-cssselect
+    #- python-soupsieve:
+    #    macros:
+    #      _without_tests: 1
+    #- python-beautifulsoup4
+    #- python-soupsieve
+    #- python-cssselect
     - python-webob
     - python-waitress
     - python-WSGIProxy2
