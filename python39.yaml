@@ -442,8 +442,7 @@ python39:
     #- python-argh
     #- python-pytest-timeout
     #- python-flask-sphinx-themes
-    - python-hupper
-    - python-transaction
+    #- python-transaction
     - abrt
     - python-jinja2
     - pyxdg
@@ -465,6 +464,7 @@ python39:
     #- python-pyquery  # testfull rebuild after webtest
 
     #- python-pytest-cov  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788811
+    #- python-hupper  # waits for pytest-cov
     #- python-dogpile-cache  # waits for pytest-cov
     #- python-pbr  # waits for sphinxcontrib-apidoc (not listed in this recipe yet)
 
