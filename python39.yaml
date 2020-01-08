@@ -443,7 +443,8 @@ python39:
     #- python-pytest-timeout
     #- python-flask-sphinx-themes
     #- python-transaction
-    - abrt
+    #- abrt
+    - python-sphinxcontrib-log-cabinet
     - python-jinja2
     - pyxdg
     - python-paste
