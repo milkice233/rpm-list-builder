@@ -416,56 +416,56 @@ python39:
 
     #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
     #- python-httpbin  # https://src.fedoraproject.org/rpms/python-httpbin/pull-request/1
-    - python-pytest-httpbin
-    - python-vcrpy
+    #- python-pytest-httpbin
+    #- python-vcrpy
+
+    - python-ldap
+    - python-mccabe
+    - python-pycodestyle
+    - python3-typed_ast
+    - python-astroid
+    - rpmconf
+    - python-extras
+    - python-linecache2
+    - python-traceback2
+
+    - librepo # testfull rebuild
+    - libreport
+    - python-meh
+    - anaconda
+    - koji
+    - dnf-plugins-core
+    - dnf-plugins-extras
+    - python-pyrsistent
+    - python-simpleline
+    - python-feedgen
+    - python-argh
+    - python-pytest-timeout
+    - python-flask-sphinx-themes
+    - python-pathtools
+    - python-watchdog
+    - python-hupper
+    - python-transaction
+    - abrt
+    - python-jinja2
+    - pyxdg
+    - python-paste
+    - python-plaster-pastedeploy
+    - rpmlint
+    - createrepo_c
 
     #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
     #- python-pyquery:  # waits for webob
     #    macros:
     #      _without_tests: 1
+    #- python-webtest  # waits for webob
+    #- python-pyquery  # testfull rebuild after webtest
     #- python-gitdb  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788660
     #- GitPython
 
     #- python-pytest-cov  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788811
     #- python-dogpile-cache  # waits for pytest-cov
     #- python-pbr  # waits for sphinxcontrib-apidoc (not listed in this recipe yet)
-
-    #- python-ldap
-    #- python-mccabe
-    #- python-pycodestyle
-    #- python3-typed_ast
-    #- python-astroid
-    #- rpmconf
-    #- python-extras
-    #- python-linecache2
-    #- python-traceback2
-
-    #- librepo # testfull rebuild
-    #- libreport
-    #- python-meh
-    #- anaconda
-    #- koji
-    #- dnf-plugins-core
-    #- dnf-plugins-extras
-    #- python-pyrsistent
-    #- python-simpleline
-    #- python-feedgen
-    #- python-argh
-    #- python-pytest-timeout
-    #- python-flask-sphinx-themes
-    #- python-pathtools
-    #- python-watchdog
-    #- python-hupper
-    #- python-transaction
-    #- abrt
-    #- python-jinja2
-    #- pyxdg
-    #- python-paste
-    #- python-plaster-pastedeploy
-    #- python-webtest
-    #- python-pyquery  # testfull rebuild after webtest
-    #- rpmlint
-    #- createrepo_c
 
     #- python-hyperlink
     #- python-hamcrest
