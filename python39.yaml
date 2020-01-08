@@ -429,7 +429,6 @@ python39:
     #- python-linecache2
     #- python-traceback2
 
-    - librepo # testfull rebuild
     - libreport
     - python-meh
     - anaconda
@@ -453,6 +452,8 @@ python39:
     - python-plaster-pastedeploy
     - rpmlint
     - createrepo_c
+
+    #- librepo # testfull rebuild, FAILED SKIPPED - waiting for copr to kill the build (hangs after segfault)
 
     #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
     #- python-pyquery:  # waits for webob
