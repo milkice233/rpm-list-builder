@@ -25,6 +25,7 @@ python39:
     #    macros:
     #      _without_doc: 1
     #- python3 # very blocking. do not proceed further, or the pkgs won't have automatic requires (not even on python(abi))
+
     #- dblatex
     #- asciidoc
     #- python-pytoml
@@ -74,10 +75,10 @@ python39:
     #- python-pluggy:
     #    macros:
     #      _without_tests: 1
-    #- python-hypothesis: #need to fix the doc macro to plural for consistency
+    #- python-hypothesis:
     #    macros:
     #      _without_tests: 1
-    #      _without_doc: 1
+    #      _without_doc: 1  # might want to fix the doc macro to plural for consistency
     #- python-decorator # https://src.fedoraproject.org/rpms/python-decorator/pull-request/2
     #- python-markupsafe
     #- python-pysocks:
@@ -173,8 +174,8 @@ python39:
     #- rpm
     #- python-nose-cov
     #- python-cov-core
-    #- python-nose2  # https://bugzilla.redhat.com/show_bug.cgi?id=1787946
-    #- python-parameterized  # https://bugzilla.redhat.com/show_bug.cgi?id=1787948
+    #- python-nose2  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787946
+    #- python-parameterized  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787948
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
     #- unbound
@@ -226,7 +227,7 @@ python39:
     #- python-asn1crypto
     #- python-ply
     #- python-pycparser
-    #- python-cffi # need to fix the tostring calls to tobytes and also the unpack args test fails
+    #- python-cffi
     #- python-cryptography
     #- python-jwt
     #- python-oauthlib
@@ -306,7 +307,7 @@ python39:
     #- python-psycopg2
     #- python-humanize
     #- python-augeas
-    #- dbus-python # needs the collections.abc fix in dbus/service.py but conditionalized for py3 only
+    #- dbus-python # patched https://bugzilla.redhat.com/show_bug.cgi?id=1788491
     #- python-qt5 # speed things up by building both pyqts at the same time
     #- PyQt4
     #- python-pillow
@@ -429,10 +430,10 @@ python39:
     #- python-linecache2
     #- python-traceback2
 
-    - libreport
-    - python-meh
-    - anaconda
-    - koji
+    #- libreport
+    #- python-meh
+    #- anaconda
+    #- koji
     - dnf-plugins-core
     - dnf-plugins-extras
     - python-pyrsistent
