@@ -434,9 +434,9 @@ python39:
     #- python-meh
     #- anaconda
     #- koji
-    - dnf-plugins-core
-    - dnf-plugins-extras
-    - python-pyrsistent
+    #- dnf-plugins-core
+    #- dnf-plugins-extras
+    #- python-pyrsistent
     - python-simpleline
     - python-feedgen
     - python-argh
@@ -454,7 +454,7 @@ python39:
     - rpmlint
     - createrepo_c
 
-    #- librepo # testfull rebuild, FAILED SKIPPED - waiting for copr to kill the build (hangs after segfault)
+    #- librepo # testfull rebuild, FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788918
 
     #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
     #- python-pyquery:  # waits for webob
