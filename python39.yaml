@@ -452,6 +452,27 @@ python39:
     #- rpmlint
     #- createrepo_c
 
+    #- python-pytest-cov  # https://bugzilla.redhat.com/show_bug.cgi?id=1788811
+    #- python-hupper
+    #- python-dogpile-cache
+
+    #- python-hyperlink
+    #- python-hamcrest
+    #- python-hpack
+    #- python-mistune
+    #- python-m2r
+
+    #- python-sphinxcontrib-apidoc
+    #- python-pbr  # waits for sphinxcontrib-apidoc (not listed in this recipe yet)
+    
+    #- python-pytest-mock
+    #- python-botocore
+    #- python-s3transfer
+    #- python-jmespath
+    #- python-boto3
+    #- python-yarl
+    - python-vcrpy # failed has new deps
+
     # !!! BOOKMARK !!!
 
     #- python-pathtools   XXX was retired
@@ -466,23 +487,8 @@ python39:
     #- python-webtest  # waits for webob
     #- python-pyquery  # testfull rebuild after webtest
 
-    #- python-pytest-cov  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788811
-    #- python-hupper  # waits for pytest-cov
-    #- python-dogpile-cache  # waits for pytest-cov
-    #- python-pbr  # waits for sphinxcontrib-apidoc (not listed in this recipe yet)
 
-    #- python-vcrpy # failed has new deps
-    #   .... pytest-mock
-    #   .... botocore, boto, boto3
-    #   .... aiohttp
-
-    #- python-hyperlink
-    #- python-hamcrest
-    #- python-hpack
-    #- python-mistune
-    #- python-m2r
-
-    #- python-pytest-mock
+    
     #- python-graphviz
     #- python-Automat:
     #    macros:
