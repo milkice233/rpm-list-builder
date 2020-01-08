@@ -409,11 +409,16 @@ python39:
     #- python-cpuinfo
     #- python-pytest-benchmark
     #- python-fields
+    #- python-path
+    #- python-termcolor
+    #- python-pytest-shutil
+    #- python-openstackdocstheme
+    #- python-pbr
 
     #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
-    #- python-httpbin  # FAILED with Flask 1.1.1 https://src.fedoraproject.org/rpms/python-flask/pull-request/6#comment-35725
-    #- python-pytest-httpbin  # waits for httpbin
-    #- python-vcrpy # waits for httpbin
+    - python-httpbin  # https://src.fedoraproject.org/rpms/python-httpbin/pull-request/1
+    - python-pytest-httpbin
+    - python-vcrpy
 
     #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
     #- python-pyquery:  # waits for webob
@@ -423,12 +428,8 @@ python39:
     #- GitPython
 
     #- python-pytest-cov  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788811
-    #- python-dogpile-cache
-    #- python-path
-    #- python-termcolor
-    #- python-pytest-shutil
-    #- python-openstackdocstheme
-    #- python-pbr
+    #- python-dogpile-cache  # waits for pytest-cov
+
 
     #- python-ldap
     #- python-mccabe
