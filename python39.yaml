@@ -435,10 +435,10 @@ python39:
     #- anaconda
     #- koji
     #- dnf-plugins-core
-    #- dnf-plugins-extras
+    #- dnf-plugins-extras  # FAILED SKIPPED (rpmconf bug) https://bugzilla.redhat.com/show_bug.cgi?id=1788922
     #- python-pyrsistent
-    - python-simpleline
-    - python-feedgen
+    #- python-simpleline
+    #- python-feedgen
     - python-argh
     - python-pytest-timeout
     - python-flask-sphinx-themes
