@@ -513,7 +513,12 @@ python39:
     #- python-pyroute2
     #- mock
     #- rpkg
-    #- python-flit  # this has a new bootstrap sequence with requests-download, see specs
+    #- python-flit:
+    #    macros:
+    #      _without_tests: 1
+    #- python-testpath
+    #- python-requests-download
+    #- python-flit  # testfull, untested here, will need more
     #- python-entrypoints
     #- python-flake8
     #- python-alembic
