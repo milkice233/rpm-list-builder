@@ -444,13 +444,15 @@ python39:
     #- python-flask-sphinx-themes
     #- python-transaction
     #- abrt
-    - python-sphinxcontrib-log-cabinet
-    - python-jinja2
-    - pyxdg
-    - python-paste
-    - python-plaster-pastedeploy
-    - rpmlint
-    - createrepo_c
+    #- python-sphinxcontrib-log-cabinet
+    #- python-jinja2
+    #- pyxdg
+    #- python-paste
+    #- python-plaster-pastedeploy
+    #- rpmlint
+    #- createrepo_c
+
+    # !!! BOOKMARK !!!
 
     #- python-pathtools   XXX was retired
     #- python-watchdog needs pathtools
