@@ -417,7 +417,6 @@ python39:
     #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
     #- python-httpbin  # https://src.fedoraproject.org/rpms/python-httpbin/pull-request/1
     #- python-pytest-httpbin
-    #- python-vcrpy
 
     - python-ldap
     - python-mccabe
@@ -466,6 +465,11 @@ python39:
     #- python-pytest-cov  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788811
     #- python-dogpile-cache  # waits for pytest-cov
     #- python-pbr  # waits for sphinxcontrib-apidoc (not listed in this recipe yet)
+
+    #- python-vcrpy # failed has new deps
+    #   .... pytest-mock
+    #   .... botocore, boto, boto3
+    #   .... aiohttp
 
     #- python-hyperlink
     #- python-hamcrest
