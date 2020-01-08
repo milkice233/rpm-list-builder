@@ -375,18 +375,6 @@ python39:
     #- python-werkzeug  # https://bugzilla.redhat.com/show_bug.cgi?id=1788565 https://src.fedoraproject.org/rpms/python-werkzeug/pull-request/6
     #- python-raven
 
-   # - python-flask FAILED  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
-   # - python-httpbin #waits for flask
-   # - python-pytest-httpbin # waits for flask
-   # - python-vcrpy #waits for flask
-
-    #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
-    #- python-pyquery:  # waits for webob
-    #    macros:
-    #      _without_tests: 1
-    #- python-gitdb  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788660
-    #- GitPython
-
     #- python-zope-component
     #- python-zope-exceptions
     #- python-zope-testing
@@ -413,21 +401,34 @@ python39:
     #- python-paramiko
     #- python-pip  # testfull rebuild
 
-    - python-execnet
-    - python-pytest-forked
-    - python-pytest-xdist
-    - python-sqlalchemy  # xdist enabled tests, no need to build
-    - python-sphinx-theme-py3doc-enhanced
-    - python-cpuinfo
-    - python-pytest-benchmark
-    - python-fields
-    - python-pytest-cov
-    - python-dogpile-cache
-    - python-path
-    - python-termcolor
-    - python-pytest-shutil
-    - python-openstackdocstheme
-    - python-pbr
+    #- python-execnet
+    #- python-pytest-forked
+    #- python-pytest-xdist
+    #- python-sqlalchemy  # xdist enabled tests, no need to build
+    #- python-sphinx-theme-py3doc-enhanced
+    #- python-cpuinfo
+    #- python-pytest-benchmark
+    #- python-fields
+
+    #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
+    #- python-httpbin  # FAILED with Flask 1.1.1 https://src.fedoraproject.org/rpms/python-flask/pull-request/6#comment-35725
+    #- python-pytest-httpbin  # waits for httpbin
+    #- python-vcrpy # waits for httpbin
+
+    #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
+    #- python-pyquery:  # waits for webob
+    #    macros:
+    #      _without_tests: 1
+    #- python-gitdb  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788660
+    #- GitPython
+
+    #- python-pytest-cov
+    #- python-dogpile-cache
+    #- python-path
+    #- python-termcolor
+    #- python-pytest-shutil
+    #- python-openstackdocstheme
+    #- python-pbr
 
     #- python-ldap
     #- python-mccabe
