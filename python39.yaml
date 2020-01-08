@@ -422,13 +422,12 @@ python39:
     #- python-pycodestyle
     #- python-gitdb
     #- GitPython
-
-    - python3-typed_ast
-    - python-astroid
-    - rpmconf
-    - python-extras
-    - python-linecache2
-    - python-traceback2
+    #- python3-typed_ast
+    #- python-astroid
+    #- rpmconf
+    #- python-extras
+    #- python-linecache2
+    #- python-traceback2
 
     - librepo # testfull rebuild
     - libreport
