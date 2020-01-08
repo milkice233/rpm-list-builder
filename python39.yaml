@@ -370,13 +370,15 @@ python39:
     #- python-cssselect
     #- python-waitress
     #- python-WSGIProxy2
-    - python-sphinx-issues
-    - python-Pallets-Sphinx-Themes
-    - python-werkzeug  # https://bugzilla.redhat.com/show_bug.cgi?id=1788565 https://src.fedoraproject.org/rpms/python-werkzeug/pull-request/6
-    - python-raven
-    - python-httpbin
-    - python-pytest-httpbin
-    - python-vcrpy
+    #- python-sphinx-issues
+    #- python-Pallets-Sphinx-Themes
+    #- python-werkzeug  # https://bugzilla.redhat.com/show_bug.cgi?id=1788565 https://src.fedoraproject.org/rpms/python-werkzeug/pull-request/6
+    #- python-raven
+
+   # - python-flask FAILED  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
+   # - python-httpbin #waits for flask
+   # - python-pytest-httpbin # waits for flask
+   # - python-vcrpy #waits for flask
 
     #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
     #- python-pyquery:  # waits for webob
@@ -398,24 +400,34 @@ python39:
     #- python-scripttest
     #- python-setuptools_git
     #- python-apipkg
-    #- python-pip  # testfull rebuild
-    #- python-execnet
-    #- python-pytest-forked
-    #- python-pytest-xdist
-    #- python-sqlalchemy  # xdist enabled tests, no need to build
-    #- python-sphinx-theme-py3doc-enhanced
-    #- python-cpuinfo
-    #- python-pytest-benchmark
-    #- python-fields
-    #- python-pytest-cov
-    #- python-dogpile-cache
-    #- python-path
-    #- python-termcolor
-    #- python-pytest-shutil
+    #- python-sphinx-epytext
+    #- breezy
     #- python-dulwich
+    #- python-fastimport
     #- python-certifi
-    #- python-openstackdocstheme
-    #- python-pbr
+    #- python-pytest-relaxed # release was downgraded for some reason, needs fix in rawhide https://bugzilla.redhat.com/show_bug.cgi?id=1788771
+    #- python-lexicon
+    #- python-fluidity-sm
+    #- python-pynacl
+    #- python-invoke
+    #- python-paramiko
+    #- python-pip  # testfull rebuild
+
+    - python-execnet
+    - python-pytest-forked
+    - python-pytest-xdist
+    - python-sqlalchemy  # xdist enabled tests, no need to build
+    - python-sphinx-theme-py3doc-enhanced
+    - python-cpuinfo
+    - python-pytest-benchmark
+    - python-fields
+    - python-pytest-cov
+    - python-dogpile-cache
+    - python-path
+    - python-termcolor
+    - python-pytest-shutil
+    - python-openstackdocstheme
+    - python-pbr
 
     #- python-ldap
     #- python-mccabe
@@ -427,7 +439,6 @@ python39:
     #- python-linecache2
     #- python-traceback2
 
-    #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6
     #- librepo # testfull rebuild
     #- libreport
     #- python-meh
