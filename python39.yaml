@@ -422,7 +422,7 @@ python39:
     #- python-gitdb  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788660
     #- GitPython
 
-    #- python-pytest-cov
+    #- python-pytest-cov  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788811
     #- python-dogpile-cache
     #- python-path
     #- python-termcolor
