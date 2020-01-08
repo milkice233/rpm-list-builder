@@ -417,10 +417,12 @@ python39:
     #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
     #- python-httpbin  # https://src.fedoraproject.org/rpms/python-httpbin/pull-request/1
     #- python-pytest-httpbin
+    #- python-ldap
+    #- python-mccabe
+    #- python-pycodestyle
+    #- python-gitdb
+    #- GitPython
 
-    - python-ldap
-    - python-mccabe
-    - python-pycodestyle
     - python3-typed_ast
     - python-astroid
     - rpmconf
@@ -459,8 +461,6 @@ python39:
     #      _without_tests: 1
     #- python-webtest  # waits for webob
     #- python-pyquery  # testfull rebuild after webtest
-    #- python-gitdb  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788660
-    #- GitPython
 
     #- python-pytest-cov  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788811
     #- python-dogpile-cache  # waits for pytest-cov
