@@ -463,7 +463,7 @@ python39:
     #- python-m2r
 
     #- python-sphinxcontrib-apidoc
-    #- python-pbr  # waits for sphinxcontrib-apidoc (not listed in this recipe yet)
+    #- python-pbr
     
     #- python-pytest-mock
     #- python-botocore
@@ -475,10 +475,11 @@ python39:
     #    macros:
     #      _without_tests: 1
     #- python-aiohttp
-    - python-boto
-    - python-vcrpy # failed has new deps
+    #- python-httpretty #https://src.fedoraproject.org/rpms/python-httpretty/pull-request/6
+    #- python-boto
+    #- python-rsa
+    #- python-vcrpy
 
-    # !!! BOOKMARK !!!
 
     #- python-pathtools   XXX was retired
     #- python-watchdog needs pathtools
@@ -492,6 +493,9 @@ python39:
     #- python-webtest  # waits for webob
     #- python-pyquery  # testfull rebuild after webtest
 
+    #- libmodulemd # SKIPPED fails with the latest glib2: https://bugzilla.redhat.com/show_bug.cgi?id=1789189
+    #- rpkg # waits on libmodulemd
+
     #- python-graphviz
     #- python-Automat:
     #    macros:
@@ -504,15 +508,15 @@ python39:
     #- python-twisted
     #- python-towncrier  # testfull rebuild, untested here
     #- python-Automat  # testfull rebuild
-    #- python-sphinx-testing
+    #- python-sphinx-testing # issue with the open() call https://bugzilla.redhat.com/show_bug.cgi?id=1789151
     #- python-sphinx-removed-in
     #- python-pygments-pytest  # tests were disabled during 3.8 bootstrap (pygments-ansi-color missing)
-    #- pytest # testfull rebuild
+    #- pytest # testfull rebuild, needs https://github.com/pytest-dev/pytest/pull/6406/files
     #- kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here
     #- python-txzmq
     #- python-txws
-    #- python-munch
+    #- python-munch # issue with the open() call https://bugzilla.redhat.com/show_bug.cgi?id=1789175
     #- python-productmd
     #- python-multilib
     #- python-beanbag
@@ -526,69 +530,71 @@ python39:
     #- python-pylibravatar
     #- python-pyroute2
     #- mock
-    #- rpkg
     #- python-flit:
     #    macros:
     #      _without_tests: 1
     #- python-testpath
     #- python-requests-download
-    #- python-flit  # testfull, untested here, will need more
     #- python-entrypoints
     #- python-flake8
+    #- python-responses
+    #- python-flit  # testfull
     #- python-alembic
     #- python-defusedxml
     #- python-pytest-fixture-config
     #- python-pytest-virtualenv
     #- python-setuptools  # testfull rebuild
+    #- python-trustme
     #- python-urllib3  # testfull rebuild
 
-    #- python-simplegeneric
-    #- python-wcwidth
-    #- python-prompt-toolkit
-    #- python-ipython_genutils
-    #- python-traitlets
-    #- python-pickleshare
-    #- python-backcall
-    #- ipython:
-    #    macros:
-    #      _without_doc: 1
-    #      _without_check: 1
-    #- python-jupyter-client:
-    #    macros:
-    #      _without_doc: 1
-    #- python-nose_warnings_filters
-    #- python-sphinxcontrib-github-alt
-    #- python-jupyter-core
-    #- python-ipykernel
-    #- python-jupyter-client  # docsfull
-    #- python-cycler
-    #- python-pymongo
-    #- python-testpath
-    #- python-nbformat
-    #- python-pandocfilters
-    #- python-latexcodec
-    #- python-orderedset
-    #- python-prometheus_client
-    #- python-send2trash
-    #- python-pyglet
-    #- future
-    #- python-terminado
-    #- python-pybtex
-    #- python-pybtex-docutils
-    #- python-kiwisolver
-    #- python-PyPDF2
-    #- python-scandir
-    #- python-pathlib2
-    #- python-wxpython4
-    #- python-sphinxcontrib-bibtex
-    #- python-nbconvert:
-    #    macros:
-    #      _without_doc: 1
-    #- python-nbsphinx
-    #- python-nbconvert # docsfull
-    #- python-notebook
-    #- python-matplotlib
-    #- ipython  # docsfull, testfull
+    # !!! BOOKMARK !!!
+
+    - python-simplegeneric
+    - python-wcwidth
+    - python-prompt-toolkit
+    - python-ipython_genutils
+    - python-traitlets
+    - python-pickleshare
+    - python-backcall
+    - ipython:
+        macros:
+          _without_doc: 1
+          _without_check: 1
+    - python-jupyter-client:
+        macros:
+          _without_doc: 1
+    - python-nose_warnings_filters
+    - python-sphinxcontrib-github-alt
+    - python-jupyter-core
+    - python-ipykernel
+    - python-jupyter-client  # docsfull
+    - python-cycler
+    - python-pymongo
+    - python-nbformat
+    - python-pandocfilters
+    - python-latexcodec
+    - python-orderedset
+    - python-prometheus_client
+    - python-send2trash
+    - python-pyglet
+    - future
+    - python-terminado
+    - python-pybtex
+    - python-pybtex-docutils
+    - python-kiwisolver
+    - python-PyPDF2
+    - python-scandir
+    - python-pathlib2
+    - python-wxpython4
+    - python-sphinxcontrib-bibtex
+    - python-nbconvert:
+        macros:
+          _without_doc: 1
+    - python-nbsphinx
+    - python-nbconvert # docsfull
+    - python-notebook
+    - python-matplotlib
+    - ipython  # docsfull, testfull
 
     #- python-chameleon
     #- python-pyramid
