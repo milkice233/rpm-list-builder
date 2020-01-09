@@ -55,7 +55,7 @@ python39:
     #- python-traceback2:
     #    macros:
     #      _without_tests: 1
-    #- python-unittest2  # bump and fix the collections imports
+    #- python-unittest2  # https://bugzilla.redhat.com/show_bug.cgi?id=1789200
     #- python-contextlib2
     #- python-funcsigs:
     #    macros:
@@ -493,7 +493,7 @@ python39:
     #- python-webtest  # waits for webob
     #- python-pyquery  # testfull rebuild after webtest
 
-    #- libmodulemd # SKIPPED fails with the latest glib2: https://bugzilla.redhat.com/show_bug.cgi?id=1789189
+    #- libmodulemd # SKIPPED fails with the latest glib2, fix on the way: https://bugzilla.redhat.com/show_bug.cgi?id=1789189
     #- rpkg # waits on libmodulemd
 
     #- python-graphviz
@@ -547,33 +547,35 @@ python39:
     #- python-trustme
     #- python-urllib3  # testfull rebuild
 
-    # !!! BOOKMARK !!!
 
-    - python-simplegeneric
-    - python-wcwidth
-    - python-prompt-toolkit
-    - python-ipython_genutils
-    - python-traitlets
-    - python-pickleshare
-    - python-backcall
-    - ipython:
-        macros:
-          _without_doc: 1
-          _without_check: 1
-    - python-jupyter-client:
-        macros:
-          _without_doc: 1
-    - python-nose_warnings_filters
-    - python-sphinxcontrib-github-alt
-    - python-jupyter-core
-    - python-ipykernel
-    - python-jupyter-client  # docsfull
-    - python-cycler
-    - python-pymongo
-    - python-nbformat
-    - python-pandocfilters
-    - python-latexcodec
-    - python-orderedset
+    #- python-simplegeneric
+    #- python-wcwidth
+    #- python-prompt-toolkit
+    #- python-ipython_genutils
+    #- python-traitlets
+    #- python-pickleshare # https://bugzilla.redhat.com/show_bug.cgi?id=1789210
+    #- python-backcall
+    #- ipython:
+    #    macros:
+    #      _without_doc: 1
+    #      _without_check: 1
+    #- python-nose_warnings_filters
+    #- python-sphinxcontrib-github-alt
+    #- python-genty
+    #- python-flaky
+    #- python-jupyter-core
+    #- python-jupyter-client:
+    #    macros:
+    #      _without_doc: 1
+    #      _without_tests: 1
+    #- python-ipykernel # need to add the collections fix on pickleshare: https://bugzilla.redhat.com/show_bug.cgi?id=1789210
+    #- python-jupyter-client  # docsfull, testfull
+    #- python-cycler
+    #- python-pymongo
+    #- python-nbformat # collections issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789213
+    #- python-pandocfilters
+    #- python-latexcodec
+    - python-orderedset # !!! BOOKMARK !!!
     - python-prometheus_client
     - python-send2trash
     - python-pyglet
@@ -595,6 +597,7 @@ python39:
     - python-notebook
     - python-matplotlib
     - ipython  # docsfull, testfull
+
 
     #- python-chameleon
     #- python-pyramid
