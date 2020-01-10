@@ -481,19 +481,6 @@ python39:
     #- python-rsa
     #- python-vcrpy
 
-
-    #- python-pathtools   XXX was retired
-    #- python-watchdog needs pathtools
-
-    #- librepo # testfull rebuild, FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788918
-
-    #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
-    #- python-pyquery:  # waits for webob
-    #    macros:
-    #      _without_tests: 1
-    #- python-webtest  # waits for webob
-    #- python-pyquery  # testfull rebuild after webtest
-
     #- python-graphviz
     #- python-Automat:
     #    macros:
@@ -597,30 +584,31 @@ python39:
     #- python-matplotlib # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1789664
     #- ipython  # docsfull, testfull, waits on matplotlib
 
-
-   # !!! BOOKMARK !!!
-
     
-    #- libmodulemd # SKIPPED fails with the latest glib2, fix on the way: https://bugzilla.redhat.com/show_bug.cgi?id=1789189
-    #- rpkg # waits on libmodulemd
+    #- libmodulemd
+    #- rpkg
     #- python-chameleon
     #- python-pyramid # waits on python-webob
     #- python-cornice # waits on python-pyramid
     #- python-cornice-sphinx # waits on python-cornice
-    - python-django
-    - python3-openid
-    - python-openid-cla
-    - python-openid-teams
-    - python-pyramid-fas-openid
-    - kobo
-    - python-fedora
+    #- python-async-generator
+    #- python3-pytest-asyncio
+    #- python-asgiref
+    #- python-django
+    #- python3-openid # FAILS https://bugzilla.redhat.com/show_bug.cgi?id=1789672
+    #- python-openid-cla # waits on python3-openid
+    #- python-openid-teams # waits on python3-openid
+    #- python-pyramid-fas-openid # waits on python3-openid
+    #- kobo
+    #- python-fedora # waits on python3-openid # !!! BOOKMARK !!!
     - python-moksha-common
-    - python-moksha-hub
+    - python-moksha-hub # 'array.array' object has no attribute 'tostring' !!! BOOKMARK !!!
     - fedmsg
-    - python-pyramid-mako
+    #- python-pyramid-mako # waits on python-pyramid
     - pydot
     - python-sqlalchemy_schemadisplay
     - python-pika
+    - python-crochet
     - fedora-messaging
     - pungi
     - python-dict-sorted
@@ -655,3 +643,18 @@ python39:
     #- python-oslotest:
     #    replaced_macros:
     #      repo_bootstrap: 1
+
+
+    ####!!!  FAILURES  !!!#####
+
+    #- python-pathtools   XXX was retired
+    #- python-watchdog needs pathtools
+
+    #- librepo # testfull rebuild, FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788918
+
+    #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
+    #- python-pyquery:  # waits for webob
+    #    macros:
+    #      _without_tests: 1
+    #- python-webtest  # waits for webob
+    #- python-pyquery  # testfull rebuild after webtest
