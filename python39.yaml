@@ -610,6 +610,8 @@ python39:
     - python-pika
     - python-crochet
     - fedora-messaging
+    - pysendfile
+    - python-pycdlib
     - pungi
     - python-dict-sorted
     - bodhi
