@@ -60,6 +60,7 @@ python39:
     #- python-funcsigs:
     #    macros:
     #      _without_doc: 1
+    #- python-case
     #- python-mock:
     #    macros:
     #      _without_tests: 1
@@ -227,7 +228,7 @@ python39:
     #- python-asn1crypto
     #- python-ply
     #- python-pycparser
-    #- python-cffi
+    #- python-cffi #https://bitbucket.org/cffi/cffi/commits/d6ad2ea5a57e
     #- python-cryptography
     #- python-jwt
     #- python-oauthlib
@@ -493,9 +494,6 @@ python39:
     #- python-webtest  # waits for webob
     #- python-pyquery  # testfull rebuild after webtest
 
-    #- libmodulemd # SKIPPED fails with the latest glib2, fix on the way: https://bugzilla.redhat.com/show_bug.cgi?id=1789189
-    #- rpkg # waits on libmodulemd
-
     #- python-graphviz
     #- python-Automat:
     #    macros:
@@ -574,72 +572,75 @@ python39:
     #- python-pymongo
     #- python-nbformat # collections issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789213
     #- python-pandocfilters
-    #- python-latexcodec
-    - python-orderedset # !!! BOOKMARK !!!
-    - python-prometheus_client
-    - python-send2trash
-    - python-pyglet
-    - future
-    - python-terminado
-    - python-pybtex
-    - python-pybtex-docutils
-    - python-kiwisolver
-    - python-PyPDF2
-    - python-scandir
-    - python-pathlib2
-    - python-wxpython4
-    - python-sphinxcontrib-bibtex
-    - python-nbconvert:
-        macros:
-          _without_doc: 1
-    - python-nbsphinx
-    - python-nbconvert # docsfull
-    - python-notebook
-    - python-matplotlib
-    - ipython  # docsfull, testfull
+    #- python-orderedset # collections issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789618
+    #- python-prometheus_client
+    #- python-send2trash
+    #- python-pyglet
+    #- future
+    #- python-terminado
+    #- python-latexcodec # FAILED, tests fail: https://bugzilla.redhat.com/show_bug.cgi?id=1789613
+    #- python-pybtex # SKIPPED waits on latexcodec
+    #- python-pybtex-docutils # SKIPPED waits on latexcodec
+    #- python-kiwisolver
+    #- python-PyPDF2
+    #- python-scandir # C API type issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789643
+    #- python-pathlib2
+    #- python-wxpython4 # waf issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789646
+    #- python-sphinxcontrib-bibtex # SKIPPED waits on latexcodec
+    #- python-nbconvert: # waits on python-bleach
+    #    macros:
+    #      _without_doc: 1
+    #- python-nbsphinx # waits on python-nbconvert
+    #- python-nbconvert # docsfull, waits on python-nbsphinx
+    #- python-notebook # waits on python-nbconvert
+    #- python-pytest-rerunfailures
+    #- python-matplotlib # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1789664
+    #- ipython  # docsfull, testfull, waits on matplotlib
 
 
+   # !!! BOOKMARK !!!
+
+    
+    #- libmodulemd # SKIPPED fails with the latest glib2, fix on the way: https://bugzilla.redhat.com/show_bug.cgi?id=1789189
+    #- rpkg # waits on libmodulemd
     #- python-chameleon
-    #- python-pyramid
-    #- python-cornice
-    #- python-cornice-sphinx
-    #- python-django
-    #- python3-openid
-    #- python-openid-cla
-    #- python-openid-teams
-    #- python-pyramid-fas-openid
-    #- kobo
-    #- python-fedora
-    #- python-moksha-common
-    #- python-moksha-hub
-    #- fedmsg
-    #- python-pyramid-mako
-    #- pydot
-    #- python-sqlalchemy_schemadisplay
-    #- python-responses
-    #- python-pika
-    #- fedora-messaging
-    #- pungi
-    #- python-dict-sorted
-    #- bodhi
-    #- fedpkg
-    #- python-httpretty
-    #- cloud-init
-    #- libmodulemd
-    #- python-smartcols
-    #- python-pytest-aiohttp
-    #- python-async-timeout
-    #- python-click-completion
-    #- python-shellingham
-    #- python-betamax
-    #- python-requests-toolbelt
-    #- libsolv  # python3-solv
-    #- fedmod
-    #- openmpi
-    #- mpich
-    #- boost
-    #- python-requests
-    #- python-hypothesis  # testfull, untested here
+    #- python-pyramid # waits on python-webob
+    #- python-cornice # waits on python-pyramid
+    #- python-cornice-sphinx # waits on python-cornice
+    - python-django
+    - python3-openid
+    - python-openid-cla
+    - python-openid-teams
+    - python-pyramid-fas-openid
+    - kobo
+    - python-fedora
+    - python-moksha-common
+    - python-moksha-hub
+    - fedmsg
+    - python-pyramid-mako
+    - pydot
+    - python-sqlalchemy_schemadisplay
+    - python-pika
+    - fedora-messaging
+    - pungi
+    - python-dict-sorted
+    - bodhi
+    - fedpkg
+    - cloud-init
+    - python-smartcols
+    - python-pytest-aiohttp
+    - python-async-timeout
+    - python-click-completion
+    - python-shellingham
+    - python-betamax
+    - python-requests-toolbelt
+    - libsolv  # python3-solv
+    - fedmod
+    - openmpi
+    - mpich
+    - boost
+    - python-requests
+    - python-hypothesis  # testfull, untested here
 
 
     # additional bootstrap loops:
