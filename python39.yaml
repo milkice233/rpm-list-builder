@@ -572,6 +572,7 @@ python39:
     #- python-PyPDF2
     #- python-scandir # C API type issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789643
     #- python-pathlib2
+    #- waf
     #- python-wxpython4 # waf issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789646
     #- python-sphinxcontrib-bibtex # SKIPPED waits on latexcodec
     #- python-nbconvert: # waits on python-bleach
