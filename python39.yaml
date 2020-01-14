@@ -323,7 +323,7 @@ python39:
     #- python-chai
     #- python-simplejson
     #- python-arrow
-    #- python-bleach  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788512
+    - python-bleach  # failing tests https://bugzilla.redhat.com/show_bug.cgi?id=1788512
     #- python-translationstring
     #- python-colander
     #- python-zope-event
@@ -575,12 +575,12 @@ python39:
     #- waf
     #- python-wxpython4
     #- python-sphinxcontrib-bibtex
-    #- python-nbconvert: # SKIPPED waits on python-bleach
+    #- python-nbconvert:
     #    macros:
     #      _without_doc: 1
-    #- python-nbsphinx # SKIPPED waits on python-nbconvert
-    #- python-nbconvert # SKIPPED docsfull, waits on python-nbsphinx
-    #- python-notebook # SKIPPED waits on python-nbconvert
+    #- python-nbsphinx
+    #- python-nbconvert
+    #- python-notebook
     #- python-pytest-rerunfailures
     #- python-matplotlib # https://bugzilla.redhat.com/show_bug.cgi?id=1789664
     #- ipython  # docsfull, testfull
@@ -603,12 +603,12 @@ python39:
     #- python3-pytest-asyncio
     #- python-asgiref
     #- python-django
-    #- python3-openid # FAILS https://bugzilla.redhat.com/show_bug.cgi?id=1789672
-    #- python-openid-cla # SKIPPED waits on python3-openid
-    #- python-openid-teams # SKIPPED waits on python3-openid
-    #- python-pyramid-fas-openid # SKIPPED waits on python3-openid
+    #- python3-openid # https://bugzilla.redhat.com/show_bug.cgi?id=1789672
+    #- python-openid-cla
+    #- python-openid-teams
+    #- python-pyramid-fas-openid
     #- kobo
-    #- python-fedora # SKIPPED waits on python3-openid #
+    #- python-fedora
     #- python-moksha-common
     #- python-moksha-hub # 'array.array' object has no attribute 'tostring on txws: https://bugzilla.redhat.com/show_bug.cgi?id=1790701
     #- fedmsg
@@ -642,17 +642,21 @@ python39:
     #- python-pandas
     #- python-numexpr
     #- python-tables
-    - scipy # !!! BOOKMARK !!!
-    - python-hypothesis  # testfull, untested here
+    #- scipy
+    #- python-numpydoc
+    #- python-Bottleneck
+    #- python-hypothesis  # testfull, untested here
 
 
     # additional bootstrap loops:
 
-    - python-zbase32:
-        macros:
-          _with_bootstrap: 1
-    - pyutil
-    - python-zbase32
+    #- python-zbase32:
+    #    macros:
+    #      _with_bootstrap: 1
+    #- pyutil
+    #- python-zbase32
+
+    # !!! BOOKMARK !!!
 
     # oslo notes
     #- python-oslotest:
