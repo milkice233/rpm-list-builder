@@ -476,7 +476,7 @@ python39:
     #    macros:
     #      _without_tests: 1
     #- python-aiohttp
-    #- python-httpretty #https://src.fedoraproject.org/rpms/python-httpretty/pull-request/6
+    #- python-httpretty
     #- python-boto
     #- python-rsa
     #- python-vcrpy
@@ -538,7 +538,7 @@ python39:
     #- python-prompt-toolkit
     #- python-ipython_genutils
     #- python-traitlets
-    #- python-pickleshare # https://bugzilla.redhat.com/show_bug.cgi?id=1789210
+    #- python-pickleshare
     #- python-backcall
     #- ipython:
     #    macros:
@@ -553,13 +553,13 @@ python39:
     #    macros:
     #      _without_doc: 1
     #      _without_tests: 1
-    #- python-ipykernel # need to add the collections fix on pickleshare: https://bugzilla.redhat.com/show_bug.cgi?id=1789210
+    #- python-ipykernel
     #- python-jupyter-client  # docsfull, testfull
     #- python-cycler
     #- python-pymongo
-    #- python-nbformat # collections issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789213
+    #- python-nbformat
     #- python-pandocfilters
-    #- python-orderedset # collections issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789618
+    #- python-orderedset
     #- python-prometheus_client
     #- python-send2trash
     #- python-pyglet
@@ -573,46 +573,46 @@ python39:
     #- python-scandir # C API type issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789643
     #- python-pathlib2
     #- waf
-    #- python-wxpython4 # waf issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789646
+    #- python-wxpython4
     #- python-sphinxcontrib-bibtex # SKIPPED waits on latexcodec
-    #- python-nbconvert: # waits on python-bleach
+    #- python-nbconvert: # SKIPPED waits on python-bleach
     #    macros:
     #      _without_doc: 1
-    #- python-nbsphinx # waits on python-nbconvert
-    #- python-nbconvert # docsfull, waits on python-nbsphinx
-    #- python-notebook # waits on python-nbconvert
+    #- python-nbsphinx # SKIPPED waits on python-nbconvert
+    #- python-nbconvert # SKIPPED docsfull, waits on python-nbsphinx
+    #- python-notebook # SKIPPED waits on python-nbconvert
     #- python-pytest-rerunfailures
     #- python-matplotlib # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1789664
-    #- ipython  # docsfull, testfull, waits on matplotlib
+    #- ipython  # SKIPPED docsfull, testfull, waits on matplotlib
 
     
     #- libmodulemd
     #- rpkg
     #- python-chameleon
-    #- python-pyramid # waits on python-webob
-    #- python-cornice # waits on python-pyramid
-    #- python-cornice-sphinx # waits on python-cornice
+    #- python-pyramid # SKIPPED waits on python-webob
+    #- python-cornice # SKIPPED waits on python-pyramid
+    #- python-cornice-sphinx # SKIPPED waits on python-cornice
     #- python-async-generator
     #- python3-pytest-asyncio
     #- python-asgiref
     #- python-django
     #- python3-openid # FAILS https://bugzilla.redhat.com/show_bug.cgi?id=1789672
-    #- python-openid-cla # waits on python3-openid
-    #- python-openid-teams # waits on python3-openid
-    #- python-pyramid-fas-openid # waits on python3-openid
+    #- python-openid-cla # SKIPPED waits on python3-openid
+    #- python-openid-teams # SKIPPED waits on python3-openid
+    #- python-pyramid-fas-openid # SKIPPED waits on python3-openid
     #- kobo
-    #- python-fedora # waits on python3-openid # !!! BOOKMARK !!!
-    - python-moksha-common
-    - python-moksha-hub # 'array.array' object has no attribute 'tostring' !!! BOOKMARK !!!
-    - fedmsg
-    #- python-pyramid-mako # waits on python-pyramid
-    - pydot
-    - python-sqlalchemy_schemadisplay
-    - python-pika
-    - python-crochet
-    - fedora-messaging
-    - pysendfile
-    - python-pycdlib
+    #- python-fedora # SKIPPED waits on python3-openid #
+    #- python-moksha-common
+    #- python-moksha-hub # 'array.array' object has no attribute 'tostring on txws: https://bugzilla.redhat.com/show_bug.cgi?id=1790701 !!! BOOKMARK !!!
+    #- fedmsg
+    #- python-pyramid-mako # SKIPPED waits on python-pyramid
+    #- pydot
+    #- python-sqlalchemy_schemadisplay
+    #- python-pika
+    #- python-crochet
+    #- fedora-messaging
+    #- pysendfile
+    #- python-pycdlib
     - pungi
     - python-dict-sorted
     - bodhi
