@@ -582,16 +582,23 @@ python39:
     #- python-nbconvert # SKIPPED docsfull, waits on python-nbsphinx
     #- python-notebook # SKIPPED waits on python-nbconvert
     #- python-pytest-rerunfailures
-    #- python-matplotlib # FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1789664
-    #- ipython  # SKIPPED docsfull, testfull, waits on matplotlib
+    #- python-matplotlib # https://bugzilla.redhat.com/show_bug.cgi?id=1789664
+    #- ipython  # docsfull, testfull
 
     
+    #- python-webob  # https://bugzilla.redhat.com/show_bug.cgi?id=1788703
+    #- python-pyquery:
+    #    macros:
+    #      _without_tests: 1
+    #- python-webtest
+    #- python-pyquery  # testfull rebuild after webtest
+
     #- libmodulemd
     #- rpkg
     #- python-chameleon
-    #- python-pyramid # SKIPPED waits on python-webob
-    #- python-cornice # SKIPPED waits on python-pyramid
-    #- python-cornice-sphinx # SKIPPED waits on python-cornice
+    #- python-pyramid
+    #- python-cornice
+    #- python-cornice-sphinx
     #- python-async-generator
     #- python3-pytest-asyncio
     #- python-asgiref
@@ -603,9 +610,9 @@ python39:
     #- kobo
     #- python-fedora # SKIPPED waits on python3-openid #
     #- python-moksha-common
-    #- python-moksha-hub # 'array.array' object has no attribute 'tostring on txws: https://bugzilla.redhat.com/show_bug.cgi?id=1790701 !!! BOOKMARK !!!
+    #- python-moksha-hub # 'array.array' object has no attribute 'tostring on txws: https://bugzilla.redhat.com/show_bug.cgi?id=1790701
     #- fedmsg
-    #- python-pyramid-mako # SKIPPED waits on python-pyramid
+    #- python-pyramid-mako
     #- pydot
     #- python-sqlalchemy_schemadisplay
     #- python-pika
@@ -613,34 +620,36 @@ python39:
     #- fedora-messaging
     #- pysendfile
     #- python-pycdlib
-    - pungi
-    - python-dict-sorted
-    - bodhi
-    - fedpkg
-    - cloud-init
-    - python-smartcols
-    - python-pytest-aiohttp
-    - python-async-timeout
-    - python-click-completion
-    - python-shellingham
-    - python-betamax
-    - python-requests-toolbelt
-    - libsolv  # python3-solv
-    - fedmod
-    - openmpi
-    - mpich
-    - boost
-    - python-requests
+    #- pungi
+    #- python-dict-sorted
+    #- python-backoff
+    #- bodhi # SKIPPED waits on python-bleach
+    #- fedpkg # SKIPPED waits on bodhi and python-fedora
+    #- cloud-init
+    #- python-smartcols
+    #- python-pytest-aiohttp
+    #- python-async-timeout
+    #- python-click-completion
+    #- python-shellingham
+    #- python-betamax
+    #- python-requests-toolbelt
+    #- libsolv  # python3-solv # FAILED cmake error, can't find python libs
+    #- fedmod # SKIPPED waits on libsolv
+    #- openmpi
+    #- mpich
+    #- boost
+    #- python-requests
+    - python-pandas # !!! BOOKMARK !!!
     - python-hypothesis  # testfull, untested here
 
 
     # additional bootstrap loops:
 
-    #- python-zbase32:
-    #    macros:
-    #      _with_bootstrap: 1
-    #- pyutil
-    #- python-zbase32
+    - python-zbase32:
+        macros:
+          _with_bootstrap: 1
+    - pyutil
+    - python-zbase32
 
     # oslo notes
     #- python-oslotest:
@@ -655,9 +664,3 @@ python39:
 
     #- librepo # testfull rebuild, FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788918
 
-    #- python-webob  # FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788703
-    #- python-pyquery:  # waits for webob
-    #    macros:
-    #      _without_tests: 1
-    #- python-webtest  # waits for webob
-    #- python-pyquery  # testfull rebuild after webtest
