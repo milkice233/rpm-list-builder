@@ -80,7 +80,7 @@ python39:
     #    macros:
     #      _without_tests: 1
     #      _without_doc: 1  # might want to fix the doc macro to plural for consistency
-    #- python-decorator # https://src.fedoraproject.org/rpms/python-decorator/pull-request/2
+    #- python-decorator
     #- python-markupsafe
     #- python-pysocks:
     #    replaced_macros:
@@ -374,7 +374,7 @@ python39:
     #- python-WSGIProxy2
     #- python-sphinx-issues
     #- python-Pallets-Sphinx-Themes
-    #- python-werkzeug  # https://bugzilla.redhat.com/show_bug.cgi?id=1788565 https://src.fedoraproject.org/rpms/python-werkzeug/pull-request/6
+    #- python-werkzeug
     #- python-raven
 
     #- python-zope-component
@@ -416,8 +416,8 @@ python39:
     #- python-pytest-shutil
     #- python-openstackdocstheme
 
-    #- python-flask  # https://src.fedoraproject.org/rpms/python-flask/pull-request/6 https://bugzilla.redhat.com/show_bug.cgi?id=1788736
-    #- python-httpbin  # https://src.fedoraproject.org/rpms/python-httpbin/pull-request/1
+    #- python-flask
+    #- python-httpbin
     #- python-pytest-httpbin
     #- python-ldap
     #- python-mccabe
@@ -570,7 +570,6 @@ python39:
     #- python-pybtex-docutils
     #- python-kiwisolver
     #- python-PyPDF2
-    #- python-scandir # C API type issue: https://bugzilla.redhat.com/show_bug.cgi?id=1789643
     #- python-pathlib2
     #- waf
     #- python-wxpython4
