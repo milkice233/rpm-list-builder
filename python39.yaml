@@ -105,102 +105,102 @@ python39:
     #      _without_tests: 1
     #- python-testscenarios
     #- python-fixtures  # with tests FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1787753
-    - python-wcwidth:
-        macros:
-          _without_tests: 1
-    - python-packaging:
-        macros:
-          _without_docs: 1
-          _without_tests: 1
-    - pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
-        macros:
-          _without_timeout: 1
-          _without_optional_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
-          _without_docs: 1
-    - python-wheel
-    - python-mock
-    - python-chardet
-    - python-pluggy
-    - pytz
-    #- babel:  # mako needs a patch in babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
+    #- python-wcwidth:
     #    macros:
-    #      _with_bootstrap: 1
-    #- python-imagesize
-    #- python-docutils
-    #- python-jinja2:
+    #      _without_tests: 1
+    #- python-packaging:
     #    macros:
     #      _without_docs: 1
-    #- python-process-tests
-    #- python-pretend
-    #- python-sphinx_rtd_theme:
-    #    macros:
-    #      _with_bootstrap: 1
-    #- python-sphinx-theme-alabaster
-    #- python-idna
-    #- python-urllib3:
-    #    macros:
     #      _without_tests: 1
-    #- python-requests:
+    #- pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
     #    macros:
-    #      _without_tests: 1
-    #- python-sphinxcontrib-applehelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-devhelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-htmlhelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-jsmath:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-qthelp:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinxcontrib-serializinghtml:
-    #    macros:
-    #      _without_check: 1
-    #- python-sphinx:
-    #    macros:
-    #      _without_websupport: 1
-    #      _without_tests: 1
-    #- pyparsing
-    #- python-sqlalchemy:
-    #    macros:
-    #      _without_xdist: 1
-    #- python-whoosh
-    #- python-sphinxcontrib-trio
-    #- python-atomicwrites # docsfull and testfull
-    #- python-pygments # docsfull
-    #- python-testtools # docsfull and testfull
-    #- rpm
-    #- python-nose-cov
-    #- python-cov-core
-    #- python-nose2  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787946
-    #- python-parameterized  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787948
-    #- pyxattr  # tests fail in copr (Operation not supported), commented out
-    #- python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
-    #- unbound
-    #- pycairo
-    #- meson
-    #- python-pytest-runner
+    #      _without_timeout: 1
+    #      _without_optional_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
+    #      _without_docs: 1
+    #- python-wheel
+    #- python-mock
+    #- python-chardet
+    #- python-pluggy
+    #- pytz
+    - babel:  # mako needs a patch in babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
+        macros:
+          _with_bootstrap: 1
+    - python-imagesize
+    - python-docutils
+    - python-jinja2:
+        macros:
+          _without_docs: 1
+    - python-process-tests
+    - python-pretend
+    - python-sphinx_rtd_theme:
+        macros:
+          _with_bootstrap: 1
+    - python-sphinx-theme-alabaster
+    - python-idna
+    - python-urllib3:
+        macros:
+          _without_tests: 1
+    - python-requests:
+        macros:
+          _without_tests: 1
+    - python-sphinxcontrib-applehelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-devhelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-htmlhelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-jsmath:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-qthelp:
+        macros:
+          _without_check: 1
+    - python-sphinxcontrib-serializinghtml:
+        macros:
+          _without_check: 1
+    - python-sphinx:
+        macros:
+          _without_websupport: 1
+          _without_tests: 1
+    - pyparsing
+    - python-sqlalchemy:
+        macros:
+          _without_xdist: 1
+    - python-whoosh
+    - python-sphinxcontrib-trio
+    - python-atomicwrites # docsfull and testfull
+    - python-pygments # docsfull
+    - python-testtools # docsfull and testfull
+    - rpm
+    - python-nose-cov
+    - python-cov-core
+    - python-nose2  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787946
+    - python-parameterized  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787948
+    - pyxattr  # tests fail in copr (Operation not supported), commented out
+    - python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
+    - unbound
+    - pycairo
+    - meson
+    - python-pytest-runner
 
-    #- python-parso
-    #- python-jedi
-    #- Cython:
-    #    macros:
-    #      _without_tests: 1
-    #- numpy
-    #- Cython  # testfull, not blocking
+    - python-parso
+    - python-jedi
+    - Cython:
+        macros:
+          _without_tests: 1
+    - numpy
+    - Cython  # testfull, not blocking
 
-    #- PyYAML
-    #- python-tidy
-    #- python-markdown
-    #- python-lxml
-    #- python-anytree
+    - PyYAML
+    - python-tidy
+    - python-markdown
+    - python-lxml
+    - python-anytree
 
-    #- libdnf  # python3-hawkey
+    - libdnf  # python3-hawkey
     #- libcomps  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1788100
     #- gpgme  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1787966
     #- librepo:
