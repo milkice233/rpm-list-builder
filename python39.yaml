@@ -199,14 +199,17 @@ python39:
 
     #- libdnf  # python3-hawkey
     #- libcomps
-    - gpgme  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1787966
-    - librepo:
-        macros:
-          _without_pythontests: 1
+    #- gpgme  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1787966
+    #- librepo:
+    #    macros:
+    #      _without_pythontests: 1
 
+    - meson:
+        macros:
+          _without_check: 1
     - gobject-introspection
     - pygobject3
-    - meson
+    - meson  # tesfull, not blocking
     - python-itsdangerous
     - python-click
     - python-configobj
