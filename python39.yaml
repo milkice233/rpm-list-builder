@@ -179,11 +179,10 @@ python39:
     #- python-cov-core
     #- python-nose2  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787946
     #- python-parameterized  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787948
-    - pyxattr  # tests fail in copr (Operation not supported), commented out
-    - python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
-    - unbound
-    - pycairo
-    - meson
+    #- pyxattr  # tests fail in copr (Operation not supported), commented out
+    #- python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
+    #- unbound
+    #- pycairo
     - python-pytest-runner
 
     - python-parso
@@ -209,6 +208,7 @@ python39:
 
     - gobject-introspection
     - pygobject3
+    - meson
     - python-itsdangerous
     - python-click
     - python-configobj
