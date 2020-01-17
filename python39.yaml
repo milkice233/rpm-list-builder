@@ -193,12 +193,12 @@ python39:
     #- Cython  # testfull, not blocking
     #- PyYAML
     #- python-tidy
-    - python-markdown
-    - python-lxml
-    - python-anytree
+    #- python-markdown
+    #- python-lxml
+    #- python-anytree
 
-    - libdnf  # python3-hawkey
-    - libcomps  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1788100
+    #- libdnf  # python3-hawkey
+    #- libcomps
     - gpgme  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1787966
     - librepo:
         macros:
@@ -633,8 +633,8 @@ python39:
     #- python-shellingham
     #- python-betamax
     #- python-requests-toolbelt
-    #- libsolv  # python3-solv # FAILED cmake error, can't find python libs
-    #- fedmod # SKIPPED waits on libsolv
+    #- libsolv
+    #- fedmod
     #- openmpi
     #- mpich
     #- boost
