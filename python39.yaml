@@ -161,19 +161,19 @@ python39:
     #- python-sphinxcontrib-serializinghtml:
     #    macros:
     #      _without_check: 1
-    - python-sphinx:
-        macros:
-          _without_websupport: 1
-          _without_tests: 1
-    - pyparsing
-    - python-sqlalchemy:
-        macros:
-          _without_xdist: 1
-    - python-whoosh
-    - python-sphinxcontrib-trio
-    - python-atomicwrites # docsfull and testfull, not blocking
-    - python-pygments # docsfull, not blocking
-    - python-testtools # docsfull and testfull, not blocking
+    #- python-sphinx:
+    #    macros:
+    #      _without_websupport: 1
+    #      _without_tests: 1
+    #- pyparsing
+    #- python-sqlalchemy:
+    #    macros:
+    #      _without_xdist: 1
+    #- python-whoosh
+    #- python-sphinxcontrib-trio
+    #- python-atomicwrites # docsfull and testfull, not blocking
+    #- python-pygments # docsfull, not blocking
+    #- python-testtools # docsfull and testfull, not blocking
     - rpm
     - python-nose-cov
     - python-cov-core
