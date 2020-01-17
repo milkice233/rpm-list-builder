@@ -96,32 +96,32 @@ python39:
     #    macros:
     #      _without_docs: 1
     #      _without_tests: 1
-    - python-testtools:
-        macros:
-          _without_tests: 1
-          _without_docs: 1
-    - python-fixtures:
-        macros:
-          _without_tests: 1
-    - python-testscenarios
+    #- python-testtools:
+    #    macros:
+    #      _without_tests: 1
+    #      _without_docs: 1
+    #- python-fixtures:
+    #    macros:
+    #      _without_tests: 1
+    #- python-testscenarios
     #- python-fixtures  # with tests FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1787753
-    #- python-wcwidth:
-    #    macros:
-    #      _without_tests: 1
-    #- python-packaging:
-    #    macros:
-    #      _without_docs: 1
-    #      _without_tests: 1
-    #- pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
-    #    macros:
-    #      _without_timeout: 1
-    #      _without_optional_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
-    #      _without_docs: 1
-    #- python-wheel
-    #- python-mock
-    #- python-chardet
-    #- python-pluggy
-    #- pytz
+    - python-wcwidth:
+        macros:
+          _without_tests: 1
+    - python-packaging:
+        macros:
+          _without_docs: 1
+          _without_tests: 1
+    - pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
+        macros:
+          _without_timeout: 1
+          _without_optional_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
+          _without_docs: 1
+    - python-wheel
+    - python-mock
+    - python-chardet
+    - python-pluggy
+    - pytz
     #- babel:  # mako needs a patch in babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
     #    macros:
     #      _with_bootstrap: 1
