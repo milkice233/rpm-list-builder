@@ -183,18 +183,16 @@ python39:
     #- python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
     #- unbound
     #- pycairo
-    - python-pytest-runner
-
-    - python-parso
-    - python-jedi
-    - Cython:
-        macros:
-          _without_tests: 1
-    - numpy
-    - Cython  # testfull, not blocking
-
-    - PyYAML
-    - python-tidy
+    #- python-pytest-runner
+    #- python-parso
+    #- python-jedi
+    #- Cython:
+    #    macros:
+    #      _without_tests: 1
+    #- numpy
+    #- Cython  # testfull, not blocking
+    #- PyYAML
+    #- python-tidy
     - python-markdown
     - python-lxml
     - python-anytree
@@ -230,58 +228,58 @@ python39:
     - python-asn1crypto
     - python-ply
     - python-pycparser
-    #- python-cffi #https://bitbucket.org/cffi/cffi/commits/d6ad2ea5a57e
-    #- python-cryptography
-    #- python-jwt
-    #- python-oauthlib
-    #- python-prettytable
-    #- pyserial
-    #- libselinux
-    #- policycoreutils
-    #- python-ordered-set
-    #- pykickstart
-    #- python-pyudev
-    #- pyparted
-    #- libblockdev
-    #- libbytesize
-    #- python-blivet
-    #- python-requests-file
-    #- python-requests-ftp
-    #- libpwquality
-    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
-    #- python-pydbus
-    #- python-ntplib
-    #- python-pid
-    #- python-wrapt
-    #- python-polib
-    #- python-lazy-object-proxy
-    #- python-ptyprocess
-    #- python-pexpect
-    #- python-argcomplete
-    #- python-webencodings
-    #- python-u-msgpack-python
-    #- python-pytest-expect
-    #- python-genshi
-    #- python-html5lib
-    #- python-sphinxcontrib-websupport
-    #- python-sphinx
-    #- python-sphinxcontrib-applehelp # all of those can be parallel
-    #- python-sphinxcontrib-devhelp
-    #- python-sphinxcontrib-htmlhelp
-    #- python-sphinxcontrib-jsmath
-    #- python-sphinxcontrib-qthelp
-    #- python-sphinxcontrib-serializinghtml
-    #- python-sphinxcontrib-httpdomain # to here
-    #- python-sphinx_rtd_theme
+    - python-cffi
+    - python-cryptography
+    - python-jwt
+    - python-oauthlib
+    - python-prettytable
+    - pyserial
+    - libselinux
+    - policycoreutils
+    - python-ordered-set
+    - pykickstart
+    - python-pyudev
+    - pyparted
+    - libblockdev
+    - libbytesize
+    - python-blivet
+    - python-requests-file
+    - python-requests-ftp
+    - libpwquality
+    - python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
+    - python-pydbus
+    - python-ntplib
+    - python-pid
+    - python-wrapt
+    - python-polib
+    - python-lazy-object-proxy
+    - python-ptyprocess
+    - python-pexpect
+    - python-argcomplete
+    - python-webencodings
+    - python-u-msgpack-python
+    - python-pytest-expect
+    - python-genshi
+    - python-html5lib
+    - python-sphinxcontrib-websupport
+    - python-sphinx
+    - python-sphinxcontrib-applehelp # all of those can be parallel
+    - python-sphinxcontrib-devhelp
+    - python-sphinxcontrib-htmlhelp
+    - python-sphinxcontrib-jsmath
+    - python-sphinxcontrib-qthelp
+    - python-sphinxcontrib-serializinghtml
+    - python-sphinxcontrib-httpdomain # to here
+    - python-sphinx_rtd_theme
 
     ## docs rebuilds:
-    #- python-packaging
-    #- python-funcsigs
+    - python-packaging
+    - python-funcsigs
 
     ## testfull rebuilds:
-    #- python-py
-    #- python-six # https://github.com/benjaminp/six/issues/317
-    #- python-setuptools_scm
+    - python-py
+    - python-six  # https://src.fedoraproject.org/rpms/python-six/pull-request/6
+    - python-setuptools_scm
 
     #- python-dateutil:
     #    macros:
