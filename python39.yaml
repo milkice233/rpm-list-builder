@@ -27,6 +27,7 @@ python39:
     - python3 # wait for gdb, skip test_io in copr
 
     # blocking point. do not jump ahead, or the pkgs won't have automatic requires (not even on python(abi))
+    # delete the first python3 build if the second is not bumped
 
     #- dblatex
     #- asciidoc
