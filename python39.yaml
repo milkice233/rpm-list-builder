@@ -380,25 +380,25 @@ python39:
     #- python-werkzeug
     #- python-raven
 
-    - python-zope-component
-    - python-zope-exceptions
-    - python-zope-testing
-    - python-zope-schema
-    - python-zope-i18nmessageid
-    - python-zope-configuration
-    - python-zope-deprecation
-
-    - python-pytest-capturelog
-    - python-attrs  # testfull rebuild
-    - python-scripttest
-    - python-setuptools_git
-    - python-apipkg
-    - python-sphinx-epytext
-    - breezy
-    - python-dulwich
-    - python-fastimport
-    - python-certifi
-    - python-pytest-relaxed
+    #- python-zope-component
+    #- python-zope-exceptions
+    #- python-zope-testing
+    #- python-zope-schema
+    #- python-zope-i18nmessageid
+    #- python-zope-configuration
+    #- python-zope-deprecation
+    #- python-pytest-capturelog
+    #- python-attrs  # testfull rebuild
+    #- python-scripttest
+    #- python-setuptools_git
+    #- python-apipkg
+    #- python-sphinx-epytext
+    #- breezy
+    #- python-dulwich
+    #- python-fastimport
+    #- python-certifi
+    #- python-pytest-relaxed
+    - python-spec
     - python-lexicon
     - python-fluidity-sm
     - python-pynacl
