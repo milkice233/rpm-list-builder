@@ -400,17 +400,16 @@ python39:
     #- python-pytest-relaxed
     #- python-spec
     #- python-lexicon
-    - python-should_dsl
-    - python-fluidity-sm
-    - python-pynacl
-    - python-invoke
-    - python-paramiko
-    - python-pip  # testfull rebuild
-
-    - python-execnet
-    - python-pytest-forked
-    - python-pytest-xdist
-    - python-sqlalchemy  # xdist enabled tests, no need to build
+    #- python-should_dsl
+    #- python-fluidity-sm
+    #- python-pynacl
+    #- python-invoke
+    #- python-paramiko
+    #- python-pip  # testfull rebuild
+    #- python-execnet
+    #- python-pytest-forked
+    #- python-pytest-xdist
+    #- python-sqlalchemy  # xdist enabled tests, no need to build
     - python-sphinx-theme-py3doc-enhanced
     - python-cpuinfo
     - python-pytest-benchmark
@@ -457,54 +456,54 @@ python39:
     - rpmlint
     - createrepo_c
 
-    #- python-pytest-cov  # https://bugzilla.redhat.com/show_bug.cgi?id=1788811
-    #- python-hupper
-    #- python-dogpile-cache
+    - python-pytest-cov  # https://bugzilla.redhat.com/show_bug.cgi?id=1788811
+    - python-hupper
+    - python-dogpile-cache
 
-    #- python-hyperlink
-    #- python-hamcrest
-    #- python-hpack
-    #- python-mistune
-    #- python-m2r
+    - python-hyperlink
+    - python-hamcrest
+    - python-hpack
+    - python-mistune
+    - python-m2r
 
-    #- python-sphinxcontrib-apidoc
-    #- python-pbr
+    - python-sphinxcontrib-apidoc
+    - python-pbr
     
-    #- python-pytest-mock
-    #- python-botocore
-    #- python-s3transfer
-    #- python-jmespath
-    #- python-boto3
-    #- python-yarl
-    #- python-async-timeout:
-    #    macros:
-    #      _without_tests: 1
-    #- python-aiohttp
-    #- python-httpretty
-    #- python-boto
-    #- python-rsa
-    #- python-vcrpy
+    - python-pytest-mock
+    - python-botocore
+    - python-s3transfer
+    - python-jmespath
+    - python-boto3
+    - python-yarl
+    - python-async-timeout:
+        macros:
+          _without_tests: 1
+    - python-aiohttp
+    - python-httpretty
+    - python-boto
+    - python-rsa
+    - python-vcrpy
 
-    #- python-graphviz
-    #- python-Automat:
-    #    macros:
-    #      _without_tests: 1
-    #- python-constantly
-    #- python-hyperframe
-    #- python-h2
-    #- python-priority  # test_period_of_repetition flaky in copr (timeouts)
-    #- python-appdirs
-    #- python-twisted
+    - python-graphviz
+    - python-Automat:
+        macros:
+          _without_tests: 1
+    - python-constantly
+    - python-hyperframe
+    - python-h2
+    - python-priority  # test_period_of_repetition flaky in copr (timeouts)
+    - python-appdirs
+    - python-twisted
     #- python-towncrier  # testfull rebuild, untested here
     #- python-Automat  # testfull rebuild
-    #- python-sphinx-testing
-    #- python-sphinx-removed-in
-    #- python-pygments-pytest  # tests were disabled during 3.8 bootstrap (pygments-ansi-color missing)
+    - python-sphinx-testing
+    - python-sphinx-removed-in
+    - python-pygments-pytest  # tests were disabled during 3.8 bootstrap (pygments-ansi-color missing)
     #- pytest # testfull rebuild, needs https://github.com/pytest-dev/pytest/pull/6406/files
-    #- kernel-tools  # python3-perf
+    - kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here
-    #- python-txzmq
-    #- python-txws
+    - python-txzmq
+    - python-txws
     #- python-munch # issue with the open() call https://bugzilla.redhat.com/show_bug.cgi?id=1789175
     #- python-productmd
     #- python-multilib
