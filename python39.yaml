@@ -398,8 +398,9 @@ python39:
     #- python-fastimport
     #- python-certifi
     #- python-pytest-relaxed
-    - python-spec
-    - python-lexicon
+    #- python-spec
+    #- python-lexicon
+    - python-should_dsl
     - python-fluidity-sm
     - python-pynacl
     - python-invoke
