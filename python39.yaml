@@ -460,31 +460,31 @@ python39:
     #- python-hupper
     #- python-dogpile-cache
 
-    - python-hyperlink
-    - python-hamcrest
-    - python-hpack
-    - python-mistune
-    - python-m2r
+    #- python-hyperlink
+    #- python-hamcrest
+    #- python-hpack
+    #- python-mistune
+    #- python-m2r
 
-    - python-sphinxcontrib-apidoc
-    - python-pbr
-    
-    - python-pytest-mock
-    - python-botocore
-    - python-s3transfer
-    - python-jmespath
-    - python-boto3
-    - python-yarl
-    - python-async-timeout:
-        macros:
-          _without_tests: 1
-    - python-aiohttp
-    - python-httpretty
-    - python-boto
-    - python-rsa
-    - python-vcrpy
+    #- python-sphinxcontrib-apidoc
+    #- python-pbr
 
-    - python-graphviz
+    #- python-pytest-mock
+    #- python-botocore
+    #- python-s3transfer
+    #- python-jmespath
+    #- python-boto3
+    #- python-yarl
+    #- python-async-timeout:
+    #    macros:
+    #      _without_tests: 1
+    #- python-aiohttp
+    #- python-httpretty
+    #- python-boto
+    #- python-rsa
+    #- python-vcrpy
+
+    #- python-graphviz
     - python-Automat:
         macros:
           _without_tests: 1
