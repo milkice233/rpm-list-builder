@@ -314,71 +314,71 @@ python39:
     #- dbus-python # patched https://bugzilla.redhat.com/show_bug.cgi?id=1788491
     #- python-qt5 # speed things up by building both pyqts at the same time
     #- PyQt4
-    - python-pillow
-    - python-memcached
-    - dnf
-    - fros
-    - libxml2
-    - glade
-    - python-kerberos
-    - python-requests-kerberos
-    - python-editor
-    - python-chai
-    - python-simplejson
-    - python-arrow
+    #- python-pillow
+    #- python-memcached
+    #- dnf
+    #- fros
+    #- libxml2
+    #- glade
+    #- python-kerberos
+    #- python-requests-kerberos
+    #- python-editor
+    #- python-chai
+    #- python-simplejson
+    #- python-arrow
     #- python-bleach  # failing tests https://bugzilla.redhat.com/show_bug.cgi?id=1788512
-    #- python-translationstring
-    #- python-colander
-    #- python-zope-event
-    #- python-zope-interface
-    #- python-pyasn1
-    #- python-service-identity
-    #- python-zmq
-    #- python-stomper
-    #- python-lockfile
-    #- python-websocket-client
-    #- python-psutil
-    #- python-pysocks
-    #- python-daemon
-    #- brotli
-    #- python-multidict
-    #- python-yarl
-    #- python-bugzilla
-    #- python-simplemediawiki
-    #- python-smmap
-    #- python-cccolutils
-    #- python-openidc-client
-    #- python-rpmfluff
-    #- python-isort
-    #- file # python3-magic
-    #- python-enchant
-    #- python-tox
-    #- python-tox-current-env
-    #- python-filelock
-    #- python-elementpath:
-    #    macros:
-    #      _without_tests: 1
-    #- python-xmlschema
-    #- python-elementpath
-    #- python-distro
-    #- python-tempita
-    #- python-paste-deploy
-    #- python-plaster
-    #- python-repoze-lru
-    #- python-nose-exclude
-    #- python-venusian
-    #- python-soupsieve:
-    #    macros:
-    #      _without_tests: 1
-    #- python-beautifulsoup4
-    #- python-soupsieve
-    #- python-cssselect
-    #- python-waitress
-    #- python-WSGIProxy2
-    #- python-sphinx-issues
-    #- python-Pallets-Sphinx-Themes
-    #- python-werkzeug
-    #- python-raven
+    - python-translationstring
+    - python-colander
+    - python-zope-event
+    - python-zope-interface
+    - python-pyasn1
+    - python-service-identity
+    - python-zmq
+    - python-stomper
+    - python-lockfile
+    - python-websocket-client
+    - python-psutil
+    - python-pysocks
+    - python-daemon
+    - brotli
+    - python-multidict
+    - python-yarl
+    - python-bugzilla
+    - python-simplemediawiki
+    - python-smmap
+    - python-cccolutils
+    - python-openidc-client
+    - python-rpmfluff
+    - python-isort
+    - file # python3-magic
+    - python-enchant
+    - python-tox
+    - python-tox-current-env
+    - python-filelock
+    - python-elementpath:
+        macros:
+          _without_tests: 1
+    - python-xmlschema
+    - python-elementpath
+    - python-distro
+    - python-tempita
+    - python-paste-deploy
+    - python-plaster
+    - python-repoze-lru
+    - python-nose-exclude
+    - python-venusian
+    - python-soupsieve:
+        macros:
+          _without_tests: 1
+    - python-beautifulsoup4
+    - python-soupsieve
+    - python-cssselect
+    - python-waitress
+    - python-WSGIProxy2
+    - python-sphinx-issues
+    - python-Pallets-Sphinx-Themes
+    - python-werkzeug
+    - python-raven
 
     #- python-zope-component
     #- python-zope-exceptions
