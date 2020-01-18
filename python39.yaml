@@ -419,46 +419,46 @@ python39:
     #- python-pytest-shutil
     #- python-openstackdocstheme
 
-    - python-flask
-    - python-httpbin
-    - python-pytest-httpbin
-    - python-ldap
-    - python-mccabe
-    - python-pycodestyle
-    - python-gitdb
-    - GitPython
-    - python3-typed_ast
-    - python-astroid
-    - rpmconf
-    - python-extras
-    - python-linecache2
-    - python-traceback2
+    #- python-flask
+    #- python-httpbin
+    #- python-pytest-httpbin
+    #- python-ldap
+    #- python-mccabe
+    #- python-pycodestyle
+    #- python-gitdb
+    #- GitPython
+    #- python3-typed_ast
+    #- python-astroid
+    #- rpmconf
+    #- python-extras
+    #- python-linecache2
+    #- python-traceback2
 
-    - libreport
-    - python-meh
-    - anaconda
-    - koji
-    - dnf-plugins-core
-    - dnf-plugins-extras
-    - python-pyrsistent
-    - python-simpleline
-    - python-feedgen
-    - python-argh
-    - python-pytest-timeout
-    - python-flask-sphinx-themes
-    - python-transaction
-    - abrt
-    - python-sphinxcontrib-log-cabinet
-    - python-jinja2
-    - pyxdg
-    - python-paste
-    - python-plaster-pastedeploy
-    - rpmlint
-    - createrepo_c
+    #- libreport
+    #- python-meh
+    #- anaconda
+    #- koji
+    #- dnf-plugins-core
+    #- dnf-plugins-extras
+    #- python-pyrsistent
+    #- python-simpleline
+    #- python-feedgen
+    #- python-argh
+    #- python-pytest-timeout
+    #- python-flask-sphinx-themes
+    #- python-transaction
+    #- abrt
+    #- python-sphinxcontrib-log-cabinet
+    #- python-jinja2
+    #- pyxdg
+    #- python-paste
+    #- python-plaster-pastedeploy
+    #- rpmlint
+    #- createrepo_c
 
-    - python-pytest-cov  # https://bugzilla.redhat.com/show_bug.cgi?id=1788811
-    - python-hupper
-    - python-dogpile-cache
+    #- python-pytest-cov
+    #- python-hupper
+    #- python-dogpile-cache
 
     - python-hyperlink
     - python-hamcrest
