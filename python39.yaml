@@ -327,134 +327,134 @@ python39:
     #- python-simplejson
     #- python-arrow
     #- python-bleach  # failing tests https://bugzilla.redhat.com/show_bug.cgi?id=1788512
-    - python-translationstring
-    - python-colander
-    - python-zope-event
-    - python-zope-interface
-    - python-pyasn1
-    - python-service-identity
-    - python-zmq
-    - python-stomper
-    - python-lockfile
-    - python-websocket-client
-    - python-psutil
-    - python-pysocks
-    - python-daemon
-    - brotli
-    - python-multidict
-    - python-yarl
-    - python-bugzilla
-    - python-simplemediawiki
-    - python-smmap
-    - python-cccolutils
-    - python-openidc-client
-    - python-rpmfluff
-    - python-isort
-    - file # python3-magic
-    - python-enchant
-    - python-tox
-    - python-tox-current-env
-    - python-filelock
-    - python-elementpath:
-        macros:
-          _without_tests: 1
-    - python-xmlschema
-    - python-elementpath
-    - python-distro
-    - python-tempita
-    - python-paste-deploy
-    - python-plaster
-    - python-repoze-lru
-    - python-nose-exclude
-    - python-venusian
-    - python-soupsieve:
-        macros:
-          _without_tests: 1
-    - python-beautifulsoup4
-    - python-soupsieve
-    - python-cssselect
-    - python-waitress
-    - python-WSGIProxy2
-    - python-sphinx-issues
-    - python-Pallets-Sphinx-Themes
-    - python-werkzeug
-    - python-raven
+    #- python-translationstring
+    #- python-colander
+    #- python-zope-event
+    #- python-zope-interface
+    #- python-pyasn1
+    #- python-service-identity
+    #- python-zmq
+    #- python-stomper
+    #- python-lockfile
+    #- python-websocket-client
+    #- python-psutil
+    #- python-pysocks
+    #- python-daemon
+    #- brotli
+    #- python-multidict
+    #- python-yarl
+    #- python-bugzilla
+    #- python-simplemediawiki
+    #- python-smmap
+    #- python-cccolutils
+    #- python-openidc-client
+    #- python-rpmfluff
+    #- python-isort
+    #- file # python3-magic
+    #- python-enchant
+    #- python-tox
+    #- python-tox-current-env
+    #- python-filelock
+    #- python-elementpath:
+    #    macros:
+    #      _without_tests: 1
+    #- python-xmlschema
+    #- python-elementpath
+    #- python-distro
+    #- python-tempita
+    #- python-paste-deploy
+    #- python-plaster
+    #- python-repoze-lru
+    #- python-nose-exclude
+    #- python-venusian
+    #- python-soupsieve:
+    #    macros:
+    #      _without_tests: 1
+    #- python-beautifulsoup4
+    #- python-soupsieve
+    #- python-cssselect
+    #- python-waitress
+    #- python-WSGIProxy2
+    #- python-sphinx-issues
+    #- python-Pallets-Sphinx-Themes
+    #- python-werkzeug
+    #- python-raven
 
-    #- python-zope-component
-    #- python-zope-exceptions
-    #- python-zope-testing
-    #- python-zope-schema
-    #- python-zope-i18nmessageid
-    #- python-zope-configuration
-    #- python-zope-deprecation
+    - python-zope-component
+    - python-zope-exceptions
+    - python-zope-testing
+    - python-zope-schema
+    - python-zope-i18nmessageid
+    - python-zope-configuration
+    - python-zope-deprecation
 
-    #- python-pytest-capturelog
-    #- python-attrs  # testfull rebuild
-    #- python-scripttest
-    #- python-setuptools_git
-    #- python-apipkg
-    #- python-sphinx-epytext
-    #- breezy
-    #- python-dulwich
-    #- python-fastimport
-    #- python-certifi
-    #- python-pytest-relaxed # release was downgraded for some reason, needs fix in rawhide https://bugzilla.redhat.com/show_bug.cgi?id=1788771
-    #- python-lexicon
-    #- python-fluidity-sm
-    #- python-pynacl
-    #- python-invoke
-    #- python-paramiko
-    #- python-pip  # testfull rebuild
+    - python-pytest-capturelog
+    - python-attrs  # testfull rebuild
+    - python-scripttest
+    - python-setuptools_git
+    - python-apipkg
+    - python-sphinx-epytext
+    - breezy
+    - python-dulwich
+    - python-fastimport
+    - python-certifi
+    - python-pytest-relaxed
+    - python-lexicon
+    - python-fluidity-sm
+    - python-pynacl
+    - python-invoke
+    - python-paramiko
+    - python-pip  # testfull rebuild
 
-    #- python-execnet
-    #- python-pytest-forked
-    #- python-pytest-xdist
-    #- python-sqlalchemy  # xdist enabled tests, no need to build
-    #- python-sphinx-theme-py3doc-enhanced
-    #- python-cpuinfo
-    #- python-pytest-benchmark
-    #- python-fields
-    #- python-path
-    #- python-termcolor
-    #- python-pytest-shutil
-    #- python-openstackdocstheme
+    - python-execnet
+    - python-pytest-forked
+    - python-pytest-xdist
+    - python-sqlalchemy  # xdist enabled tests, no need to build
+    - python-sphinx-theme-py3doc-enhanced
+    - python-cpuinfo
+    - python-pytest-benchmark
+    - python-fields
+    - python-path
+    - python-termcolor
+    - python-pytest-shutil
+    - python-openstackdocstheme
 
-    #- python-flask
-    #- python-httpbin
-    #- python-pytest-httpbin
-    #- python-ldap
-    #- python-mccabe
-    #- python-pycodestyle
-    #- python-gitdb
-    #- GitPython
-    #- python3-typed_ast
-    #- python-astroid
-    #- rpmconf
-    #- python-extras
-    #- python-linecache2
-    #- python-traceback2
+    - python-flask
+    - python-httpbin
+    - python-pytest-httpbin
+    - python-ldap
+    - python-mccabe
+    - python-pycodestyle
+    - python-gitdb
+    - GitPython
+    - python3-typed_ast
+    - python-astroid
+    - rpmconf
+    - python-extras
+    - python-linecache2
+    - python-traceback2
 
-    #- libreport
-    #- python-meh
-    #- anaconda
-    #- koji
-    #- dnf-plugins-core
-    #- dnf-plugins-extras  # FAILED SKIPPED (rpmconf bug) https://bugzilla.redhat.com/show_bug.cgi?id=1788922
-    #- python-pyrsistent
-    #- python-simpleline
-    #- python-feedgen
-    #- python-argh
-    #- python-pytest-timeout
-    #- python-flask-sphinx-themes
-    #- python-transaction
-    #- abrt
-    #- python-sphinxcontrib-log-cabinet
-    #- python-jinja2
-    #- pyxdg
-    #- python-paste
-    #- python-plaster-pastedeploy
-    #- rpmlint
-    #- createrepo_c
+    - libreport
+    - python-meh
+    - anaconda
+    - koji
+    - dnf-plugins-core
+    - dnf-plugins-extras
+    - python-pyrsistent
+    - python-simpleline
+    - python-feedgen
+    - python-argh
+    - python-pytest-timeout
+    - python-flask-sphinx-themes
+    - python-transaction
+    - abrt
+    - python-sphinxcontrib-log-cabinet
+    - python-jinja2
+    - pyxdg
+    - python-paste
+    - python-plaster-pastedeploy
+    - rpmlint
+    - createrepo_c
 
     #- python-pytest-cov  # https://bugzilla.redhat.com/show_bug.cgi?id=1788811
     #- python-hupper
