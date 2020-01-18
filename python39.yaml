@@ -410,14 +410,14 @@ python39:
     #- python-pytest-forked
     #- python-pytest-xdist
     #- python-sqlalchemy  # xdist enabled tests, no need to build
-    - python-sphinx-theme-py3doc-enhanced
-    - python-cpuinfo
-    - python-pytest-benchmark
-    - python-fields
-    - python-path
-    - python-termcolor
-    - python-pytest-shutil
-    - python-openstackdocstheme
+    #- python-sphinx-theme-py3doc-enhanced
+    #- python-cpuinfo
+    #- python-pytest-benchmark
+    #- python-fields
+    #- python-path
+    #- python-termcolor
+    #- python-pytest-shutil
+    #- python-openstackdocstheme
 
     - python-flask
     - python-httpbin
