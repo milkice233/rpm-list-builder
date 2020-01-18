@@ -311,9 +311,9 @@ python39:
     #- python-psycopg2
     #- python-humanize
     #- python-augeas
-    - dbus-python # patched https://bugzilla.redhat.com/show_bug.cgi?id=1788491
-    - python-qt5 # speed things up by building both pyqts at the same time
-    - PyQt4
+    #- dbus-python # patched https://bugzilla.redhat.com/show_bug.cgi?id=1788491
+    #- python-qt5 # speed things up by building both pyqts at the same time
+    #- PyQt4
     - python-pillow
     - python-memcached
     - dnf
