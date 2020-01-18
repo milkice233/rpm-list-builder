@@ -260,29 +260,29 @@ python39:
     #- python-pexpect
     #- python-argcomplete
     #- python-webencodings
-    - python-u-msgpack-python
-    - python-pytest-expect
-    - python-genshi
-    - python-html5lib
-    - python-sphinxcontrib-websupport
-    - python-sphinx
-    - python-sphinxcontrib-applehelp # all of those can be parallel
-    - python-sphinxcontrib-devhelp
-    - python-sphinxcontrib-htmlhelp
-    - python-sphinxcontrib-jsmath
-    - python-sphinxcontrib-qthelp
-    - python-sphinxcontrib-serializinghtml
-    - python-sphinxcontrib-httpdomain # to here
-    - python-sphinx_rtd_theme
+    #- python-u-msgpack-python
+    #- python-pytest-expect
+    #- python-genshi
+    #- python-html5lib
+    #- python-sphinxcontrib-websupport
+    #- python-sphinx
+    #- python-sphinxcontrib-applehelp # all of those can be parallel
+    #- python-sphinxcontrib-devhelp
+    #- python-sphinxcontrib-htmlhelp
+    #- python-sphinxcontrib-jsmath
+    #- python-sphinxcontrib-qthelp
+    #- python-sphinxcontrib-serializinghtml
+    #- python-sphinxcontrib-httpdomain # to here
+    #- python-sphinx_rtd_theme
 
     ## docs rebuilds:
-    - python-packaging
-    - python-funcsigs
+    #- python-packaging
+    #- python-funcsigs
 
     ## testfull rebuilds:
-    - python-py
-    - python-six  # https://src.fedoraproject.org/rpms/python-six/pull-request/6
-    - python-setuptools_scm
+    #- python-py
+    #- python-six  # https://src.fedoraproject.org/rpms/python-six/pull-request/6
+    #- python-setuptools_scm
 
     #- python-dateutil:
     #    macros:
@@ -311,21 +311,21 @@ python39:
     #- python-psycopg2
     #- python-humanize
     #- python-augeas
-    #- dbus-python # patched https://bugzilla.redhat.com/show_bug.cgi?id=1788491
-    #- python-qt5 # speed things up by building both pyqts at the same time
-    #- PyQt4
-    #- python-pillow
-    #- python-memcached
-    #- dnf
-    #- fros
-    #- libxml2
-    #- glade
-    #- python-kerberos
-    #- python-requests-kerberos
-    #- python-editor
-    #- python-chai
-    #- python-simplejson
-    #- python-arrow
+    - dbus-python # patched https://bugzilla.redhat.com/show_bug.cgi?id=1788491
+    - python-qt5 # speed things up by building both pyqts at the same time
+    - PyQt4
+    - python-pillow
+    - python-memcached
+    - dnf
+    - fros
+    - libxml2
+    - glade
+    - python-kerberos
+    - python-requests-kerberos
+    - python-editor
+    - python-chai
+    - python-simplejson
+    - python-arrow
     #- python-bleach  # failing tests https://bugzilla.redhat.com/show_bug.cgi?id=1788512
     #- python-translationstring
     #- python-colander
