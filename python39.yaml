@@ -204,62 +204,62 @@ python39:
     #    macros:
     #      _without_pythontests: 1
 
-    - meson:
-        macros:
-          _without_check: 1
-    - gobject-introspection
-    - pygobject3
-    - meson  # tesfull, not blocking
-    - python-itsdangerous
-    - python-click
-    - python-configobj
-    - python-httplib2
-    - python-sure
-    - python-bottle
-    - pyflakes
-    - python-pycurl
-    - python-tornado
-    - python-jsonpointer
-    - python-jsonpatch
-    - python-jsonschema:
-        macros:
-          _without_tests: 1
+    #- meson:
+    #    macros:
+    #      _without_check: 1
+    #- gobject-introspection
+    #- pygobject3
+    #- meson  # tesfull, not blocking, FAILED
+    #- python-itsdangerous
+    #- python-click
+    #- python-configobj
+    #- python-httplib2
+    #- python-sure
+    #- python-bottle
+    #- pyflakes
+    #- python-pycurl
+    #- python-tornado
+    #- python-jsonpointer
+    #- python-jsonpatch
+    #- python-jsonschema:
+    #    macros:
+    #      _without_tests: 1
 
-    - python-blinker
-    - python-iso8601
-    - python-cryptography-vectors
-    - python-asn1crypto
-    - python-ply
-    - python-pycparser
-    - python-cffi
-    - python-cryptography
-    - python-jwt
-    - python-oauthlib
-    - python-prettytable
-    - pyserial
-    - libselinux
-    - policycoreutils
-    - python-ordered-set
-    - pykickstart
-    - python-pyudev
-    - pyparted
-    - libblockdev
-    - libbytesize
-    - python-blivet
-    - python-requests-file
-    - python-requests-ftp
-    - libpwquality
-    - python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
-    - python-pydbus
-    - python-ntplib
-    - python-pid
-    - python-wrapt
-    - python-polib
-    - python-lazy-object-proxy
-    - python-ptyprocess
-    - python-pexpect
-    - python-argcomplete
-    - python-webencodings
+    #- python-blinker
+    #- python-iso8601
+    #- python-cryptography-vectors
+    #- python-asn1crypto
+    #- python-ply
+    #- python-pycparser
+    #- python-cffi
+    #- python-cryptography
+    #- python-jwt
+    #- python-oauthlib
+    #- python-prettytable
+    #- pyserial
+    #- libselinux
+    #- policycoreutils
+    #- python-ordered-set
+    #- pykickstart
+    #- python-pyudev
+    #- pyparted
+    #- libblockdev
+    #- libbytesize
+    #- python-blivet
+    #- python-requests-file
+    #- python-requests-ftp
+    #- libpwquality
+    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
+    #- python-pydbus
+    #- python-ntplib
+    #- python-pid
+    #- python-wrapt
+    #- python-polib
+    #- python-lazy-object-proxy
+    #- python-ptyprocess
+    #- python-pexpect
+    #- python-argcomplete
+    #- python-webencodings
     - python-u-msgpack-python
     - python-pytest-expect
     - python-genshi
