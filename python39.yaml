@@ -502,89 +502,89 @@ python39:
     #- pytest # testfull rebuild, needs https://github.com/pytest-dev/pytest/pull/6406/files
     #- kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here
-    - python-txzmq
-    - python-txws
-    - python-munch # issue with the open() call https://bugzilla.redhat.com/show_bug.cgi?id=1789175
-    - python-productmd
-    - python-multilib
-    - python-beanbag
-    - pdc-client
-    - python-semantic_version
-    - python-kitchen
-    - python-gevent
-    - libgit2-glib
-    - lorax
-    - python3-py3dns
-    - python-pylibravatar
-    - python-pyroute2
-    - mock
-    - python-flit:
-        macros:
-          _without_tests: 1
-    - python-testpath
-    - python-requests-download
-    - python-entrypoints
-    - python-flake8
-    - python-responses
+    #- python-txzmq
+    #- python-txws
+    #- python-munch # issue with the open() call https://bugzilla.redhat.com/show_bug.cgi?id=1789175
+    #- python-productmd
+    #- python-multilib
+    #- python-beanbag
+    #- pdc-client
+    #- python-semantic_version
+    #- python-kitchen
+    #- python-gevent
+    #- libgit2-glib
+    #- lorax
+    #- python3-py3dns
+    #- python-pylibravatar
+    #- python-pyroute2
+    #- mock
+    #- python-flit:
+    #    macros:
+    #      _without_tests: 1
+    #- python-testpath
+    #- python-requests-download
+    #- python-entrypoints
+    #- python-flake8
+    #- python-responses
     #- python-flit  # testfull
-    - python-alembic
-    - python-defusedxml
-    - python-pytest-fixture-config
-    - python-pytest-virtualenv
+    #- python-alembic
+    #- python-defusedxml
+    #- python-pytest-fixture-config
+    #- python-pytest-virtualenv
     #- python-setuptools  # testfull rebuild
-    - python-trustme
+    #- python-trustme
     #- python-urllib3  # testfull rebuild
 
 
-    - python-simplegeneric
-    - python-wcwidth
-    - python-prompt-toolkit
-    - python-ipython_genutils
-    - python-traitlets
-    - python-pickleshare
-    - python-backcall
-    - ipython:
-        macros:
-          _without_doc: 1
-          _without_check: 1
-    - python-nose_warnings_filters
-    - python-sphinxcontrib-github-alt
-    - python-genty
-    - python-flaky
-    - python-jupyter-core
-    - python-jupyter-client:
-        macros:
-          _without_doc: 1
-          _without_tests: 1
-    - python-ipykernel
+    #- python-simplegeneric
+    #- python-wcwidth
+    #- python-prompt-toolkit
+    #- python-ipython_genutils
+    #- python-traitlets
+    #- python-pickleshare
+    #- python-backcall
+    #- ipython:
+    #    macros:
+    #      _without_doc: 1
+    #      _without_check: 1
+    #- python-nose_warnings_filters
+    #- python-sphinxcontrib-github-alt
+    #- python-genty
+    #- python-flaky
+    #- python-jupyter-core
+    #- python-jupyter-client:
+    #    macros:
+    #      _without_doc: 1
+    #      _without_tests: 1
+    #- python-ipykernel
     #- python-jupyter-client  # docsfull, testfull
-    - python-cycler
-    - python-pymongo
-    - python-nbformat
-    - python-pandocfilters
-    - python-orderedset
-    - python-prometheus_client
-    - python-send2trash
-    - python-pyglet
-    - future
-    - python-terminado
-    - python-latexcodec
-    - python-case
-    - python-pybtex
-    - python-pybtex-docutils
-    - python-kiwisolver
-    - python-PyPDF2
-    - python-pathlib2
-    - waf
-    - python-wxpython4
-    - python-sphinxcontrib-bibtex
-    - python-nbconvert:
-        macros:
-          _without_doc: 1
-    - python-nbsphinx
-    - python-nbconvert
-    - python-notebook
-    - python-pytest-rerunfailures
+    #- python-cycler
+    #- python-pymongo
+    #- python-nbformat
+    #- python-pandocfilters
+    #- python-orderedset
+    #- python-prometheus_client
+    #- python-send2trash
+    #- python-pyglet
+    #- future  # https://bugzilla.redhat.com/show_bug.cgi?id=1789631
+    #- python-terminado
+    #- python-latexcodec
+    #- python-case
+    #- python-pybtex
+    #- python-pybtex-docutils
+    #- python-kiwisolver
+    #- python-PyPDF2
+    #- python-pathlib2
+    #- waf
+    #- python-wxpython4
+    #- python-sphinxcontrib-bibtex
+    #- python-nbconvert:   # SKIPPED waits on python-bleach
+    #    macros:
+    #      _without_doc: 1
+    #- python-nbsphinx
+    #- python-nbconvert
+    #- python-notebook
+    #- python-pytest-rerunfailures
     #- python-matplotlib # https://bugzilla.redhat.com/show_bug.cgi?id=1789664
     #- ipython  # docsfull, testfull
 
