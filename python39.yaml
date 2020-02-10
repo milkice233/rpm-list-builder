@@ -112,7 +112,7 @@ python39:
     #    macros:
     #      _without_docs: 1
     #      _without_tests: 1
-    #- pytest:  # workaround from https://bugzilla.redhat.com/show_bug.cgi?id=1787902
+    #- pytest:
     #    macros:
     #      _without_timeout: 1
     #      _without_optional_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
@@ -122,7 +122,7 @@ python39:
     #- python-chardet
     #- python-pluggy
     #- pytz
-    #- babel:  # mako needs a patch in babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
+    #- babel:
     #    macros:
     #      _with_bootstrap: 1
     #- python-imagesize
@@ -585,11 +585,11 @@ python39:
     #- python-nbconvert
     #- python-notebook
     #- python-pytest-rerunfailures
-    #- python-matplotlib # https://bugzilla.redhat.com/show_bug.cgi?id=1789664
+    #- python-matplotlib # https://bugzilla.redhat.com/show_bug.cgi?id=1801244
     #- ipython  # docsfull, testfull
 
     
-    #- python-webob  # https://bugzilla.redhat.com/show_bug.cgi?id=1788703
+    #- python-webob
     #- python-pyquery:
     #    macros:
     #      _without_tests: 1
@@ -606,7 +606,7 @@ python39:
     #- python3-pytest-asyncio
     #- python-asgiref
     #- python-django
-    #- python3-openid # https://bugzilla.redhat.com/show_bug.cgi?id=1789672
+    #- python3-openid
     #- python-openid-cla
     #- python-openid-teams
     #- python-pyramid-fas-openid
@@ -648,6 +648,7 @@ python39:
     #- scipy
     #- python-numpydoc
     #- python-Bottleneck
+    #- librepo # testfull rebuild
     #- python-hypothesis  # testfull, untested here
 
 
@@ -672,5 +673,4 @@ python39:
     #- python-pathtools   XXX was retired
     #- python-watchdog needs pathtools
 
-    #- librepo # testfull rebuild, FAILED SKIPPED https://bugzilla.redhat.com/show_bug.cgi?id=1788918
 
