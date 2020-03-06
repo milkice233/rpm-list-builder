@@ -42,9 +42,6 @@ python39:
     #    macros:
     #      _without_tests: 1
     #      _without_docs: 1
-    #- python-unittest2:
-    #    replaced_macros:
-    #      bootstrap_traceback2: 1
     #- python-iniparse
     #- python-chardet:
     #    macros:
@@ -55,10 +52,6 @@ python39:
     #- python-linecache2:
     #    macros:
     #      _without_tests: 1
-    #- python-traceback2:
-    #    macros:
-    #      _without_tests: 1
-    #- python-unittest2
     #- python-contextlib2
     #- python-funcsigs:
     #    macros:
@@ -432,7 +425,6 @@ python39:
     #- rpmconf
     #- python-extras
     #- python-linecache2
-    #- python-traceback2
 
     #- libreport
     #- python-meh
