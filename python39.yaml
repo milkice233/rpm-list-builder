@@ -49,9 +49,6 @@ python39:
     #- python-pbr:
     #    macros:
     #      _with_bootstrap: 1
-    #- python-linecache2:
-    #    macros:
-    #      _without_tests: 1
     #- python-contextlib2
     #- python-funcsigs:
     #    macros:
@@ -424,7 +421,6 @@ python39:
     #- python-astroid
     #- rpmconf
     #- python-extras
-    #- python-linecache2
 
     #- libreport
     #- python-meh
@@ -570,14 +566,14 @@ python39:
     #- waf
     #- python-wxpython4
     #- python-sphinxcontrib-bibtex
-    #- python-nbconvert:   # SKIPPED waits on python-bleach
+    #- python-nbconvert:
     #    macros:
     #      _without_doc: 1
     #- python-nbsphinx
     #- python-nbconvert
     #- python-notebook
     #- python-pytest-rerunfailures
-    #- python-matplotlib # https://bugzilla.redhat.com/show_bug.cgi?id=1801244
+    #- python-matplotlib
     #- ipython  # docsfull, testfull
 
     
@@ -651,6 +647,12 @@ python39:
     #      _with_bootstrap: 1
     #- pyutil
     #- python-zbase32
+
+    #- python-lit:
+    #    macros:
+    #      _without_check: 1
+    #- python-lit
+    #- clang
 
     # !!! BOOKMARK !!!
 
