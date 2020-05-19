@@ -80,6 +80,7 @@ python39:
     #- python-pygments:
     #   macros:
     #      _without_docs: 1
+    #      _without_tests: 1
     #- python-snowballstemmer
     #- python-more-itertools
     #- python-atomicwrites:
@@ -162,7 +163,7 @@ python39:
     #- python-whoosh
     #- python-sphinxcontrib-trio
     #- python-atomicwrites # docsfull and testfull, not blocking
-    #- python-pygments # docsfull, not blocking
+    #- python-pygments # docsfull, testfull, not blocking
     #- python-testtools # docsfull and testfull, not blocking
     #- rpm
     #- python-nose-cov
