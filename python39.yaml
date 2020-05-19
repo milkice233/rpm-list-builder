@@ -587,7 +587,6 @@ python39:
 
     #- libmodulemd
     #- rpkg
-    #- python-chameleon
     #- python-pyramid
     #- python-cornice
     #- python-cornice-sphinx
