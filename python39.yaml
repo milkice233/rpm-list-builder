@@ -207,7 +207,6 @@ python39:
     #- python-httplib2
     #- python-sure
     #- python-bottle
-    #- pyflakes
     #- python-pycurl
     #- python-tornado
     #- python-jsonpointer
