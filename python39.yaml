@@ -1,6 +1,6 @@
 python39:
   packages:
-    #- python3:
+    #- python3.9:
     #    macros:
     #      _with_bootstrap: 1
     #      _without_rpmwheels: 1
@@ -24,7 +24,7 @@ python39:
     #- pyparsing:
     #    macros:
     #      _without_doc: 1
-    #- python3 # wait for gdb, skip test_io in copr
+    #- python3.9 # wait for gdb, skip test_io in copr
 
     # blocking point. do not jump ahead, or the pkgs won't have automatic requires (not even on python(abi))
     # delete the first python3 build if the second is not bumped
