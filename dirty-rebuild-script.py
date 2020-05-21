@@ -5,18 +5,18 @@ def r(cmd):
     print(cmd)
 
 
-with open('../python38.yaml') as f:
-    pkgs = yaml.load(f)['python38']['packages']
+with open('../python39.yaml') as f:
+    pkgs = yaml.safe_load(f)['python39']['packages']
 
 
 for pkg in pkgs:
     macros = {}
     replaced = {}
 
-    chaneglog = 'Rebuilt for Python 3.8'
+    chaneglog = 'Rebuilt for Python 3.9'
     if isinstance(pkg, dict):
         assert len(pkg) == 1
-        chaneglog = 'Bootstrap for Python 3.8'
+        chaneglog = 'Bootstrap for Python 3.9'
         for key, val in pkg.items():
             pkg = key
             macros = val.get('macros', {})
@@ -40,9 +40,9 @@ for pkg in pkgs:
     r(f'git --no-pager show')
     r(f'sleep 3')
     r(f'git push')
-    r(f'fedpkg build --target=f32-python || :')
-    r(f'while ! /usr/bin/koji wait-repo f32-python --build='
-      f'$(rpm --define \'_sourcedir .\'  --define \'dist %{{?distprefix}}.fc32%{{?with_bootstrap:~bootstrap}}\' -q '
+    r(f'fedpkg build --target=f33-python || :')
+    r(f'while ! /usr/bin/koji wait-repo f33-python --build='
+      f'$(rpm --define \'_sourcedir .\'  --define \'fedora 33\' -q '
       f'--qf "%{{NAME}}-%{{VERSION}}-'
       f'%{{RELEASE}}\\n" --specfile {pkg}.spec | head -n1); '
       f'do sleep 15; done')
