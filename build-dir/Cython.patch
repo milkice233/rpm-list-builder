@@ -1,0 +1,9 @@
+diff --git a/Cython.spec b/Cython.spec
+index 3df6edf..1fac581 100644
+--- a/Cython.spec
++++ b/Cython.spec
+@@ -1,3 +1,4 @@
++%global _without_tests 1
+ %global srcname Cython
+ %global upname cython
+ 
