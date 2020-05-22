@@ -166,55 +166,55 @@ python39:
     #      _without_xdist: 1
     #- python-whoosh
     #- python-sphinxcontrib-trio
-    - python-atomicwrites # docsfull and testfull, not blocking
-    - python-pygments # docsfull, testfull, not blocking
-    - python-testtools # docsfull and testfull, not blocking
-    - rpm
-    - python-nose-cov
-    - python-cov-core
-    - python-nose2
-    - python-parameterized
-    - pyxattr  # tests fail in copr (Operation not supported), commented out
-    - python-mako
-    - unbound
-    - pycairo
-    - python-pytest-runner
-    #- python-parso
-    #- python-jedi
-    - Cython:
-        macros:
-          _without_tests: 1
-    - numpy
-    #- Cython  # testfull, not blocking
-    - PyYAML
-    - python-tidy
-    - python-markdown
-    - python-lxml
-    - python-anytree
-
-    #- libdnf  # python3-hawkey
-    #- libcomps
-    #- gpgme
-    #- librepo:
-    #    macros:
-    #      _without_pythontests: 1
-
-    #- meson  # check disabled by default, if not, without check build needed before pygobject3
-    #- gobject-introspection
-    #- pygobject3
-    #- python-itsdangerous
-    #- python-click
-    #- python-configobj
-    #- python-httplib2
-    #- python-sure
-    #- python-bottle
-    #- python-pycurl
-    #- python-tornado
-    #- python-jsonpointer
-    #- python-jsonpatch
-    #- python-jsonschema:
+    #- python-atomicwrites # docsfull and testfull, not blocking
+    #- python-pygments # docsfull, testfull, not blocking
+    #- python-testtools # docsfull and testfull, not blocking
+    #- rpm
+    #- python-nose-cov
+    #- python-cov-core
+    #- python-nose2
+    #- python-parameterized
+    #- pyxattr  # tests fail in copr (Operation not supported), commented out
+    #- python-mako
+    #- unbound
+    #- pycairo
+    #- python-pytest-runner
+    #- python-parso SKIPPED
+    #- python-jedi SKIPPED
+    #- Cython:
     #    macros:
     #      _without_tests: 1
+    #- numpy  # not blocking until very later (except for cython that we skip)
+    #- Cython  # testfull, not blocking (SKIPed)
+    #- PyYAML
+    #- python-tidy
+    #- python-markdown
+    #- python-lxml
+    #- python-anytree
+
+    - libdnf  # python3-hawkey
+    - libcomps
+    - gpgme
+    - librepo:
+        macros:
+          _without_pythontests: 1
+
+    - meson  # check disabled by default, if not, without check build needed before pygobject3
+    - gobject-introspection
+    - pygobject3
+    - python-itsdangerous
+    - python-click
+    - python-configobj
+    - python-httplib2
+    - python-sure
+    - python-bottle
+    - python-pycurl
+    - python-tornado
+    - python-jsonpointer
+    - python-jsonpatch
+    - python-jsonschema:
+        macros:
+          _without_tests: 1
 
     #- python-blinker
     #- python-iso8601
@@ -384,7 +384,7 @@ python39:
     #- python-setuptools_git
     #- python-apipkg
     #- python-sphinx-epytext
-    #- breezy
+    #- breezy  # only blocks pip
     #- python-dulwich
     #- python-fastimport
     #- python-certifi
@@ -396,7 +396,7 @@ python39:
     #- python-pynacl
     #- python-invoke
     #- python-paramiko
-    #- python-pip  # testfull rebuild, not blocking
+    #- python-pip  # testfull rebuild, wait for breezy, not blocking
     #- python-execnet
     #- python-pytest-forked
     #- python-pytest-xdist

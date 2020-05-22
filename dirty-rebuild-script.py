@@ -40,7 +40,7 @@ for pkg in pkgs:
     r(f'git --no-pager show')
     r(f'sleep 3')
     r(f'git push')
-    r(f'fedpkg build --target=f33-python || :')
+    r(f'fedpkg build --fail-fast --target=f33-python || :')
     r(f'koji regen-repo f33-python  || :')
     r(f'while ! /usr/bin/koji wait-repo f33-python --build='
       f'$(rpm --define \'_sourcedir .\'  --define \'fedora 33\' -q '
