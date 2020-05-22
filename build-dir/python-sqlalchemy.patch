@@ -1,0 +1,9 @@
+diff --git a/python-sqlalchemy.spec b/python-sqlalchemy.spec
+index 61d70c1..be51085 100644
+--- a/python-sqlalchemy.spec
++++ b/python-sqlalchemy.spec
+@@ -1,3 +1,4 @@
++%global _without_xdist 1
+ # Don't build Python 3 package on all EL <= 7
+ %if !0%{?rhel} || 0%{?rhel} > 7
+ %bcond_without python3

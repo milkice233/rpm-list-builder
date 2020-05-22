@@ -1,9 +1,0 @@
-diff --git a/pyparsing.spec b/pyparsing.spec
-index 9f3bf83..206a251 100644
---- a/pyparsing.spec
-+++ b/pyparsing.spec
-@@ -1,3 +1,4 @@
-+%global _without_doc 1
- %global srcname pyparsing
- %global _summary Python package with an object-oriented approach to text processing
- 
