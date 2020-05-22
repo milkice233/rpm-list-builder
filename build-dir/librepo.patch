@@ -1,0 +1,9 @@
+diff --git a/librepo.spec b/librepo.spec
+index b5ec5d1..4739e3a 100644
+--- a/librepo.spec
++++ b/librepo.spec
+@@ -1,3 +1,4 @@
++%global _without_pythontests 1
+ %global libcurl_version 7.28.0
+ 
+ %if 0%{?rhel} && 0%{?rhel} <= 7
