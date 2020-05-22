@@ -29,45 +29,49 @@ python39:
     # blocking point. do not jump ahead, or the pkgs won't have automatic requires (not even on python(abi))
     # delete the first python3 build if the second is not bumped
 
-    - dblatex
-    - asciidoc
-    - python-pytoml
-    - python-six:
-        macros:
-          _without_tests: 1
-    - python-setuptools_scm:
-        macros:
-          _without_tests: 1
-    - python-py:
+    #- dblatex
+    #- asciidoc
+    #- python-pytoml
+    #- python-six:
+    #    macros:
+    #      _without_tests: 1
+    #- python-setuptools_scm:
+    #    macros:
+    #      _without_tests: 1
+    #- python-py:
+    #    macros:
+    #      _without_tests: 1
+    #      _without_docs: 1
+    #- python-iniparse
+    #- python-chardet:
+    #    macros:
+    #      _without_tests: 1
+    #- python-pbr:
+    #    macros:
+    #      _with_bootstrap: 1
+    #- python-contextlib2
+    #- python-funcsigs:
+    #    macros:
+    #      _without_doc: 1
+    #- python-mock:
+    #    macros:
+    #      _without_tests: 1
+    #- python-mimeparse
+    #- python-extras:
+    #    macros:
+    #      _without_check: 1
+    #- python-coverage
+    #- python-nose
+    #- python-attrs:
+    #    macros:
+    #      _without_tests: 1
+    #- python-pluggy:
+    #    macros:
+    #      _without_tests: 1
+    - python-sortedcontainers:
         macros:
           _without_tests: 1
           _without_docs: 1
-    - python-iniparse
-    - python-chardet:
-        macros:
-          _without_tests: 1
-    - python-pbr:
-        macros:
-          _with_bootstrap: 1
-    - python-contextlib2
-    - python-funcsigs:
-        macros:
-          _without_doc: 1
-    - python-mock:
-        macros:
-          _without_tests: 1
-    - python-mimeparse
-    - python-extras:
-        macros:
-          _without_check: 1
-    - python-coverage
-    - python-nose
-    - python-attrs:
-        macros:
-          _without_tests: 1
-    - python-pluggy:
-        macros:
-          _without_tests: 1
     - python-hypothesis:
         macros:
           _without_tests: 1
@@ -630,6 +634,7 @@ python39:
     #- python-numexpr
     #- python-tables
     #- scipy
+    #- python-sortedcontainers
     #- python-numpydoc
     #- python-Bottleneck
     #- librepo # testfull rebuild
