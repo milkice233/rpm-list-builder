@@ -41,6 +41,7 @@ for pkg in pkgs:
     r(f'sleep 3')
     r(f'git push')
     r(f'fedpkg build --target=f33-python || :')
+    r(f'koji regen-repo f33-python  || :')
     r(f'while ! /usr/bin/koji wait-repo f33-python --build='
       f'$(rpm --define \'_sourcedir .\'  --define \'fedora 33\' -q '
       f'--qf "%{{NAME}}-%{{VERSION}}-'
