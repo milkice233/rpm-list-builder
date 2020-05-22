@@ -164,18 +164,18 @@ python39:
     #- python-sqlalchemy:
     #    macros:
     #      _without_xdist: 1
-    - python-whoosh
-    - python-sphinxcontrib-trio
+    #- python-whoosh
+    #- python-sphinxcontrib-trio
     - python-atomicwrites # docsfull and testfull, not blocking
     - python-pygments # docsfull, testfull, not blocking
     - python-testtools # docsfull and testfull, not blocking
     - rpm
     - python-nose-cov
     - python-cov-core
-    - python-nose2  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787946
-    - python-parameterized  # pushable fix https://bugzilla.redhat.com/show_bug.cgi?id=1787948
+    - python-nose2
+    - python-parameterized
     - pyxattr  # tests fail in copr (Operation not supported), commented out
-    - python-mako  # patches for mako and babel: https://bugzilla.redhat.com/show_bug.cgi?id=1787962
+    - python-mako
     - unbound
     - pycairo
     - python-pytest-runner
@@ -194,12 +194,12 @@ python39:
 
     #- libdnf  # python3-hawkey
     #- libcomps
-    #- gpgme  # workaround exists https://bugzilla.redhat.com/show_bug.cgi?id=1787966
+    #- gpgme
     #- librepo:
     #    macros:
     #      _without_pythontests: 1
 
-    #- meson  # check disabled by default, if not, needed withtout check before pygobject3
+    #- meson  # check disabled by default, if not, without check build needed before pygobject3
     #- gobject-introspection
     #- pygobject3
     #- python-itsdangerous
@@ -253,24 +253,24 @@ python39:
     #- python-webencodings
     #- python-u-msgpack-python
     #- python-pytest-expect
-    #- python-genshi
-    #- python-html5lib
+    #- python-genshi  # FAILS https://bugzilla.redhat.com/show_bug.cgi?id=1817711
+    #- python-html5lib  # remove genshi
     #- python-sphinxcontrib-websupport
     #- python-sphinx
-    #- python-sphinxcontrib-applehelp # all of those can be parallel
+    #- python-sphinxcontrib-applehelp # all of those are not blocking:
     #- python-sphinxcontrib-devhelp
     #- python-sphinxcontrib-htmlhelp
     #- python-sphinxcontrib-jsmath
     #- python-sphinxcontrib-qthelp
     #- python-sphinxcontrib-serializinghtml
-    #- python-sphinxcontrib-httpdomain # to here
-    #- python-sphinx_rtd_theme
+    #- python-sphinxcontrib-httpdomain
+    #- python-sphinx_rtd_theme # to here
 
-    ## docs rebuilds:
+    ## docs rebuilds, not blocking:
     #- python-packaging
     #- python-funcsigs
 
-    ## testfull rebuilds:
+    ## testfull rebuilds, not blocking:
     #- python-py
     #- python-six  # https://src.fedoraproject.org/rpms/python-six/pull-request/6
     #- python-setuptools_scm
@@ -281,7 +281,7 @@ python39:
     #- python-freezegun
     #- python-dateutil
 
-    #- babel
+    #- babel # not blocking
     #- pyOpenSSL
     #- python-greenlet
     #- python-redis
@@ -302,7 +302,7 @@ python39:
     #- python-psycopg2
     #- python-humanize
     #- python-augeas
-    #- dbus-python # patched https://bugzilla.redhat.com/show_bug.cgi?id=1788491
+    #- dbus-python
     #- python-qt5 # speed things up by building both pyqts at the same time
     #- PyQt4
     #- python-pillow
@@ -317,7 +317,7 @@ python39:
     #- python-chai
     #- python-simplejson
     #- python-arrow
-    #- python-bleach  # failing tests https://bugzilla.redhat.com/show_bug.cgi?id=1788512
+    #- python-bleach
     #- python-translationstring
     #- python-colander
     #- python-zope-event
@@ -350,7 +350,7 @@ python39:
     #    macros:
     #      _without_tests: 1
     #- python-xmlschema
-    #- python-elementpath
+    #- python-elementpath  # not blocking
     #- python-distro
     #- python-tempita
     #- python-paste-deploy
@@ -362,7 +362,7 @@ python39:
     #    macros:
     #      _without_tests: 1
     #- python-beautifulsoup4
-    #- python-soupsieve
+    #- python-soupsieve  # not blocking
     #- python-cssselect
     #- python-waitress
     #- python-WSGIProxy2
@@ -379,7 +379,7 @@ python39:
     #- python-zope-configuration
     #- python-zope-deprecation
     #- python-pytest-capturelog
-    #- python-attrs  # testfull rebuild
+    #- python-attrs  # testfull rebuild, not blocking
     #- python-scripttest
     #- python-setuptools_git
     #- python-apipkg
@@ -396,11 +396,11 @@ python39:
     #- python-pynacl
     #- python-invoke
     #- python-paramiko
-    #- python-pip  # testfull rebuild
+    #- python-pip  # testfull rebuild, not blocking
     #- python-execnet
     #- python-pytest-forked
     #- python-pytest-xdist
-    #- python-sqlalchemy  # xdist enabled tests, no need to build
+    #- python-sqlalchemy  # xdist enabled tests, no need to build, just clean-up
     #- python-sphinx-theme-py3doc-enhanced
     #- python-cpuinfo
     #- python-pytest-benchmark
@@ -456,7 +456,7 @@ python39:
     #- python-m2r
 
     #- python-sphinxcontrib-apidoc
-    #- python-pbr
+    #- python-pbr  # not blocking
 
     #- python-pytest-mock
     #- python-botocore
@@ -488,12 +488,12 @@ python39:
     #- python-sphinx-testing
     #- python-sphinx-removed-in
     #- python-pygments-pytest  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing)
-    #- pytest # testfull rebuild, needs https://github.com/pytest-dev/pytest/pull/6406/files
+    #- pytest # testfull rebuild
     #- kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here
     #- python-txzmq
     #- python-txws
-    #- python-munch # issue with the open() call https://bugzilla.redhat.com/show_bug.cgi?id=1789175
+    #- python-munch
     #- python-productmd
     #- python-multilib
     #- python-beanbag
@@ -555,7 +555,7 @@ python39:
     #- python-prometheus_client
     #- python-send2trash
     #- python-pyglet
-    #- future  # https://bugzilla.redhat.com/show_bug.cgi?id=1789631
+    #- future
     #- python-terminado
     #- python-latexcodec
     #- python-case
@@ -571,7 +571,7 @@ python39:
     #    macros:
     #      _without_doc: 1
     #- python-nbsphinx
-    #- python-nbconvert
+    #- python-nbconvert  # not blocking
     #- python-notebook
     #- python-pytest-rerunfailures
     #- python-matplotlib
@@ -619,7 +619,7 @@ python39:
     #- cloud-init
     #- python-smartcols
     #- python-pytest-aiohttp
-    #- python-async-timeout
+    #- python-async-timeout  # not blocking
     #- python-click-completion
     #- python-shellingham
     #- python-betamax
