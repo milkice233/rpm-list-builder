@@ -629,7 +629,7 @@ python39:
     #- openmpi
     #- mpich
     #- boost
-    #- python-requests
+    #- python-requests  # testfull, not blocking
     #- python-pandas
     #- python-numexpr
     #- python-tables
