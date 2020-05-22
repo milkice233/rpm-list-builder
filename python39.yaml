@@ -68,23 +68,23 @@ python39:
     #- python-pluggy:
     #    macros:
     #      _without_tests: 1
-    - python-sortedcontainers:
-        macros:
-          _without_tests: 1
-          _without_docs: 1
-    - python-hypothesis:
-        macros:
-          _without_tests: 1
-          _without_doc: 1
-    - python-decorator
-    - python-markupsafe
-    - python-pysocks:
-        replaced_macros:
-         with_python3_tests: 0
-    - python-pygments:
-       macros:
-          _without_docs: 1
-          _without_tests: 1
+    #- python-sortedcontainers:
+    #    macros:
+    #      _without_tests: 1
+    #      _without_docs: 1
+    #- python-hypothesis:
+    #    macros:
+    #      _without_tests: 1
+    #      _without_doc: 1
+    #- python-decorator
+    #- python-markupsafe
+    #- python-pysocks:
+    #    replaced_macros:
+    #     with_python3_tests: 0
+    #- python-pygments:
+    #   macros:
+    #      _without_docs: 1
+    #      _without_tests: 1
     - python-snowballstemmer
     - python-more-itertools
     - python-atomicwrites:

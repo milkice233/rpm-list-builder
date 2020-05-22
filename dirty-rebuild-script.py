@@ -45,7 +45,7 @@ for pkg in pkgs:
       f'$(rpm --define \'_sourcedir .\'  --define \'fedora 33\' -q '
       f'--qf "%{{NAME}}-%{{VERSION}}-'
       f'%{{RELEASE}}\\n" --specfile {pkg}.spec | head -n1); '
-      f'do sleep 15; done')
+      f'do sleep 15; done | tee -a ../../wait-times')
     r(f'cd ..')
     r(f'rm -rf {pkg}')
     r(f'')
