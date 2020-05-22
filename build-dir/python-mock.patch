@@ -1,0 +1,9 @@
+diff --git a/python-mock.spec b/python-mock.spec
+index f6c17a8..436f0b8 100644
+--- a/python-mock.spec
++++ b/python-mock.spec
+@@ -1,3 +1,4 @@
++%global _without_tests 1
+ # keeping python3 subpackage as stdlib mock lives in a different namespace
+ # Some people may have not fixed their imports
+ 

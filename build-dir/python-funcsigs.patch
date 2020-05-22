@@ -1,0 +1,9 @@
+diff --git a/python-funcsigs.spec b/python-funcsigs.spec
+index a066212..203f635 100644
+--- a/python-funcsigs.spec
++++ b/python-funcsigs.spec
+@@ -1,3 +1,4 @@
++%global _without_doc 1
+ %global pypi_name funcsigs
+ 
+ # when bootstrapping Python 3, funcsigs needs to be rebuilt before sphinx
