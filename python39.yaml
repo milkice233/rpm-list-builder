@@ -202,15 +202,18 @@ python39:
     #- meson  # check disabled by default, if not, without check build needed before pygobject3
     #- gobject-introspection
     #- pygobject3
-    - python-sure
-    - python-dateutil:
-        macros:
-          _without_tests: 1
-    - python-freezegun
-    - python-dateutil # not blocking
-    - python-itsdangerous
-    - python-click
-    - python-configobj
+    #- python-sure
+    #- python-dateutil:
+    #    macros:
+    #      _without_tests: 1
+    #- python-freezegun
+    #- python-dateutil # not blocking
+    #- python-itsdangerous
+    #- python-click
+    #- python-configobj
+    - python-ptyprocess
+    - python-pexpect
+    - python-pytest-timeout
     - python-httplib2
     - python-bottle
     - python-pycurl
@@ -252,8 +255,6 @@ python39:
     - python-wrapt
     - python-polib
     - python-lazy-object-proxy
-    - python-ptyprocess
-    - python-pexpect
     - python-argcomplete
     - python-webencodings
     - python-u-msgpack-python
@@ -432,7 +433,6 @@ python39:
     - python-simpleline
     - python-feedgen
     - python-argh
-    - python-pytest-timeout
     - python-flask-sphinx-themes
     - python-transaction
     - abrt
