@@ -326,58 +326,60 @@ python39:
     #- python-translationstring
     #- python-colander
     #- python-zope-event
-    - python-zope-testing
-    - python-zope-interface
-    - python-pyasn1
-    - python-service-identity
-    - python-zmq
-    - python-stomper
-    - python-lockfile
-    - python-websocket-client
-    - python-psutil
-    - python-pysocks
-    - python-daemon
-    - brotli
-    - python-multidict
-    - python-yarl
-    - python-bugzilla
-    - python-simplemediawiki
-    - python-smmap
-    - python-cccolutils
-    - python-openidc-client
-    - python-rpmfluff
-    - python-isort
-    - file # python3-magic
-    - python-enchant
-    - python-tox
-    - python-tox-current-env
-    - python-filelock
-    - python-elementpath:
-        macros:
-          _without_tests: 1
-    - python-xmlschema
-    - python-elementpath  # not blocking
-    - python-distro
-    - python-tempita
-    - python-paste-deploy
-    - python-plaster
-    - python-repoze-lru
-    - python-nose-exclude
-    - python-venusian
-    - python-soupsieve:
-        macros:
-          _without_tests: 1
-    - python-beautifulsoup4
-    - python-soupsieve  # not blocking
-    - python-cssselect
-    - python-waitress
-    - python-WSGIProxy2
-    - python-sphinx-issues
-    - python-Pallets-Sphinx-Themes
-    - python-werkzeug
-    - python-raven
+    #- python-zope-testing
+    #- python-zope-interface
+    #- python-pyasn1
+    #- python-service-identity
+    #- python-zmq
+    #- python-stomper
+    #- python-lockfile
+    #- python-websocket-client
+    #- python-psutil
+    #- python-pysocks
+    #- python-daemon
+    #- brotli
+    #- python-multidict
+    #- python-yarl
+    #- python-bugzilla
+    #- python-simplemediawiki
+    #- python-smmap
+    #- python-cccolutils
+    #- python-openidc-client
+    #- python-rpmfluff  # not blocking
+    #- python-isort
+    #- file # python3-magic
+    #- python-enchant
+    #- python-tox
+    #- python-tox-current-env
+    #- python-filelock
+    #- python-elementpath:
+    #    macros:
+    #      _without_tests: 1
+    #- python-xmlschema
+    #- python-elementpath  # not blocking
+    #- python-distro
+    #- python-tempita
+    #- python-paste-deploy
+    #- python-plaster
+    #- python-repoze-lru
+    #- python-nose-exclude
+    #- python-venusian
+    #- python-soupsieve:
+    #    macros:
+    #      _without_tests: 1
+    #- python-beautifulsoup4
+    #- python-soupsieve  # not blocking
+    #- python-cssselect
+    #- python-waitress
+    #- python-WSGIProxy2
+    #- python-sphinx-issues
+    #- python-Pallets-Sphinx-Themes
+    #- python-requests-unixsocket
+    #- python-sphinxcontrib-log-cabinet
+    #- python-werkzeug
+    #- python-raven
 
-    - python-zope-component
+    #- python-zope-component
     - python-zope-exceptions
     - python-zope-schema
     - python-zope-i18nmessageid
@@ -661,18 +663,3 @@ python39:
     #      _without_check: 1
     #- python-lit
     #- clang
-
-    # !!! BOOKMARK !!!
-
-    # oslo notes
-    #- python-oslotest:
-    #    replaced_macros:
-    #      repo_bootstrap: 1
-
-
-    ####!!!  FAILURES  !!!#####
-
-    #- python-pathtools   XXX was retired
-    #- python-watchdog needs pathtools
-
-
