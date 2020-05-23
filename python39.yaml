@@ -211,100 +211,99 @@ python39:
     #- python-itsdangerous
     #- python-click
     #- python-configobj
-    - python-ptyprocess
-    - python-pexpect
-    - python-pytest-timeout
-    - python-httplib2
-    - python-bottle
-    - python-pycurl
-    - python-tornado
-    - python-jsonpointer
-    - python-jsonpatch
-    - python-jsonschema:
-        macros:
-          _without_tests: 1
+    #- python-ptyprocess
+    #- python-pexpect
+    #- python-pytest-timeout
+    #- python-httplib2
+    #- python-bottle
+    #- python-pycurl
+    #- python-tornado
+    #- python-jsonpointer
+    #- python-jsonpatch
+    #- python-jsonschema:
+    #    macros:
+    #      _without_tests: 1
 
-    - python-blinker
-    - python-iso8601
-    - python-cryptography-vectors
-    - python-asn1crypto
-    - python-ply
-    - python-pycparser
-    - python-cffi
-    - python-cryptography
-    - python-jwt
-    - python-oauthlib
-    - python-prettytable
-    - pyserial
-    - libselinux
-    - policycoreutils
-    - python-ordered-set
-    - pykickstart
-    - python-pyudev
-    - pyparted
-    - libblockdev
-    - libbytesize
-    - python-blivet
-    - python-requests-file
-    - python-requests-ftp
-    - libpwquality
-    - python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
-    - python-pydbus
-    - python-ntplib
-    - python-pid
-    - python-wrapt
-    - python-polib
-    - python-lazy-object-proxy
-    - python-argcomplete
-    - python-webencodings
-    - python-u-msgpack-python
-    - python-pytest-expect
-    #- python-genshi  # FAILS https://bugzilla.redhat.com/show_bug.cgi?id=1817711
-    - python-html5lib  # remove genshi
-    - python-sphinxcontrib-websupport
-    - python-sphinx
-    - python-sphinxcontrib-applehelp # all of those are not blocking:
-    - python-sphinxcontrib-devhelp
-    - python-sphinxcontrib-htmlhelp
-    - python-sphinxcontrib-jsmath
-    - python-sphinxcontrib-qthelp
-    - python-sphinxcontrib-serializinghtml
-    - python-sphinxcontrib-httpdomain
-    - python-sphinx_rtd_theme # to here
+    #- python-blinker
+    #- python-iso8601
+    #- python-cryptography-vectors
+    #- python-asn1crypto
+    #- python-ply
+    #- python-pycparser
+    #- python-cffi
+    #- python-cryptography
+    #- python-jwt
+    #- python-oauthlib
+    #- python-prettytable
+    #- pyserial
+    #- libselinux
+    #- policycoreutils
+    #- python-ordered-set
+    #- pykickstart
+    #- python-pyudev
+    #- pyparted
+    #- libblockdev
+    #- libbytesize
+    #- python-blivet
+    #- python-requests-file
+    #- python-requests-ftp
+    #- libpwquality
+    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
+    #- python-pydbus
+    #- python-ntplib
+    #- python-pid
+    #- python-wrapt
+    #- python-polib
+    #- python-lazy-object-proxy
+    #- python-argcomplete
+    #- python-webencodings
+    #- python-u-msgpack-python
+    #- python-pytest-expect
+    ##- python-genshi  # FAILS https://bugzilla.redhat.com/show_bug.cgi?id=1817711
+    #- python-html5lib  # remove genshi
+    #- python-sphinxcontrib-websupport
+    #- python-sphinx
+    #- python-sphinxcontrib-applehelp # all of those are not blocking:
+    #- python-sphinxcontrib-devhelp
+    #- python-sphinxcontrib-htmlhelp
+    #- python-sphinxcontrib-jsmath
+    #- python-sphinxcontrib-qthelp
+    #- python-sphinxcontrib-serializinghtml
+    #- python-sphinxcontrib-httpdomain # to here
 
-    # docs rebuilds, not blocking:
-    - python-packaging
-    - python-funcsigs
+    ## docs rebuilds, not blocking:
+    #- python-packaging
+    #- python-funcsigs
 
-    # testfull rebuilds, not blocking:
-    - python-py
-    - python-six
-    - python-setuptools_scm
+    ## testfull rebuilds, not blocking:
+    #- python-py
+    #- python-six
 
-    - babel # not blocking
-    - pyOpenSSL
-    - python-greenlet
-    - python-redis
-    - python-bcrypt
-    - python-olefile
+    #- babel # not blocking
+    #- pyOpenSSL
+    #- python-greenlet
+    #- python-redis
+    #- python-bcrypt
+    #- python-olefile
 
-    - python-isodate
-    - python-rdflib
-    - python-selenium
-    - python-incremental
-    - python-toml
-    - python-towncrier:
-        macros:
-          _without_tests: 1
-    - python-virtualenv
-    - python-sqlparse  # needs python3-pytest-cov but tests are disabled by default
-    - sip
-    - python-psycopg2
-    - python-humanize
-    - python-augeas
-    - dbus-python
-    - python-qt5 # speed things up by building both pyqts at the same time
-    - PyQt4
+    #- python-isodate
+    #- python-rdflib
+    #- python-selenium
+    #- python-incremental
+    #- python-toml
+    #- python-setuptools_scm  # tesfull, not blocking
+    #- python-towncrier:
+    #    macros:
+    #      _without_tests: 1
+    #- python-virtualenv
+    #- python-sqlparse  # needs python3-pytest-cov but tests are disabled by default
+    #- sip
+    #- python-psycopg2
+    #- python-humanize
+    #- python-augeas
+    #- dbus-python
+    #- python-qt5 # speed things up by building both pyqts at the same time
+    #- PyQt4
     - python-pillow
     - python-memcached
     - dnf
@@ -639,6 +638,9 @@ python39:
     - librepo # testfull rebuild
     - python-hypothesis  # testfull, untested here
 
+    # XXX untested
+    - python-readthedocs-sphinx-ext
+    #- python-sphinx_rtd_theme  # testfull (already committed and pushed)
 
     # additional bootstrap loops:
 
