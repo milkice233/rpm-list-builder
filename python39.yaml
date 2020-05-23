@@ -304,22 +304,29 @@ python39:
     #- dbus-python
     #- python-qt5 # speed things up by building both pyqts at the same time
     #- PyQt4
-    - python-pillow
-    - python-memcached
-    - dnf
-    - fros
-    - libxml2
-    - glade
-    - python-kerberos
-    - python-requests-kerberos
-    - python-editor
-    - python-chai
-    - python-simplejson
-    - python-arrow
-    - python-bleach
-    - python-translationstring
-    - python-colander
-    - python-zope-event
+    #- python-pillow
+    #- python-memcached
+    #- dnf
+    #- fros
+    #- libxml2
+    #- glade
+    #- python-kerberos
+    #- python-requests-kerberos
+    #- python-editor
+    #- python-chai
+    #- python-simplejson
+    #- python-regex
+    #- python-tzlocal
+    #- pyephem
+    #- python-pymeeus
+    #- python-convertdate
+    #- python-dateparser
+    #- python-arrow
+    #- python-bleach
+    #- python-translationstring
+    #- python-colander
+    #- python-zope-event
+    - python-zope-testing
     - python-zope-interface
     - python-pyasn1
     - python-service-identity
@@ -372,7 +379,6 @@ python39:
 
     - python-zope-component
     - python-zope-exceptions
-    - python-zope-testing
     - python-zope-schema
     - python-zope-i18nmessageid
     - python-zope-configuration
