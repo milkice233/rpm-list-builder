@@ -521,10 +521,10 @@ python39:
     #- python-testpath
     #- python-requests-download
     #- python-entrypoints
-    #- python-flake8  # SKIP needs pyflakes
-    - python-responses
-    - python-flit  # testfull
-    - python-alembic
+    ##- python-flake8  # SKIP needs pyflakes
+    #- python-responses
+    #- python-flit  # testfull
+    #- python-alembic
     - python-defusedxml
     - python-pytest-fixture-config
     - python-pytest-virtualenv
