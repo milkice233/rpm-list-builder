@@ -556,13 +556,13 @@ python39:
     #      _without_intersphinx: 1
     #- python-cycler
     #- python-pymongo
-    - python-nbformat
-    - python-pandocfilters
-    - python-orderedset
-    - python-prometheus_client
-    - python-send2trash
-    - future
-    - python-terminado
+    #- python-nbformat
+    #- python-pandocfilters
+    #- python-orderedset
+    #- python-prometheus_client
+    #- python-send2trash
+    #- future
+    #- python-terminado
     - python-latexcodec
     - python-case
     - python-pybtex
@@ -633,8 +633,8 @@ python39:
     - openmpi
     - mpich
     - boost  # not blocking
-    - bodhi
-    - fedpkg  # not blocking
+    #- bodhi SKIPPED
+    #- fedpkg  # not blocking
     - python-requests  # testfull, not blocking
     - python-pandas
     - python-numexpr
