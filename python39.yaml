@@ -179,8 +179,8 @@ python39:
     #- unbound
     #- pycairo
     #- python-pytest-runner
-    #- python-parso SKIPPED
-    #- python-jedi SKIPPED
+    #- python-parso
+    #- python-jedi
     #- Cython:
     #    macros:
     #      _without_tests: 1
@@ -537,21 +537,23 @@ python39:
     #- python-prompt-toolkit
     #- python-ipython_genutils
     #- python-traitlets
-    - python-pickleshare
-    - python-backcall
-    - ipython:
-        macros:
-          _without_doc: 1
-          _without_check: 1
-    - python-sphinxcontrib-github-alt
-    - python-genty
-    - python-flaky
-    - python-jupyter-core
-    - python-jupyter-client:
-        macros:
-          _without_doc: 1
-          _without_tests: 1
-    - python-ipykernel
+    #- python-pickleshare
+    #- python-backcall
+    #- ipython:
+    #    macros:
+    #      _without_doc: 1
+    #      _without_check: 1
+    #- python-sphinxcontrib-github-alt
+    #- python-genty
+    #- python-flaky
+    #- python-jupyter-core
+    #- python-jupyter-client:
+    #    macros:
+    #      _without_doc: 1
+    #      _without_tests: 1
+    #- python-ipykernel:
+    #    macros:
+    #      _without_intersphinx: 1
     - python-jupyter-client  # docsfull, testfull
     - python-cycler
     - python-pymongo
