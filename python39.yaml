@@ -525,26 +525,24 @@ python39:
     #- python-responses
     #- python-flit  # testfull
     #- python-alembic
-    - python-defusedxml
-    - python-pytest-fixture-config
-    - python-pytest-virtualenv
-    - python-setuptools  # testfull rebuild
-    - python-trustme
-    - python-urllib3  # testfull rebuild
+    #- python-defusedxml
+    #- python-pytest-fixture-config
+    #- python-pytest-virtualenv
+    #- python-setuptools  # testfull rebuild
+    #- python-trustme
+    #- python-urllib3  # testfull rebuild
 
-
-    - python-simplegeneric
-    - python-wcwidth
-    - python-prompt-toolkit
-    - python-ipython_genutils
-    - python-traitlets
+    #- python-simplegeneric
+    #- python-wcwidth  # not blocking
+    #- python-prompt-toolkit
+    #- python-ipython_genutils
+    #- python-traitlets
     - python-pickleshare
     - python-backcall
     - ipython:
         macros:
           _without_doc: 1
           _without_check: 1
-    - python-nose_warnings_filters
     - python-sphinxcontrib-github-alt
     - python-genty
     - python-flaky
@@ -642,7 +640,7 @@ python39:
     - python-numexpr
     - python-tables
     - scipy
-    - python-sortedcontainers
+    - python-sortedcontainers  # not blocking
     - python-numpydoc
     - python-Bottleneck
     - librepo # testfull rebuild
