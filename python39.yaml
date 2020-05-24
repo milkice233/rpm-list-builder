@@ -474,54 +474,54 @@ python39:
     #      _without_tests: 1
     #- python-aiohttp
     #- python-monotonic
-    - python-dns
-    - python-eventlet
-    - python-httpretty
-    - python-boto
-    - python-rsa
-    - python-vcrpy
+    #- python-dns
+    #- python-eventlet
+    #- python-httpretty
+    #- python-boto
+    #- python-rsa
+    #- python-vcrpy
 
-    - python-graphviz
-    - python-Automat:
-        macros:
-          _without_tests: 1
-    - python-constantly
-    - python-hyperframe
-    - python-h2
-    - python-priority  # test_period_of_repetition flaky in copr (timeouts)
-    - python-appdirs
-    - python-twisted
-    - python-towncrier  # testfull rebuild, untested here
-    - python-Automat  # testfull rebuild
-    - python-sphinx-testing
-    - python-sphinx-removed-in
-    - python-pygments-pytest  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing)
-    - pytest # testfull rebuild
-    - kernel-tools  # python3-perf
-    - python-jsonschema  # testfull, not checked here
-    - python-txzmq
-    - python-txws
-    - python-munch
-    - python-productmd
-    - python-multilib
-    - python-beanbag
-    - pdc-client
-    - python-semantic_version
-    - python-kitchen
-    - python-gevent
-    - libgit2-glib
-    - lorax
-    - python3-py3dns
-    - python-pylibravatar
-    - python-pyroute2
-    - mock
-    - python-flit:
-        macros:
-          _without_tests: 1
-    - python-testpath
-    - python-requests-download
-    - python-entrypoints
-    - python-flake8
+    #- python-graphviz
+    #- python-Automat:
+    #    macros:
+    #      _without_tests: 1
+    #- python-constantly
+    #- python-hyperframe
+    #- python-h2
+    #- python-priority  # test_period_of_repetition flaky in copr (timeouts)
+    #- python-appdirs
+    #- python-twisted
+    #- python-towncrier  # testfull rebuild, untested here
+    #- python-Automat  # testfull rebuild
+    #- python-sphinx-testing
+    #- python-sphinx-removed-in
+    #- python-pygments-pytest  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing)
+    #- pytest # testfull rebuild
+    #- kernel-tools  # python3-perf
+    #- python-jsonschema  # testfull, not checked here
+    #- python-txzmq
+    #- python-txws
+    #- python-munch
+    #- python-productmd
+    #- python-multilib
+    #- python-beanbag
+    #- pdc-client
+    #- python-semantic_version
+    #- python-kitchen
+    #- python-gevent
+    #- libgit2-glib
+    #- lorax
+    #- python3-py3dns
+    #- python-pylibravatar
+    #- python-pyroute2
+    #- mock
+    #- python-flit:
+    #    macros:
+    #      _without_tests: 1
+    #- python-testpath
+    #- python-requests-download
+    #- python-entrypoints
+    #- python-flake8  # SKIP needs pyflakes
     - python-responses
     - python-flit  # testfull
     - python-alembic
