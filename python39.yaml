@@ -554,15 +554,13 @@ python39:
     #- python-ipykernel:
     #    macros:
     #      _without_intersphinx: 1
-    - python-jupyter-client  # docsfull, testfull
-    - python-cycler
-    - python-pymongo
+    #- python-cycler
+    #- python-pymongo
     - python-nbformat
     - python-pandocfilters
     - python-orderedset
     - python-prometheus_client
     - python-send2trash
-    - python-pyglet
     - future
     - python-terminado
     - python-latexcodec
@@ -584,8 +582,8 @@ python39:
     - python-pytest-rerunfailures
     - python-matplotlib
     - ipython  # docsfull, testfull
+    - python-jupyter-client  # docsfull, testfull
 
-    
     - python-webob
     - python-pyquery:
         macros:
@@ -622,7 +620,7 @@ python39:
     - pungi
     - python-dict-sorted
     - python-backoff
-    - cloud-init
+    - cloud-init  # not blocking
     - python-smartcols
     - python-pytest-aiohttp
     - python-async-timeout  # not blocking
