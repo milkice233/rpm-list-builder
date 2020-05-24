@@ -1,9 +1,0 @@
-diff --git a/python-attrs.spec b/python-attrs.spec
-index 7d92ef5..4f5dbdb 100644
---- a/python-attrs.spec
-+++ b/python-attrs.spec
-@@ -1,3 +1,4 @@
-+%global _without_tests 1
- %global modname attrs
- 
- %if 0%{?rhel} && 0%{?rhel} <= 7
