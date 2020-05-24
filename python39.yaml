@@ -380,100 +380,102 @@ python39:
     #- python-raven
 
     #- python-zope-component
-    - python-zope-exceptions
-    - python-zope-schema
-    - python-zope-i18nmessageid
-    - python-zope-configuration
-    - python-zope-deprecation
-    - python-pytest-capturelog
-    - python-attrs  # testfull rebuild, not blocking
-    - python-scripttest
-    - python-setuptools_git
-    - python-apipkg
-    - python-sphinx-epytext
-    - breezy  # only blocks pip
-    - python-dulwich
-    - python-fastimport
-    - python-certifi
-    - python-pytest-relaxed
-    - python-spec
-    - python-lexicon
-    - python-should_dsl
-    - python-fluidity-sm
-    - python-pynacl
-    - python-invoke
-    - python-paramiko
-    - python-pip  # testfull rebuild, wait for breezy, not blocking
-    - python-execnet
-    - python-pytest-forked
-    - python-pytest-xdist
-    - python-sqlalchemy  # xdist enabled tests, no need to build, just clean-up
-    - python-sphinx-theme-py3doc-enhanced
-    - python-cpuinfo
-    - python-pytest-benchmark
-    - python-fields
-    - python-path
-    - python-termcolor
-    - python-pytest-shutil
-    - python-openstackdocstheme
+    #- python-zope-exceptions
+    #- python-zope-schema
+    #- python-zope-i18nmessageid
+    #- python-zope-configuration
+    #- python-zope-deprecation
+    #- python-pytest-capturelog
+    #- python-attrs  # testfull rebuild, not blocking
+    #- python-scripttest
+    #- python-setuptools_git
+    #- python-apipkg
+    #- python-sphinx-epytext
+    #- breezy  # only blocks pip
+    #- python-dulwich
+    #- python-fastimport
+    #- python-certifi
+    #- python-pytest-relaxed
+    #- python-spec
+    #- python-lexicon
+    #- python-should_dsl
+    #- python-fluidity-sm
+    #- python-pynacl
+    #- python-invoke
+    #- python-paramiko
+    #- python-pip  # testfull rebuild, wait for breezy, not blocking
+    #- python-execnet
+    #- python-pytest-forked
+    #- python-pytest-xdist
+    #- python-sqlalchemy  # xdist enabled tests, no need to build, just clean-up
+    #- python-sphinx-theme-py3doc-enhanced
+    #- python-cpuinfo
+    #- python-pytest-benchmark
+    #- python-fields
+    #- python-path
+    #- python-termcolor
+    #- python-pytest-shutil
+    #- python-openstackdocstheme
 
-    - python-flask
-    - python-httpbin
-    - python-pytest-httpbin
-    - python-ldap
-    - python-mccabe
-    - python-pycodestyle
-    - python-gitdb
-    - GitPython
-    - python3-typed_ast
-    - python-astroid
-    - rpmconf
-    - python-extras
+    #- python-flask
+    #- python-httpbin
+    #- python-pytest-httpbin
+    #- python-ldap
+    #- python-mccabe
+    #- python-pycodestyle
+    #- python-gitdb
+    #- GitPython
+    #- python3-typed_ast
+    #- python-astroid
+    #- rpmconf
+    #- python-extras
 
-    - libreport
-    - python-meh
-    - anaconda
-    - koji
-    - dnf-plugins-core
-    - dnf-plugins-extras
-    - python-pyrsistent
-    - python-simpleline
-    - python-feedgen
-    - python-argh
-    - python-flask-sphinx-themes
-    - python-transaction
-    - abrt
-    - python-sphinxcontrib-log-cabinet
-    - python-jinja2
-    - pyxdg
-    - python-paste
-    - python-plaster-pastedeploy
-    - rpmlint
-    - createrepo_c
+    #- libreport
+    #- python-meh
+    #- anaconda
+    #- koji
+    #- dnf-plugins-core
+    #- dnf-plugins-extras
+    #- python-pyrsistent
+    #- python-simpleline
+    #- python-feedgen
+    #- python-argh
+    #- python-flask-sphinx-themes
+    #- python-transaction
+    #- abrt
+    #- python-sphinxcontrib-log-cabinet
+    #- python-jinja2  # not blocking
+    #- pyxdg
+    #- python-paste
+    #- python-plaster-pastedeploy
+    #- rpmlint
+    #- createrepo_c
 
-    - python-pytest-cov
-    - python-hupper
-    - python-dogpile-cache
+    #- python-pytest-cov
+    #- python-hupper
+    #- python-dogpile-cache
 
-    - python-hyperlink
-    - python-hamcrest
-    - python-hpack
-    - python-mistune
-    - python-m2r
+    #- python-hyperlink
+    #- python-hamcrest
+    #- python-hpack
+    #- python-mistune
+    #- python-m2r
 
-    - python-sphinxcontrib-apidoc
-    - python-pbr  # not blocking
+    #- python-sphinxcontrib-apidoc
+    #- python-pbr  # not blocking
 
-    - python-pytest-mock
-    - python-botocore
-    - python-s3transfer
-    - python-jmespath
-    - python-boto3
-    - python-yarl
-    - python-async-timeout:
-        macros:
-          _without_tests: 1
-    - python-aiohttp
+    #- python-pytest-mock
+    #- python-botocore
+    #- python-s3transfer
+    #- python-jmespath
+    #- python-boto3
+    #- python-async-timeout:
+    #    macros:
+    #      _without_tests: 1
+    #- python-aiohttp
+    #- python-monotonic
+    - python-dns
+    - python-eventlet
     - python-httpretty
     - python-boto
     - python-rsa
