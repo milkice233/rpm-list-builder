@@ -635,9 +635,10 @@ python39:
     #- libsolv
     #- fedmod
 
-    - python-vine
-    - python-case
-    - python-amqp
+    #- python-vine
+    #- python-case
+    #- python-amqp
+    #- python-nose-cover3
     - python-kombu
     - python-billiard
     - python-celery
@@ -649,15 +650,19 @@ python39:
     #- mpich
     #- boost  # not blocking
 
+    #- librepo # testfull rebuild
     #- python-requests  # testfull, not blocking
     #- python-pandas
     #- python-numexpr
-    - python-tables
+    #- python-tables
+    - pybind11:
+        macros:
+          _without_tests: 1
     - scipy
+    - pybind11 # testfull, not blocking
     - python-sortedcontainers  # not blocking
     - python-numpydoc
     - python-Bottleneck
-    - librepo # testfull rebuild
     - python-hypothesis  # testfull, untested here
 
     #- linkchecker
