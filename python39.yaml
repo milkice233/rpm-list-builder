@@ -635,13 +635,14 @@ python39:
     #- libsolv
     #- fedmod
 
+    - python-vine
+    - python-case
     - python-amqp
     - python-kombu
-    - python-vine
     - python-billiard
     - python-celery
-    #- bodhi
-    #- fedpkg  # not blocking
+    - bodhi
+    - fedpkg  # not blocking
 
     ## this can run sooner
     #- openmpi
@@ -650,7 +651,7 @@ python39:
 
     #- python-requests  # testfull, not blocking
     #- python-pandas
-    - python-numexpr
+    #- python-numexpr
     - python-tables
     - scipy
     - python-sortedcontainers  # not blocking
