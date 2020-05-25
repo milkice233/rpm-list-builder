@@ -632,10 +632,15 @@ python39:
     #- python-shellingham
     #- python-betamax
     #- python-requests-toolbelt
-    - libsolv
-    - fedmod
+    #- libsolv
+    #- fedmod
 
-    #- bodhi  # SKIPPED
+    - python-amqp
+    - python-kombu
+    - python-vine
+    - python-billiard
+    - python-celery
+    #- bodhi
     #- fedpkg  # not blocking
 
     ## this can run sooner
@@ -644,7 +649,7 @@ python39:
     #- boost  # not blocking
 
     #- python-requests  # testfull, not blocking
-    - python-pandas
+    #- python-pandas
     - python-numexpr
     - python-tables
     - scipy
