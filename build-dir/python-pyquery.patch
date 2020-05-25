@@ -1,9 +1,0 @@
-diff --git a/python-pyquery.spec b/python-pyquery.spec
-index a1c24d8..78951d7 100644
---- a/python-pyquery.spec
-+++ b/python-pyquery.spec
-@@ -1,3 +1,4 @@
-+%global _without_tests 1
- %global real_name pyquery
- 
- %bcond_without tests
