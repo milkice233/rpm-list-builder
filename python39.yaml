@@ -574,13 +574,13 @@ python39:
     #- waf
     #- python-wxpython4
     #- python-sphinxcontrib-bibtex
-    - python-scour
-    - python-nbconvert:
-        macros:
-          _without_doc: 1
-    - python-nbsphinx
-    - python-nbconvert  # not blocking
-    - python-notebook
+    #- python-scour
+    #- python-nbconvert:
+    #    macros:
+    #      _without_doc: 1
+    #- python-nbsphinx
+    #- python-nbconvert  # not blocking
+    #- python-notebook
     - python-pytest-rerunfailures
     - python-matplotlib
     #- python-readthedocs-sphinx-ext
@@ -600,10 +600,10 @@ python39:
     #- rpkg
     #- python-pyramid
     #- python-cornice
-    - python-cornice-sphinx
-    - python-async-generator
-    - python3-pytest-asyncio
-    - python-asgiref
+    #- python-cornice-sphinx
+    #- python-async-generator
+    #- python3-pytest-asyncio
+    #- python-asgiref
     - python-django
     - python3-openid
     - python-openid-cla
@@ -655,6 +655,8 @@ python39:
     - librepo # testfull rebuild
     - python-hypothesis  # testfull, untested here
 
+    #- linkchecker
+    #- python3-docs (updated!)
 
     # additional bootstrap loops (isolated):
 
