@@ -586,8 +586,7 @@ python39:
     #- python-readthedocs-sphinx-ext
     #- python-sphinx_rtd_theme  # testfull, not blocking
     #- ipython  # docsfull, testfull
-    - python-jupyter-client  # docsfull, testfull
-
+    #- python-jupyter-client  # docsfull, testfull
 
 
     #- python-webob
@@ -615,37 +614,36 @@ python39:
     #- python-moksha-hub
     #- fedmsg
     #- python-pyramid-mako
-    - pydot
-    - python-sqlalchemy_schemadisplay
-    - python-pika
-    - python-crochet
-    - fedora-messaging
-    - pysendfile
-    - python-pycdlib
-    - pungi
-    - python-dict-sorted
-    - python-backoff
-    - cloud-init  # not blocking
-    - python-smartcols
-    - python-pytest-aiohttp
-    - python-async-timeout  # not blocking
-    - python-click-completion
-    - python-shellingham
-    - python-betamax
-    - python-requests-toolbelt
+    #- pydot
+    #- python-sqlalchemy_schemadisplay
+    #- python-pika
+    #- python-crochet
+    #- fedora-messaging
+    #- pysendfile
+    #- python-pycdlib
+    #- pungi
+    #- python-dict-sorted
+    #- python-backoff
+    #- cloud-init  # not blocking
+    #- python-smartcols
+    #- python-pytest-aiohttp
+    #- python-async-timeout  # not blocking
+    #- python-click-completion
+    #- python-shellingham
+    #- python-betamax
+    #- python-requests-toolbelt
     - libsolv
     - fedmod
 
+    #- bodhi  # SKIPPED
+    #- fedpkg  # not blocking
 
+    ## this can run sooner
     #- openmpi
     #- mpich
     #- boost  # not blocking
 
-
-    #- bodhi SKIPPED
-    #- fedpkg  # not blocking
-
-    - python-requests  # testfull, not blocking
+    #- python-requests  # testfull, not blocking
     - python-pandas
     - python-numexpr
     - python-tables
