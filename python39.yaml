@@ -567,13 +567,14 @@ python39:
     #- python-case
     #- python-pybtex
     #- python-pybtex-docutils
-    - python-cppy
-    - python-kiwisolver
-    - python-PyPDF2
-    - python-pathlib2
-    - waf
-    - python-wxpython4
-    - python-sphinxcontrib-bibtex
+    #- python-cppy
+    #- python-kiwisolver
+    #- python-PyPDF2
+    #- python-pathlib2
+    #- waf
+    #- python-wxpython4
+    #- python-sphinxcontrib-bibtex
+    - python-scour
     - python-nbconvert:
         macros:
           _without_doc: 1
@@ -582,20 +583,23 @@ python39:
     - python-notebook
     - python-pytest-rerunfailures
     - python-matplotlib
+    #- python-readthedocs-sphinx-ext
+    #- python-sphinx_rtd_theme  # testfull, not blocking
     - ipython  # docsfull, testfull
     - python-jupyter-client  # docsfull, testfull
 
-    - python-webob
-    - python-pyquery:
-        macros:
-          _without_tests: 1
-    - python-webtest
-    - python-pyquery  # testfull rebuild after webtest
 
-    - libmodulemd
-    - rpkg
-    - python-pyramid
-    - python-cornice
+
+    #- python-webob
+    #- python-pyquery:
+    #    macros:
+    #      _without_tests: 1
+    #- python-webtest
+    #- python-pyquery  # testfull rebuild after webtest
+    #- libmodulemd
+    #- rpkg
+    #- python-pyramid
+    #- python-cornice
     - python-cornice-sphinx
     - python-async-generator
     - python3-pytest-asyncio
@@ -631,9 +635,13 @@ python39:
     - python-requests-toolbelt
     - libsolv
     - fedmod
-    - openmpi
-    - mpich
-    - boost  # not blocking
+
+
+    #- openmpi
+    #- mpich
+    #- boost  # not blocking
+
+
     #- bodhi SKIPPED
     #- fedpkg  # not blocking
     - python-requests  # testfull, not blocking
@@ -647,11 +655,8 @@ python39:
     - librepo # testfull rebuild
     - python-hypothesis  # testfull, untested here
 
-    # XXX untested
-    - python-readthedocs-sphinx-ext
-    #- python-sphinx_rtd_theme  # testfull (already committed and pushed)
 
-    # additional bootstrap loops:
+    # additional bootstrap loops (isolated):
 
     #- python-zbase32:
     #    macros:
