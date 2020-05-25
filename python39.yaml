@@ -581,11 +581,11 @@ python39:
     #- python-nbsphinx
     #- python-nbconvert  # not blocking
     #- python-notebook
-    - python-pytest-rerunfailures
-    - python-matplotlib
+    #- python-pytest-rerunfailures
+    #- python-matplotlib
     #- python-readthedocs-sphinx-ext
     #- python-sphinx_rtd_theme  # testfull, not blocking
-    - ipython  # docsfull, testfull
+    #- ipython  # docsfull, testfull
     - python-jupyter-client  # docsfull, testfull
 
 
@@ -604,17 +604,17 @@ python39:
     #- python-async-generator
     #- python3-pytest-asyncio
     #- python-asgiref
-    - python-django
-    - python3-openid
-    - python-openid-cla
-    - python-openid-teams
-    - python-pyramid-fas-openid
-    - kobo
-    - python-fedora
-    - python-moksha-common
-    - python-moksha-hub
-    - fedmsg
-    - python-pyramid-mako
+    #- python-django
+    #- python3-openid
+    #- python-openid-cla
+    #- python-openid-teams
+    #- python-pyramid-fas-openid
+    #- kobo
+    #- python-fedora
+    #- python-moksha-common
+    #- python-moksha-hub
+    #- fedmsg
+    #- python-pyramid-mako
     - pydot
     - python-sqlalchemy_schemadisplay
     - python-pika
@@ -644,6 +644,7 @@ python39:
 
     #- bodhi SKIPPED
     #- fedpkg  # not blocking
+
     - python-requests  # testfull, not blocking
     - python-pandas
     - python-numexpr
@@ -657,6 +658,7 @@ python39:
 
     #- linkchecker
     #- python3-docs (updated!)
+    #- python-ipykernel
 
     # additional bootstrap loops (isolated):
 
