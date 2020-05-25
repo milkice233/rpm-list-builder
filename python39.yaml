@@ -563,10 +563,11 @@ python39:
     #- python-send2trash
     #- future
     #- python-terminado
-    - python-latexcodec
-    - python-case
-    - python-pybtex
-    - python-pybtex-docutils
+    #- python-latexcodec
+    #- python-case
+    #- python-pybtex
+    #- python-pybtex-docutils
+    - python-cppy
     - python-kiwisolver
     - python-PyPDF2
     - python-pathlib2
