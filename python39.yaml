@@ -661,9 +661,9 @@ python39:
     #      _without_tests: 1
     #- scipy
     #- pybind11 # testfull, not blocking
-    #- python-sortedcontainers  # not blocking
+    #- python-sortedcontainers  # testfull, not blocking
     #- python-Bottleneck
-    - python-hypothesis  # testfull, untested here
+    #- python-hypothesis  # testfull, not blocking
 
     #- linkchecker
     #- python3-docs (updated!)
