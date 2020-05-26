@@ -639,11 +639,11 @@ python39:
     #- python-case
     #- python-amqp
     #- python-nose-cover3
-    - python-kombu
-    - python-billiard
-    - python-celery
-    - bodhi
-    - fedpkg  # not blocking
+    #- python-kombu
+    #- python-billiard
+    #- python-celery
+    #- bodhi
+    #- fedpkg  # not blocking
 
     ## this can run sooner
     #- openmpi
@@ -655,14 +655,14 @@ python39:
     #- python-pandas
     #- python-numexpr
     #- python-tables
-    - pybind11:
-        macros:
-          _without_tests: 1
-    - scipy
-    - pybind11 # testfull, not blocking
-    - python-sortedcontainers  # not blocking
-    - python-numpydoc
-    - python-Bottleneck
+    #- python-numpydoc
+    #- pybind11:
+    #    macros:
+    #      _without_tests: 1
+    #- scipy
+    #- pybind11 # testfull, not blocking
+    #- python-sortedcontainers  # not blocking
+    #- python-Bottleneck
     - python-hypothesis  # testfull, untested here
 
     #- linkchecker
