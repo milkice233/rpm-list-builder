@@ -34,7 +34,6 @@ python310:
     # delete the first python3 build if the second is not bumped
 
     #- dblatex
-    #- asciidoc #skipped
     #- python-pytoml
     #- python-six:
     #    macros:
@@ -90,9 +89,6 @@ python310:
     #      _without_docs: 1
     #      _without_tests: 1
     #- python-snowballstemmer
-    #- python-toml: #skipped
-    #    macros:
-    #      _without_tests: 1
     #- python-tox:
     #    macros:
     #      _without_tests: 1
@@ -100,7 +96,6 @@ python310:
     #- python-more-itertools:
     #    macros:
     #     _without_tests: 1
-    # TODO: rebuild toml, tox, more-itertools later with tests
     #- python-atomicwrites:
     #    macros:
     #      _without_docs: 1
@@ -129,7 +124,6 @@ python310:
     #      _without_timeout: 1
     #      _without_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
     #      _without_docs: 1
-    #- python-iniconfig #skipped
     #- python-wheel
     #- python-mock
     #- python-chardet
@@ -189,27 +183,12 @@ python310:
     #- python-testtools: # docsfull and testfull, not blocking TODO: with test
     #     macros:
     #       _without_tests: 1
-    #- rpm: #skipped
-    #    macros:
-    #      _without_xz: 1
-    #      _without_check: 1
-    #      _without_plugins: 1
-    #      _without_libarchive: 1
-    #      _without_libimaevm: 1
-    #      _without_zstd: 1
-    #      _without_ndb: 1
-    #      _without_sqlite: 1
-    #      _without_bdb: 1
-    #      _without_bdb_ro: 1
-    # passed until this point except for skipped
     #- python-nose-cov
     #- python-cov-core
     #- python-nose2
     #- python-parameterized
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako
-    #- unbound
-    #- pycairo
     #- python-pytest-runner
     #- python-parso
     #- python-jedi
@@ -217,12 +196,21 @@ python310:
     #    macros:
     #      _without_tests: 1
     #- numpy  # not blocking until very later (except for cython that we skip)
-    #- Cython  # testfull, not blocking (SKIPed)
     #- PyYAML
     #- python-tidy
     #- python-markdown
     #- python-lxml
     #- python-anytree
+    #- asciidoc #skipped
+    #- python-more-itertools
+    #- python-toml: #skipped
+    #    macros:
+    #      _without_tests: 1
+    #- python-iniconfig #skipped
+    #- rpm #skipped
+    #- unbound #skipped
+    #- pycairo #skipped
+    #- Cython  # testfull, not blocking (SKIPed) #skipped
 
     #- libdnf  # python3-hawkey
     #- libcomps
@@ -232,29 +220,31 @@ python310:
     #      _without_pythontests: 1
 
     #- meson  # check disabled by default, if not, without check build needed before pygobject3
-    #- gobject-introspection #skipped
-    #- pygobject3 #skipped
     #- python-sure
     #- python-dateutil:
-      #    macros:
+    #    macros:
     #      _without_tests: 1
-    #- python-freezegun
-    #- python-dateutil # not blocking
-    #- python-itsdangerous
-    #- python-click
     #- python-configobj
     #- python-ptyprocess
     #- python-pexpect
-    #- python-pytest-timeout
-    #- python-httplib2
     #- python-bottle
-    #- python-pycurl
     #- python-tornado
     #- python-jsonpointer
     #- python-jsonpatch
     #- python-jsonschema:
     #    macros:
     #      _without_tests: 1
+    #- ninja-build #skipped
+    #- gobject-introspection #skipped
+    #- pygobject3 #skipped
+    #- python-freezegun #skipped
+    #- python-dateutil # not blocking #skipped
+    #- python-itsdangerous #skipped
+    #- python-click #skipped
+    #- python-pytest-timeout #skipped
+    #- python-httplib2 #skipped
+    #- python-pycurl #skipped
+    #- python-cryptography #skipped
 
     #- python-blinker
     #- python-iso8601
@@ -263,13 +253,12 @@ python310:
     #- python-ply
     #- python-pycparser
     #- python-cffi
-    #- python-cryptography
-    #- python-jwt
-    #- python-oauthlib
-    #- python-prettytable
-    #- pyserial
-    #- libselinux
-    #- policycoreutils
+    - python-jwt
+    - python-oauthlib
+    - python-prettytable
+    - pyserial
+    - libselinux
+    - policycoreutils
     #- python-ordered-set
     #- pykickstart
     #- python-pyudev
@@ -322,7 +311,7 @@ python310:
     #- python-rdflib
     #- python-selenium
     #- python-incremental
-    #- python-toml #moved before python-more-itertools
+    #- python-toml
     #- python-setuptools_scm  # tesfull, not blocking
     #- python-towncrier:
     #    macros:
