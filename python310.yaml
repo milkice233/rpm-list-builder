@@ -253,23 +253,18 @@ python310:
     #- python-ply
     #- python-pycparser
     #- python-cffi
-    - python-jwt
-    - python-oauthlib
-    - python-prettytable
-    - pyserial
-    - libselinux
-    - policycoreutils
+    #- python-prettytable
+    #- pyserial
+    #- libselinux
+    #- policycoreutils
     #- python-ordered-set
     #- pykickstart
     #- python-pyudev
-    #- pyparted
-    #- libblockdev
     #- libbytesize
     #- python-blivet
     #- python-requests-file
     #- python-requests-ftp
     #- libpwquality
-    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
     #- python-pydbus
     #- python-ntplib
     #- python-pid
@@ -280,8 +275,8 @@ python310:
     #- python-webencodings
     #- python-u-msgpack-python
     #- python-pytest-expect
-    ##- python-genshi  # FAILS https://bugzilla.redhat.com/show_bug.cgi?id=1817711
-    #- python-html5lib  # remove genshi
+    #- python-genshi
+    #- python-html5lib
     #- python-sphinxcontrib-websupport
     #- python-sphinx
     #- python-sphinxcontrib-applehelp # all of those are not blocking:
@@ -291,21 +286,26 @@ python310:
     #- python-sphinxcontrib-qthelp
     #- python-sphinxcontrib-serializinghtml
     #- python-sphinxcontrib-httpdomain # to here
+    #- python-jwt #skipped
+    #- python-oauthlib #skipped
+    #- pyparted #skipped
+    #- libblockdev #skipped
+    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'" #skipped
 
     ## docs rebuilds, not blocking:
-    #- python-packaging
     #- python-funcsigs
+    #- python-packaging #skipped
 
     ## testfull rebuilds, not blocking:
     #- python-py
     #- python-six
 
-    #- babel # not blocking
-    #- pyOpenSSL
-    #- python-greenlet
-    #- python-redis
-    #- python-bcrypt
-    #- python-olefile
+    - pyOpenSSL
+    - python-greenlet
+    - python-redis
+    - python-bcrypt
+    - python-olefile
+    #- babel # not blocking #skipped
 
     #- python-isodate
     #- python-rdflib
