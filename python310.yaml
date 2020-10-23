@@ -300,57 +300,35 @@ python310:
     #- python-py
     #- python-six
 
-    - pyOpenSSL
-    - python-greenlet
-    - python-redis
-    - python-bcrypt
-    - python-olefile
+    #- python-greenlet
+    #- python-redis
+    #- python-bcrypt
+    #- python-olefile
     #- babel # not blocking #skipped
+    #- pyOpenSSL #skipped
 
-    #- python-isodate
-    #- python-rdflib
+    #- python-rdflib #skipped
     #- python-selenium
     #- python-incremental
-    #- python-toml
     #- python-setuptools_scm  # tesfull, not blocking
-    #- python-towncrier:
-    #    macros:
-    #      _without_tests: 1
-    #- python-virtualenv
     #- python-sqlparse  # needs python3-pytest-cov but tests are disabled by default
     #- sip
-    #- python-psycopg2
     #- python-humanize
     #- python-augeas
-    #- dbus-python
-    #- python-qt5 # speed things up by building both pyqts at the same time
-    #- PyQt4
-    #- python-pillow
     #- python-memcached
-    #- dnf
     #- fros
-    #- libxml2
-    #- glade
     #- python-kerberos
-    #- python-requests-kerberos
     #- python-editor
     #- python-chai
     #- python-simplejson
     #- python-regex
-    #- python-tzlocal
-    #- pyephem
     #- python-pymeeus
-    #- python-convertdate
-    #- python-dateparser
-    #- python-arrow
     #- python-bleach
     #- python-translationstring
     #- python-colander
     #- python-zope-event
     #- python-zope-testing
-    #- python-zope-interface
     #- python-pyasn1
-    #- python-service-identity
     #- python-zmq
     #- python-stomper
     #- python-lockfile
@@ -360,23 +338,20 @@ python310:
     #- python-daemon
     #- brotli
     #- python-multidict
-    #- python-yarl
+    #- python-yarl #skipped
     #- python-bugzilla
     #- python-simplemediawiki
     #- python-smmap
     #- python-cccolutils
     #- python-openidc-client
-    #- python-rpmfluff  # not blocking
+    #- python-rpmfluff  # not blocking #skipped
     #- python-isort
     #- file # python3-magic
-    #- python-enchant
     #- python-tox
     #- python-filelock
     #- python-elementpath:
     #    macros:
     #      _without_tests: 1
-    #- python-xmlschema
-    #- python-elementpath  # not blocking
     #- python-distro
     #- python-tempita
     #- python-paste-deploy
@@ -396,31 +371,50 @@ python310:
     #- python-Pallets-Sphinx-Themes
     #- python-requests-unixsocket
     #- python-sphinxcontrib-log-cabinet
-    #- python-werkzeug
     #- python-raven
+    #- python-isodate #skipped
+    #- python-toml #skipped
+    #- python-towncrier: #skipped
+    #    macros:
+    #      _without_tests: 1
+    #- python-virtualenv #skipped
+    #- python-psycopg2 #skipped python globs(?)
+    #- dbus-python #skipped
+    #- python-qt5 # speed things up by building both pyqts at the same time #skipped
+    #- PyQt4 #skipped
+    #- python-pillow #skipped
+    #- dnf #skipped
+    #- libxml2 #skipped
+    #- glade #skipped
+    #- python-requests-kerberos #skipped
+    #- python-tzlocal #skipped glob
+    #- pyephem #skipped
+    #- python-convertdate #skipped, depeds on pyephem(dead package)
+    #- python-dateparser #skipped
+    #- python-arrow #skipped
+    #- python-zope-interface #skipped
+    #- python-service-identity #skipped
+    #- python-enchant #skipped
+    #- python-xmlschema #skipped
+    #- python-elementpath  # not blocking #skipped
+    #- python-werkzeug #skipped
 
     #- python-zope-component
-    #- python-zope-exceptions
-    #- python-zope-schema
     #- python-zope-i18nmessageid
-    #- python-zope-configuration
     #- python-zope-deprecation
     #- python-pytest-capturelog
-    #- python-attrs  # testfull rebuild, not blocking
     #- python-scripttest
     #- python-setuptools_git
     #- python-apipkg
     #- python-sphinx-epytext
-    #- breezy  # only blocks pip
     #- python-dulwich
     #- python-fastimport
     #- python-certifi
-    #- python-pytest-relaxed
-    #- python-spec
-    #- python-lexicon
-    #- python-should_dsl
-    #- python-fluidity-sm
-    #- python-pynacl
+    - python-spec
+    - python-lexicon
+    - python-should_dsl
+    - python-fluidity-sm
+    - python-pynacl
     #- python-invoke
     #- python-paramiko
     #- python-pip  # testfull rebuild, wait for breezy, not blocking
@@ -436,6 +430,12 @@ python310:
     #- python-termcolor
     #- python-pytest-shutil
     #- python-openstackdocstheme
+    #- python-zope-exceptions #skipped
+    #- python-zope-schema #skipped
+    #- python-zope-configuration #skipped
+    #- python-attrs  # testfull rebuild, not blocking #skipped
+    #- breezy  # only blocks pip #skipped
+    #- python-pytest-relaxed #skipped
 
     #- python-flask
     #- python-httpbin
