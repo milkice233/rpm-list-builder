@@ -207,7 +207,9 @@ python310:
     #    macros:
     #      _without_tests: 1
     #- python-iniconfig #skipped
-    #- rpm #skipped
+    #- rpm:  # tests fail in copr / mock, build with tests in koji #skipped
+    #    macros:
+    #      _without_check: 1
     #- unbound #skipped
     #- pycairo #skipped
     #- Cython  # testfull, not blocking (SKIPed) #skipped
@@ -220,10 +222,14 @@ python310:
     #      _without_pythontests: 1
 
     #- meson  # check disabled by default, if not, without check build needed before pygobject3
-    #- python-sure
     #- python-dateutil:
     #    macros:
     #      _without_tests: 1
+    #- python-sure
+    #- python-freezegun
+    #- babel # not blocking #skipped
+    #- python-itsdangerous
+    #- python-dateutil # not blocking
     #- python-configobj
     #- python-ptyprocess
     #- python-pexpect
@@ -237,9 +243,6 @@ python310:
     #- ninja-build #skipped
     #- gobject-introspection #skipped
     #- pygobject3 #skipped
-    #- python-freezegun #skipped
-    #- python-dateutil # not blocking #skipped
-    #- python-itsdangerous #skipped
     #- python-click #skipped
     #- python-pytest-timeout #skipped
     #- python-httplib2 #skipped
@@ -304,7 +307,6 @@ python310:
     #- python-redis
     #- python-bcrypt
     #- python-olefile
-    #- babel # not blocking #skipped
     #- pyOpenSSL #skipped
 
     #- python-rdflib #skipped
@@ -410,13 +412,11 @@ python310:
     #- python-dulwich
     #- python-fastimport
     #- python-certifi
-    - python-spec
-    - python-lexicon
-    - python-should_dsl
-    - python-fluidity-sm
-    - python-pynacl
-    #- python-invoke
-    #- python-paramiko
+    #- python-spec
+    #- python-lexicon
+    #- python-should_dsl
+    #- python-fluidity-sm
+    #- python-pynacl
     #- python-pip  # testfull rebuild, wait for breezy, not blocking
     #- python-execnet
     #- python-pytest-forked
@@ -436,55 +436,56 @@ python310:
     #- python-attrs  # testfull rebuild, not blocking #skipped
     #- breezy  # only blocks pip #skipped
     #- python-pytest-relaxed #skipped
+    #- python-invoke #skipped
+    #- python-paramiko #skipped
 
-    #- python-flask
-    #- python-httpbin
-    #- python-pytest-httpbin
-    #- python-ldap
     #- python-mccabe
     #- python-pycodestyle
     #- python-gitdb
     #- GitPython
     #- python3-typed_ast
     #- python-astroid
-    #- rpmconf
     #- python-extras
+    #- python-flask #skipped
+    #- python-httpbin #skipped
+    #- python-pytest-httpbin #skipped
+    #- python-ldap #skipped
+    #- rpmconf #skipped
 
-    #- libreport
-    #- python-meh
-    #- anaconda
-    #- koji
-    #- dnf-plugins-core
-    #- dnf-plugins-extras
     #- python-pyrsistent
-    #- python-simpleline
     #- python-feedgen
     #- python-argh
     #- python-flask-sphinx-themes
     #- python-transaction
-    #- abrt
     #- python-sphinxcontrib-log-cabinet
     #- python-jinja2  # not blocking
     #- pyxdg
-    #- python-paste
-    #- python-plaster-pastedeploy
-    #- rpmlint
-    #- createrepo_c
+    #- libreport #skipped
+    #- python-meh #skipped
+    #- anaconda #skipped
+    #- koji #skipped
+    #- dnf-plugins-core #skipped
+    #- dnf-plugins-extras #skipped
+    #- python-simpleline #skipped
+    #- abrt #skipped
+    #- python-paste #skipped
+    #- python-plaster-pastedeploy #skipped
+    #- rpmlint #skipped
+    #- createrepo_c #skipped
 
-    #- python-pytest-cov
-    #- python-hupper
-    #- python-dogpile-cache
+    #- python-pytest-cov #skipped
+    #- python-hupper #skipped
+    #- python-dogpile-cache #skipped
 
     #- python-hyperlink
     #- python-hamcrest
     #- python-hpack
     #- python-mistune
-    #- python-m2r
+    #- python-m2r #skipped
 
     #- python-sphinxcontrib-apidoc
     #- python-pbr  # not blocking
 
-    #- python-pytest-mock
     #- python-botocore
     #- python-s3transfer
     #- python-jmespath
@@ -494,12 +495,13 @@ python310:
     #      _without_tests: 1
     #- python-aiohttp
     #- python-monotonic
-    #- python-dns
-    #- python-eventlet
-    #- python-httpretty
-    #- python-boto
-    #- python-rsa
-    #- python-vcrpy
+    - python-rsa
+    - python-vcrpy
+    #- python-pytest-mock #skipped
+    #- python-dns #skipped
+    #- python-eventlet #skipped
+    #- python-httpretty #skipped
+    #- python-boto #skipped
 
     #- python-graphviz
     #- python-Automat:
