@@ -181,7 +181,7 @@ python310:
     #- python-atomicwrites # docsfull and testfull, not blocking
     #- python-pygments # docsfull, testfull, not blocking
     #- python-testtools: # docsfull and testfull, not blocking TODO: with test
-    #     macros:
+    # #    macros:
     #       _without_tests: 1
     #- python-nose-cov
     #- python-cov-core
@@ -190,7 +190,7 @@ python310:
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako
     #- python-pytest-runner
-    #- python-parso
+    #- python-parso #revert to 0.7 https://src.fedoraproject.org/rpms/python-parso/pull-request/3
     #- python-jedi
     #- Cython:
     #    macros:
@@ -340,7 +340,6 @@ python310:
     #- python-daemon
     #- brotli
     #- python-multidict
-    #- python-yarl #skipped
     #- python-bugzilla
     #- python-simplemediawiki
     #- python-smmap
@@ -379,7 +378,21 @@ python310:
     #- python-towncrier: #skipped
     #    macros:
     #      _without_tests: 1
-    #- python-virtualenv #skipped
+    #- python-distlib
+    #- python-genty
+    #- python-flaky
+    #- python3-pytest-asyncio:
+    #    macros:
+    #      _without_tests: 1
+    #- python-pytest-mock
+    #- python-factory-boy
+    #- python-text-unidecode
+    #- python-faker
+    #- python-pytest-randomly
+    #- python-appdirs
+    #- python-virtualenv:
+    #    macros:
+    #      _without_tests: 1
     #- python-psycopg2 #skipped python globs(?)
     #- dbus-python #skipped
     #- python-qt5 # speed things up by building both pyqts at the same time #skipped
@@ -391,10 +404,11 @@ python310:
     #- python-requests-kerberos #skipped
     #- python-tzlocal #skipped glob
     #- pyephem #skipped
+    #- python-ephem
     #- python-convertdate #skipped, depeds on pyephem(dead package)
     #- python-dateparser #skipped
     #- python-arrow #skipped
-    #- python-zope-interface #skipped
+    #- python-zope-interface
     #- python-service-identity #skipped
     #- python-enchant #skipped
     #- python-xmlschema #skipped
@@ -430,14 +444,9 @@ python310:
     #- python-termcolor
     #- python-pytest-shutil
     #- python-openstackdocstheme
-    #- python-zope-exceptions #skipped
-    #- python-zope-schema #skipped
-    #- python-zope-configuration #skipped
-    #- python-attrs  # testfull rebuild, not blocking #skipped
-    #- breezy  # only blocks pip #skipped
-    #- python-pytest-relaxed #skipped
-    #- python-invoke #skipped
-    #- python-paramiko #skipped
+    #- python-zope-exceptions
+    #- python-zope-schema
+    #- python-zope-configuration
 
     #- python-mccabe
     #- python-pycodestyle
@@ -473,7 +482,9 @@ python310:
     #- rpmlint #skipped
     #- createrepo_c #skipped
 
-    #- python-pytest-cov #skipped
+    #- python-pytest-cov
+    #- python-typing-extensions
+    #- python-yarl
     #- python-hupper #skipped
     #- python-dogpile-cache #skipped
 
@@ -495,29 +506,30 @@ python310:
     #      _without_tests: 1
     #- python-aiohttp
     #- python-monotonic
-    - python-rsa
-    - python-vcrpy
-    #- python-pytest-mock #skipped
     #- python-dns #skipped
     #- python-eventlet #skipped
     #- python-httpretty #skipped
     #- python-boto #skipped
+    #- python-rsa #skipped
+    #- python-vcrpy #skipped
 
-    #- python-graphviz
-    #- python-Automat:
-    #    macros:
-    #      _without_tests: 1
+    # we are here
     #- python-constantly
     #- python-hyperframe
     #- python-h2
     #- python-priority  # test_period_of_repetition flaky in copr (timeouts)
-    #- python-appdirs
     #- python-twisted
     #- python-towncrier  # testfull rebuild, untested here
     #- python-Automat  # testfull rebuild
     #- python-sphinx-testing
     #- python-sphinx-removed-in
     #- python-pygments-pytest  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing)
+    #- python-attrs  # testfull rebuild, not blocking #skipped
+    #- breezy  # only blocks pip #skipped
+    #- python-pytest4
+    #- python-pytest-relaxed #skipped
+    #- python-invoke #skipped
+    #- python-paramiko #skipped
     #- pytest # testfull rebuild
     #- kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here
@@ -553,6 +565,10 @@ python310:
     #- python-setuptools  # testfull rebuild
     #- python-trustme
     #- python-urllib3  # testfull rebuild
+    #- python-graphviz #skipped
+    #- python-Automat: #skipped
+    #    macros:
+    #      _without_tests: 1
 
     #- python-simplegeneric
     #- python-wcwidth  # not blocking
@@ -567,7 +583,6 @@ python310:
     #      _without_check: 1
     #- python-sphinxcontrib-github-alt
     #- python-genty
-    #- python-flaky
     #- python-jupyter-core
     #- python-jupyter-client:
     #    macros:
