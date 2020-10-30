@@ -201,7 +201,6 @@ python310:
     #- Cython:
     #    macros:
     #      _without_tests: 1
-    #- numpy  # not blocking until very later (except for cython that we skip)
     #- PyYAML
     #- python-tidy
     #- python-markdown
@@ -246,11 +245,11 @@ python310:
     #- gobject-introspection #skipped
     #- pygobject3 #skipped
     #- python-pycurl
-    #- python-cryptography #skipped
+    #- python-cryptography-vectors
+    #- python-cryptography
 
     #- python-blinker
     #- python-iso8601
-    #- python-cryptography-vectors
     #- python-asn1crypto
     #- python-ply
     #- python-pycparser
@@ -288,15 +287,15 @@ python310:
     #- python-sphinxcontrib-qthelp
     #- python-sphinxcontrib-serializinghtml
     #- python-sphinxcontrib-httpdomain # to here
-    #- python-jwt #skipped
-    #- python-oauthlib #skipped
-    #- pyparted #skipped
+    #- python-jwt
+    #- python-oauthlib
+    #- pyparted
     #- libblockdev #skipped
     #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'" #skipped
 
     ## docs rebuilds, not blocking:
     #- python-funcsigs
-    #- python-packaging #skipped
+    #- python-packaging
 
     ## testfull rebuilds, not blocking:
     #- python-py
@@ -306,7 +305,7 @@ python310:
     #- python-redis
     #- python-bcrypt
     #- python-olefile
-    #- pyOpenSSL #skipped
+    #- pyOpenSSL
 
     #- python-rdflib #skipped
     #- python-selenium
@@ -403,17 +402,17 @@ python310:
     #- libxml2 #skipped
     #- itstool #skipped
     #- glade #skipped
-    #- python-requests-kerberos #skipped
-    #- python-tzlocal #skipped glob
+    #- python-requests-kerberos
+    #- python-tzlocal
     #- pyephem #skipped
     #- python-ephem
     #- python-convertdate #skipped, depeds on pyephem(dead package)
     #- python-dateparser #skipped
     #- python-arrow #skipped
     #- python-zope-interface
-    #- python-service-identity #skipped
-    #- python-enchant #skipped
-    #- python-werkzeug #skipped
+    #- python-service-identity
+    #- python-enchant
+    #- python-werkzeug
 
     #- python-zope-component
     #- python-zope-i18nmessageid
@@ -455,9 +454,9 @@ python310:
     #- python3-typed_ast
     #- python-astroid
     #- python-extras
-    #- python-flask #skipped
-    #- python-httpbin #skipped
-    #- python-pytest-httpbin #skipped
+    #- python-flask
+    #- python-httpbin
+    #- python-pytest-httpbin
     #- python-ldap
     #- rpmconf #skipped
 
@@ -472,13 +471,13 @@ python310:
     #- libreport #skipped
     #- python-meh #skipped
     #- anaconda #skipped
-    #- koji #skipped
+    #- koji
     #- dnf-plugins-core #skipped
     #- dnf-plugins-extras #skipped
     #- python-simpleline #skipped
     #- abrt #skipped
-    #- python-paste #skipped
-    #- python-plaster-pastedeploy #skipped
+    #- python-paste
+    #- python-plaster-pastedeploy
     #- rpmlint #skipped
     #- createrepo_c #skipped
 
@@ -514,11 +513,15 @@ python310:
     #      _without_tests: 1
     #- python-aiohttp
     #- python-monotonic
+    #- python-betamax
+    #- python-requests-toolbelt #skipped
     #- python-dns #skipped
     #- python-eventlet #skipped
     #- python-httpretty #skipped
     #- python-boto #skipped
-    #- python-rsa #skipped
+    #- python-mypy_extensions
+    #- python3-mypy
+    #- python-rsa
     #- python-vcrpy #skipped
 
     #- python-constantly
@@ -550,35 +553,38 @@ python310:
     #- python-pathspec
     #- python-rst-linker
     #- python-jaraco-envs
-    #- python-twisted #skipped
-    #- python-towncrier  # testfull rebuild, untested here #skipped
-    #- python-Automat  # testfull rebuild #skipped
-    #- python-pygments-pytest  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing) #skipped
+    #- python-twisted
+    #- python-towncrier  # testfull rebuild, untested here
+    #- python-Automat  # testfull rebuild
+    #- python-pygments-pytest:  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing)
+    #    macros:
+    #      _without_tests: 1
     #- python-attrs  # testfull rebuild, not blocking #skipped
     #- breezy  # only blocks pip #skipped
     #- python-pytest4 #skipped
     #- python-pytest-relaxed #skipped
     #- python-invoke #skipped
     #- python-paramiko #skipped
+    #- numpy  # not blocking until very later (except for cython that we skip)
     #- pytest # testfull rebuild #skipped
     #- kernel-tools  # python3-perf #skipped
     #- python-jsonschema  # testfull, not checked here #skipped
-    #- python-txzmq #skipped
-    #- python-txws #skipped
+    #- python-txzmq
+    #- python-txws
     #- python-beanbag #skipped
     #- pdc-client #skipped
     #- python-gevent #skipped
     #- libgit2-glib #skipped
-    #- python-flit: #skipped
+    #- python-flit:
     #    macros:
     #      _without_tests: 1
-    #- python-testpath #skipped
-    #- python-requests-download #skipped
-    #- python-entrypoints #skipped
-    #- python-flit  # testfull #skipped
+    #- python-testpath
+    #- python-requests-download
+    #- python-entrypoints
+    #- python-flit  # testfull
     #- python-setuptools  # testfull rebuild #skipped
-    #- python-trustme #skipped
-    #- python-urllib3  # testfull rebuild #skipped
+    #- python-trustme
+    #- python-urllib3  # testfull rebuild
 
     #- python-simplegeneric
     #- python-wcwidth  # not blocking
@@ -591,7 +597,6 @@ python310:
     #- python-cycler
     #- python-pymongo
     #- python-nbformat
-    ## we are here
     #- python-pandocfilters
     #- python-orderedset
     #- python-prometheus_client
@@ -605,36 +610,36 @@ python310:
     #- python-cppy
     #- python-kiwisolver
     #- python-PyPDF2
-    #- python-pathlib2
     #- waf
-    #- python-wxpython4
     #- python-sphinxcontrib-bibtex
     #- python-scour
-    #- python-nbconvert:
-    #    macros:
-    #      _without_doc: 1
-    #- python-nbsphinx
-    #- python-nbconvert  # not blocking
-    #- python-notebook
     #- python-pytest-rerunfailures
-    #- python-matplotlib
     #- python-readthedocs-sphinx-ext
     #- python-sphinx_rtd_theme  # testfull, not blocking
-    #- ipython  # docsfull, testfull
-    #- python-jupyter-client  # docsfull, testfull
-    #- ipython: #skipped
-    #    macros:
-    #      _without_doc: 1
-    #      _without_check: 1
-    #- python-sphinxcontrib-github-alt #skipped
-    #- python-jupyter-core #skipped
-    #- python-jupyter-client: #skipped
+    #- python-sphinxcontrib-github-alt
+    #- python-jupyter-core
+    #- python-jupyter-client:
     #    macros:
     #      _without_doc: 1
     #      _without_tests: 1
     #- python-ipykernel: #skipped
     #    macros:
     #      _without_intersphinx: 1
+    #- python-pathlib2 #skipped - dead package
+    #- python-wxpython4 #skipped
+    #- python-nbconvert: #skipped
+    #    macros:
+    #      _without_doc: 1
+    #- python-nbsphinx #skipped
+    #- python-nbconvert  # not blocking #skipped
+    #- python-notebook #skipped
+    #- python-matplotlib #skipped
+    #- ipython  # docsfull, testfull #skipped
+    #- python-jupyter-client  # docsfull, testfull #skipped
+    #- ipython: #skipped
+    #    macros:
+    #      _without_doc: 1
+    #      _without_check: 1
 
 
     #- python-webob
@@ -643,8 +648,6 @@ python310:
     #      _without_tests: 1
     #- python-webtest
     #- python-pyquery  # testfull rebuild after webtest
-    #- libmodulemd
-    #- rpkg
     #- python-pyramid
     #- python-cornice
     #- python-cornice-sphinx
@@ -653,35 +656,36 @@ python310:
     #- python-asgiref
     #- python-django
     #- python3-openid
-    #- python-openid-cla
-    #- python-openid-teams
-    #- python-pyramid-fas-openid
-    #- kobo
-    #- python-fedora
-    #- python-moksha-common
-    #- python-moksha-hub
-    #- fedmsg
-    #- python-pyramid-mako
-    #- pydot
-    #- python-sqlalchemy_schemadisplay
-    #- python-pika
-    #- python-crochet
-    #- fedora-messaging
-    #- pysendfile
-    #- python-pycdlib
-    #- pungi
-    #- python-dict-sorted
-    #- python-backoff
-    #- cloud-init  # not blocking
-    #- python-smartcols
-    #- python-pytest-aiohttp
-    #- python-async-timeout  # not blocking
-    #- python-click-completion
-    #- python-shellingham
-    #- python-betamax
-    #- python-requests-toolbelt
-    #- libsolv
-    #- fedmod
+    ## we are here
+    - python-openid-cla
+    - python-openid-teams
+    - python-pyramid-fas-openid
+    - kobo
+    - python-fedora
+    - python-moksha-common
+    - python-moksha-hub
+    - fedmsg
+    - python-pyramid-mako
+    - pydot
+    - python-sqlalchemy_schemadisplay
+    - python-pika
+    - python-crochet
+    - fedora-messaging
+    - pysendfile
+    - python-pycdlib
+    - pungi
+    - python-dict-sorted
+    - python-backoff
+    - cloud-init  # not blocking
+    - python-smartcols
+    - python-pytest-aiohttp
+    - python-async-timeout  # not blocking
+    - python-click-completion
+    - python-shellingham
+    - libsolv
+    - fedmod
+    #- libmodulemd #skipped
+    #- rpkg #skipped
 
     #- python-vine
     #- python-case
