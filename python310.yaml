@@ -206,7 +206,7 @@ python310:
     #- python-markdown
     #- python-lxml
     #- python-anytree
-    #- asciidoc #skipped
+    #- asciidoc
     #- python-more-itertools
     #- rpm:  # tests fail in copr / mock, build with tests in koji #skipped
     #    macros:
@@ -241,7 +241,7 @@ python310:
     #- python-jsonschema:
     #    macros:
     #      _without_tests: 1
-    #- ninja-build #skipped
+    #- ninja-build
     #- gobject-introspection #skipped
     #- pygobject3 #skipped
     #- python-pycurl
@@ -307,7 +307,7 @@ python310:
     #- python-olefile
     #- pyOpenSSL
 
-    #- python-rdflib #skipped
+    #- python-rdflib
     #- python-selenium
     #- python-incremental
     #- python-setuptools_scm  # tesfull, not blocking
@@ -567,7 +567,7 @@ python310:
     #- python-paramiko #skipped
     #- numpy  # not blocking until very later (except for cython that we skip)
     #- pytest # testfull rebuild #skipped
-    #- kernel-tools  # python3-perf #skipped
+    #- kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here #skipped
     #- python-txzmq
     #- python-txws
@@ -654,55 +654,56 @@ python310:
     #- python-async-generator
     #- python3-pytest-asyncio
     #- python-asgiref
-    #- python-django
-    #- python3-openid
-    ## we are here
-    - python-openid-cla
-    - python-openid-teams
-    - python-pyramid-fas-openid
-    - kobo
-    - python-fedora
-    - python-moksha-common
-    - python-moksha-hub
-    - fedmsg
-    - python-pyramid-mako
-    - pydot
-    - python-sqlalchemy_schemadisplay
-    - python-pika
-    - python-crochet
-    - fedora-messaging
-    - pysendfile
-    - python-pycdlib
-    - pungi
-    - python-dict-sorted
-    - python-backoff
-    - cloud-init  # not blocking
-    - python-smartcols
-    - python-pytest-aiohttp
-    - python-async-timeout  # not blocking
-    - python-click-completion
-    - python-shellingham
-    - libsolv
-    - fedmod
+    #- kobo
+    #- python-moksha-common
+    #- python-moksha-hub
+    #- python-pyramid-mako
+    #- pydot
+    #- python-sqlalchemy_schemadisplay
+    #- python-pika
+    #- python-crochet
+    #- fedora-messaging
+    #- python-pycdlib
+    #- poetry
+    #- python-dict-sorted
+    #- python-smartcols
+    #- python-pytest-aiohttp
+    #- python-async-timeout  # not blocking
+    #- python-click-completion
+    #- python-shellingham
     #- libmodulemd #skipped
     #- rpkg #skipped
+    #- python-django #skipped
+    #- python3-openid #skipped
+    #- python-openid-cla #skipped
+    #- python-openid-teams #skipped
+    #- python-pyramid-fas-openid #skipped
+    #- python-fedora #skipped
+    #- fedmsg #skipped
+    #- pysendfile #skipped
+    #- pungi #skipped
+    #- python-backoff #skipped
+    #- cloud-init  # not blocking #skipped
+    #- libsolv #skipped
+    #- fedmod #skipped
 
     #- python-vine
     #- python-case
     #- python-amqp
     #- python-nose-cover3
-    #- python-kombu
     #- python-billiard
-    #- python-celery
-    #- bodhi
-    #- fedpkg  # not blocking
+    #- python-kombu #skipped
+    #- python-celery #skipped
+    #- bodhi #skipped
+    #- fedpkg  # not blocking #skipped
 
     ## this can run sooner
-    #- openmpi
-    #- mpich
-    #- boost  # not blocking
     #- gdb  # not blocking
+    #- openmpi #skipped
+    #- mpich #skipped
+    #- boost  # not blocking #skipped
 
+    # we are here
     #- librepo # testfull rebuild
     #- python-requests  # testfull, not blocking
     #- python-pandas
