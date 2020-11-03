@@ -207,10 +207,11 @@ python310:
     #- python-lxml
     #- python-anytree
     #- asciidoc
-    #- python-more-itertools
-    #- rpm:  # tests fail in copr / mock, build with tests in koji #skipped
-    #    macros:
-    #      _without_check: 1
+    #- python-more-itertool
+    #- automake
+    - rpm:  # tests fail in copr / mock, build with tests in koji #skipped
+        macros:
+          _without_check: 1
     #- unbound #skipped
     #- pycairo #skipped
     #- Cython  # testfull, not blocking (SKIPed) #skipped
@@ -371,7 +372,7 @@ python310:
     #- python-requests-unixsocket
     #- python-sphinxcontrib-log-cabinet
     #- python-raven
-    #- python-isodate #skipped
+    #- python-isodate
     #- python-towncrier:
     #    macros:
     #      _without_tests: 1
@@ -404,7 +405,6 @@ python310:
     #- glade #skipped
     #- python-requests-kerberos
     #- python-tzlocal
-    #- pyephem #skipped
     #- python-ephem
     #- python-convertdate #skipped, depeds on pyephem(dead package)
     #- python-dateparser #skipped
@@ -515,14 +515,23 @@ python310:
     #- python-monotonic
     #- python-betamax
     #- python-requests-toolbelt #skipped
-    #- python-dns #skipped
-    #- python-eventlet #skipped
-    #- python-httpretty #skipped
-    #- python-boto #skipped
+    #- python-outcome
+    #- python-curio
+    #- python-sniffio
+    #- python-trio
+    #- python-dns
+    #- python-greenlet
+    #- python-eventlet
+    #- python-httpretty
+    #- python-boto
     #- python-mypy_extensions
     #- python3-mypy
     #- python-rsa
-    #- python-vcrpy #skipped
+    #- python-rfc3986
+    #- python-h11
+    #- python-httpx
+    #- python-httpcore
+    #- python-vcrpy
 
     #- python-constantly
     #- python-hyperframe
@@ -573,7 +582,7 @@ python310:
     #- python-txws
     #- python-beanbag #skipped
     #- pdc-client #skipped
-    #- python-gevent #skipped
+    #- python-gevent
     #- libgit2-glib #skipped
     #- python-flit:
     #    macros:
@@ -630,16 +639,17 @@ python310:
     #- python-nbconvert: #skipped
     #    macros:
     #      _without_doc: 1
-    #- python-nbsphinx #skipped
-    #- python-nbconvert  # not blocking #skipped
     #- python-notebook #skipped
     #- python-matplotlib #skipped
-    #- ipython  # docsfull, testfull #skipped
-    #- python-jupyter-client  # docsfull, testfull #skipped
     #- ipython: #skipped
     #    macros:
     #      _without_doc: 1
     #      _without_check: 1
+    #- python-sphix-copybutton
+    #- python-nbsphinx #skipped
+    #- python-nbconvert  # not blocking #skipped
+    #- ipython  # docsfull, testfull #skipped
+    #- python-jupyter-client  # docsfull, testfull #skipped
 
 
     #- python-webob
@@ -680,7 +690,7 @@ python310:
     #- python-pyramid-fas-openid #skipped
     #- python-fedora #skipped
     #- fedmsg #skipped
-    #- pysendfile #skipped
+    #- pysendfile #skipped - failure not related with Python 3.10
     #- pungi #skipped
     #- python-backoff #skipped
     #- cloud-init  # not blocking #skipped
@@ -699,29 +709,31 @@ python310:
 
     ## this can run sooner
     #- gdb  # not blocking
-    #- openmpi #skipped
+    #- openmpi #skipped - failure not related with Python 3.10
     #- mpich #skipped
+    #- python-dill
+    #- mpi4py #skipped
+    #- vtk #skipped
     #- boost  # not blocking #skipped
 
-    # we are here
-    #- librepo # testfull rebuild
     #- python-requests  # testfull, not blocking
-    #- python-pandas
     #- python-numexpr
-    #- python-tables
-    #- python-numpydoc
     #- pybind11:
     #    macros:
     #      _without_tests: 1
-    #- scipy
-    #- pybind11 # testfull, not blocking
-    #- python-sortedcontainers  # testfull, not blocking
-    #- python-Bottleneck
-    #- python-hypothesis  # testfull, not blocking
+    #- librepo # testfull rebuild #skipped
+    #- python-pandas #skipped
+    #- python-tables #skipped
+    #- python-numpydoc #skipped
+    #- scipy #skipped
+    #- pybind11 # testfull, not blocking #skipped
+    #- python-sortedcontainers  # testfull, not blocking #skipped
+    #- python-Bottleneck #skipped
+    #- python-hypothesis  # testfull, not blocking #skipped
 
-    #- linkchecker
-    #- python3-docs (updated!)
-    #- python-ipykernel
+    #- linkchecker #skipped
+    #- python3-docs #(updated!) #skipped
+    #- python-ipykernel #skipped
 
     # additional bootstrap loops (isolated):
 
@@ -731,8 +743,8 @@ python310:
     #- pyutil
     #- python-zbase32
 
-    #- python-lit:
-    #    macros:
-    #      _without_check: 1
-    #- python-lit
-    #- clang
+    - python-lit:
+        macros:
+          _without_check: 1
+    - python-lit
+    - clang
