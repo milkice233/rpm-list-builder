@@ -10,7 +10,7 @@ python310:
     #      _without_optimizations: 1
     #- gdb: # not blocking
     #    macros:
-    #      _without_python 1
+    #      _without_python: 1
     #- python-setuptools: # bump release
     #    macros:
     #      _with_bootstrap: 1
@@ -28,7 +28,7 @@ python310:
     #- pyparsing:
     #    macros:
     #      _without_doc: 1
-    #- python3.9 # wait for gdb, skip test_io in copr
+    #- python3.10 # wait for gdb, skip test_io in copr
 
     # blocking point. do not jump ahead, or the pkgs won't have automatic requires (not even on python(abi))
     # delete the first python3 build if the second is not bumped
@@ -196,7 +196,7 @@ python310:
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako
     #- python-pytest-runner
-    #- python-parso #revert to 0.7 https://src.fedoraproject.org/rpms/python-parso/pull-request/3
+    #- python-parso #revert to 0.7 https://src.fedoraproject.org/rpms/python-parso/pull-request/3 #skipped
     #- python-jedi
     #- Cython:
     #    macros:
@@ -209,9 +209,9 @@ python310:
     #- asciidoc
     #- python-more-itertool
     #- automake
-    - rpm:  # tests fail in copr / mock, build with tests in koji #skipped
-        macros:
-          _without_check: 1
+    #- rpm:  # tests fail in copr / mock, build with tests in koji #skipped
+    #    macros:
+    #      _without_check: 1
     #- unbound #skipped
     #- pycairo #skipped
     #- Cython  # testfull, not blocking (SKIPed) #skipped
@@ -344,7 +344,7 @@ python310:
     #- python-smmap
     #- python-cccolutils
     #- python-openidc-client
-    #- python-rpmfluff  # not blocking #skipped
+    #- python-rpmfluff  # not blocking
     #- python-isort
     #- file # python3-magic
     #- python-tox
@@ -399,13 +399,13 @@ python310:
     #- python-qt5 # speed things up by building both pyqts at the same time #skipped
     #- PyQt4 #skipped
     #- python-pillow #skipped
-    #- dnf #skipped
+    #- dnf
     #- libxml2 #skipped
     #- itstool #skipped
     #- glade #skipped
     #- python-requests-kerberos
     #- python-tzlocal
-    #- python-ephem
+    #- python-ephem #skipped
     #- python-convertdate #skipped, depeds on pyephem(dead package)
     #- python-dateparser #skipped
     #- python-arrow #skipped
@@ -430,7 +430,7 @@ python310:
     #- python-should_dsl
     #- python-fluidity-sm
     #- python-pynacl
-    #- python-pip  # testfull rebuild, wait for breezy, not blocking
+    #- python-pip  # testfull rebuild, wait for breezy, not blocking #skipped
     #- python-execnet
     #- python-pytest-forked
     #- python-pytest-xdist
@@ -458,7 +458,7 @@ python310:
     #- python-httpbin
     #- python-pytest-httpbin
     #- python-ldap
-    #- rpmconf #skipped
+    #- rpmconf
 
     #- python-pyrsistent
     #- python-feedgen
@@ -472,13 +472,13 @@ python310:
     #- python-meh #skipped
     #- anaconda #skipped
     #- koji
-    #- dnf-plugins-core #skipped
+    #- dnf-plugins-core
     #- dnf-plugins-extras #skipped
     #- python-simpleline #skipped
     #- abrt #skipped
     #- python-paste
     #- python-plaster-pastedeploy
-    #- rpmlint #skipped
+    #- rpmlint
     #- createrepo_c #skipped
 
     #- python-pytest-cov
@@ -514,7 +514,7 @@ python310:
     #- python-aiohttp
     #- python-monotonic
     #- python-betamax
-    #- python-requests-toolbelt #skipped
+    #- python-requests-toolbelt
     #- python-outcome
     #- python-curio
     #- python-sniffio
@@ -576,12 +576,12 @@ python310:
     #- python-paramiko #skipped
     #- numpy  # not blocking until very later (except for cython that we skip)
     #- pytest # testfull rebuild #skipped
-    #- kernel-tools  # python3-perf
-    #- python-jsonschema  # testfull, not checked here #skipped
+    #- kernel-tools  # python3-perf #skipped
+    #- python-jsonschema  # testfull, not checked here
     #- python-txzmq
     #- python-txws
-    #- python-beanbag #skipped
-    #- pdc-client #skipped
+    #- python-beanbag
+    #- pdc-client
     #- python-gevent
     #- libgit2-glib #skipped
     #- python-flit:
@@ -674,6 +674,7 @@ python310:
     #- python-crochet
     #- fedora-messaging
     #- python-pycdlib
+    #- python-keyring
     #- poetry
     #- python-dict-sorted
     #- python-smartcols
@@ -690,8 +691,21 @@ python310:
     #- python-pyramid-fas-openid #skipped
     #- python-fedora #skipped
     #- fedmsg #skipped
-    #- pysendfile #skipped - failure not related with Python 3.10
     #- pungi #skipped
+    #- python-cherrypy
+    #- python-zc-lockfile
+    #- python-setuptools_scm_git_archive
+    #- python-jaraco-classes
+    #- python-jaraco-functools
+    #- python-tempora
+    #- python-portend
+    #- python-cachy
+    #- python-cleo
+    #- python-clikit
+    #- python-pkginfo
+    #- python-tomlkit
+    #- python-cheroot
+    #- python-CacheControl
     #- python-backoff #skipped
     #- cloud-init  # not blocking #skipped
     #- libsolv #skipped
@@ -702,8 +716,10 @@ python310:
     #- python-amqp
     #- python-nose-cover3
     #- python-billiard
-    #- python-kombu #skipped
-    #- python-celery #skipped
+    #- python-kombu
+    #- python-msgpack
+    #- python-pytest-subtests
+    #- python-celery
     #- bodhi #skipped
     #- fedpkg  # not blocking #skipped
 
@@ -729,10 +745,11 @@ python310:
     #- pybind11 # testfull, not blocking #skipped
     #- python-sortedcontainers  # testfull, not blocking #skipped
     #- python-Bottleneck #skipped
+    #- python-sphinx-hoverxref
     #- python-hypothesis  # testfull, not blocking #skipped
 
-    #- linkchecker #skipped
-    #- python3-docs #(updated!) #skipped
+    #- linkchecker
+    #- python3-docs #(updated!)
     #- python-ipykernel #skipped
 
     # additional bootstrap loops (isolated):
@@ -743,8 +760,8 @@ python310:
     #- pyutil
     #- python-zbase32
 
-    - python-lit:
-        macros:
-          _without_check: 1
-    - python-lit
-    - clang
+    #- python-lit:
+    #    macros:
+    #      _without_check: 1
+    #- python-lit
+    #- clang
