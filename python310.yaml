@@ -15,7 +15,15 @@ python310:
     #    macros:
     #      _with_bootstrap: 1
     #      _without_tests: 1
-    #- python-wheel:
+    #- pyparsing: # bump release
+    #    macros:
+    #      _with_bootstrap: 1
+    #- python-packaging: # bump release
+    #    macros:
+    #      _with_bootstrap: 1
+    #      _without_tests: 1
+    #      _without_docs: 1
+    #- python-wheel: # bump release
     #    macros:
     #      _with_bootstrap: 1
     #- python-pip:
@@ -25,9 +33,6 @@ python310:
     #- python-setuptools:
     #    macros:
     #      _without_tests: 1
-    #- pyparsing:
-    #    macros:
-    #      _without_doc: 1
     #- python3.10 # wait for gdb, skip test_io in copr
 
     # blocking point. do not jump ahead, or the pkgs won't have automatic requires (not even on python(abi))
@@ -117,10 +122,6 @@ python310:
     #- python-fixtures  # with tests FAILED https://bugzilla.redhat.com/show_bug.cgi?id=1787753
     #- python-wcwidth:
     #    macros:
-    #      _without_tests: 1
-    #- python-packaging:
-    #    macros:
-    #      _without_docs: 1
     #      _without_tests: 1
     #- python-iniconfig:
     #    macros:
