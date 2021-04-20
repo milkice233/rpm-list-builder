@@ -33,14 +33,20 @@ python310:
     #- python-setuptools:
     #    macros:
     #      _without_tests: 1
-    #- python3.10 # wait for gdb, skip test_io in copr
+    #- python3.10 # wait for gdb
 
     # blocking point. do not jump ahead, or the pkgs won't have automatic requires (not even on python(abi))
-    # delete the first python3 build if the second is not bumped
+    # DELETE the first python3.10 build if the second is not bumped
+
+    # VERIFY: in Koji do scratch build on the next package
+    # in COPR just build it, check if provides python3dist() and python3.10dist()
+    # eg. Provides: dblatex = 0.3.12-2.fc35 python3.10dist(dblatex) = 0.3.12 python3dist(dblatex) = 0.3.12
 
     #- dblatex
-    #- python-pytoml
     #- python-six:
+    #    macros:
+    #      _without_tests: 1
+    #- python-toml:
     #    macros:
     #      _without_tests: 1
     #- python-setuptools_scm:
@@ -57,10 +63,6 @@ python310:
     #- python-pbr:
     #    macros:
     #      _with_bootstrap: 1
-    #- python-contextlib2
-    #- python-funcsigs:
-    #    macros:
-    #      _without_doc: 1
     #- python-mock:
     #    macros:
     #      _without_tests: 1
@@ -94,16 +96,30 @@ python310:
     #      _without_docs: 1
     #      _without_tests: 1
     #- python-snowballstemmer
-    #- python-tox:
+    #- python-tox
+    #- python-tox-current-env
+    #- python-filelock:
+    #    macros:
+    #      _without_docs: 1
+    #- python-elementpath:  # not blocking
     #    macros:
     #      _without_tests: 1
-    #- python-tox-current-env
-    #- python-elementpath  # not blocking
-    #- python-iniconfig
-    #- python-xmlschema
-    #- python-toml
+    #- python-iniconfig:
+    #    macros:
+    #      _without_tests: 1
+    #- python-distlib
+    #- python-appdirs
+    #- python-virtualenv:
+    #    macros:
+    #      _without_tests: 1
+    #- Cython:
+    #    macros:
+    #      _without_tests: 1
+    #- python-lxml
+    #- python-xmlschema:
+    #    macros:
+    #      _without_tests: 1
     #- python-colorama
-    #- python-click
     #- python-more-itertools:
     #    macros:
     #     _without_tests: 1
@@ -123,14 +139,12 @@ python310:
     #- python-wcwidth:
     #    macros:
     #      _without_tests: 1
-    #- python-iniconfig:
-    #    macros:
-    #      _without_tests: 1
     #- pytest:
     #    macros:
     #      _without_timeout: 1
-    #      _without_tests: 1  # if we update to pytest 5, replace with _without_tests (and can build without hypothesis if needed)
+    #      _without_tests: 1
     #      _without_docs: 1
+    #- python-click
     #- python-wheel
     #- python-mock
     #- python-chardet
@@ -194,28 +208,29 @@ python310:
     #- python-cov-core
     #- python-nose2
     #- python-parameterized
+    #- pyxattr:
+    #    macros:
+    #      _without_tests: 1
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako
     #- python-pytest-runner
-    #- python-parso #revert to 0.7 https://src.fedoraproject.org/rpms/python-parso/pull-request/3 #skipped
-    #- python-jedi
-    #- Cython:
+    #- python-parso #revert to 0.7 https://src.fedoraproject.org/rpms/python-parso/pull-request/3
+    #- python-jedi:
     #    macros:
     #      _without_tests: 1
     #- PyYAML
     #- python-tidy
     #- python-markdown
-    #- python-lxml
     #- python-anytree
     #- asciidoc
-    #- python-more-itertool
+    #- python-more-itertools
     #- automake
-    #- rpm:  # tests fail in copr / mock, build with tests in koji #skipped
+    #- rpm:  # tests fail in copr / mock, build with tests in koji
     #    macros:
     #      _without_check: 1
     #- unbound #skipped
-    #- pycairo #skipped
-    #- Cython  # testfull, not blocking (SKIPed) #skipped
+    #- pycairo
+    #- Cython  # testfull, not blocking (SKIPed)
 
     #- libdnf  # python3-hawkey
     #- libcomps
@@ -230,7 +245,7 @@ python310:
     #      _without_tests: 1
     #- python-sure
     #- python-freezegun
-    #- babel # not blocking #skipped
+    #- babel # not blocking
     #- python-itsdangerous
     #- python-dateutil # not blocking
     #- python-configobj
@@ -244,8 +259,8 @@ python310:
     #    macros:
     #      _without_tests: 1
     #- ninja-build
-    #- gobject-introspection #skipped
-    #- pygobject3 #skipped
+    #- gobject-introspection
+    #- pygobject3
     #- python-pycurl
     #- python-cryptography-vectors
     #- python-cryptography
@@ -292,11 +307,10 @@ python310:
     #- python-jwt
     #- python-oauthlib
     #- pyparted
-    #- libblockdev #skipped
-    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'" #skipped
+    #- libblockdev
+    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
 
     ## docs rebuilds, not blocking:
-    #- python-funcsigs
     #- python-packaging
 
     ## testfull rebuilds, not blocking:
@@ -377,7 +391,6 @@ python310:
     #- python-towncrier:
     #    macros:
     #      _without_tests: 1
-    #- python-distlib
     #- python-genty
     #- python-flaky
     #- python3-pytest-asyncio:
@@ -388,16 +401,10 @@ python310:
     #- python-text-unidecode
     #- python-faker
     #- python-pytest-randomly
-    #- python-appdirs
-    #- python-virtualenv:
-    #    macros:
-    #      _without_tests: 1
-    #- python-toml:
-    #    macros:
-    #      _without_tests: 1
+    #- python-toml
     #- python-psycopg2
-    #- dbus-python #skipped
-    #- python-qt5 # speed things up by building both pyqts at the same time #skipped
+    #- dbus-python
+    #- python-qt5 # speed things up by building both pyqts at the same time
     #- PyQt4 #skipped
     #- python-pillow #skipped
     #- dnf
@@ -469,13 +476,13 @@ python310:
     #- python-sphinxcontrib-log-cabinet
     #- python-jinja2  # not blocking
     #- pyxdg
-    #- libreport #skipped
+    #- libreport
     #- python-meh #skipped
     #- anaconda #skipped
     #- koji
     #- dnf-plugins-core
     #- dnf-plugins-extras #skipped
-    #- python-simpleline #skipped
+    #- python-simpleline
     #- abrt #skipped
     #- python-paste
     #- python-plaster-pastedeploy
@@ -584,8 +591,8 @@ python310:
     #- python-beanbag
     #- pdc-client
     #- python-gevent
-    #- libgit2-glib #skipped
-    #- python-flit:
+    #- libgit2-glib
+    #- python-flit: #https://src.fedoraproject.org/rpms/python-packaging/pull-request/14 in future it must be build before python-packaging
     #    macros:
     #      _without_tests: 1
     #- python-testpath
@@ -632,22 +639,32 @@ python310:
     #    macros:
     #      _without_doc: 1
     #      _without_tests: 1
-    #- python-ipykernel: #skipped
+    #- python-matplotlib: #skipped
     #    macros:
-    #      _without_intersphinx: 1
-    #- python-pathlib2 #skipped - dead package
-    #- python-wxpython4 #skipped
-    #- python-nbconvert: #skipped
-    #    macros:
-    #      _without_doc: 1
-    #- python-notebook #skipped
-    #- python-matplotlib #skipped
-    #- ipython: #skipped
+    #      _without_check: 1
+    #- ipython:
     #    macros:
     #      _without_doc: 1
     #      _without_check: 1
-    #- python-sphix-copybutton
+    #- python-sphinx-copybutton
+    #- python-ipykernel:
+    #    macros:
+    #      _without_intersphinx: 1
+    #- python-pathlib2 #skipped - dead package
+    #- python-wxpython4
+    #- python-pandas #skipped
+    #- python-sphinx-gallery
     #- python-nbsphinx #skipped
+    #- python-nbclient:
+    #    macros:
+    #      _without_check: 1
+    #- python-nbconvert:
+    #    macros:
+    #      _without_doc: 1
+    #- python-matplotlib #skipped
+    #- python-pikepdf #skipped
+    #- python-notebook #skipped
+    #- python-nbclient
     #- python-nbconvert  # not blocking #skipped
     #- ipython  # docsfull, testfull #skipped
     #- python-jupyter-client  # docsfull, testfull #skipped
@@ -683,7 +700,9 @@ python310:
     #- python-async-timeout  # not blocking
     #- python-click-completion
     #- python-shellingham
-    #- libmodulemd #skipped
+    #- libmodulemd
+    #- python-gssapi
+    #- python-requests-gssapi
     #- rpkg #skipped
     #- python-django #skipped
     #- python3-openid #skipped
@@ -707,7 +726,10 @@ python310:
     #- python-tomlkit
     #- python-cheroot
     #- python-CacheControl
-    #- python-backoff #skipped
+    #- python-jeepney
+    #- python-SecretStorage
+    #- python-pastel
+    #- python-backoff
     #- cloud-init  # not blocking #skipped
     #- libsolv #skipped
     #- fedmod #skipped
@@ -738,8 +760,7 @@ python310:
     #- pybind11:
     #    macros:
     #      _without_tests: 1
-    #- librepo # testfull rebuild #skipped
-    #- python-pandas #skipped
+    #- librepo # testfull rebuild
     #- python-tables #skipped
     #- python-numpydoc #skipped
     #- scipy #skipped
@@ -755,7 +776,15 @@ python310:
 
     # additional bootstrap loops (isolated):
 
+    #TODO: freeipa-healthcheck bootstrap loop
+    #https://src.fedoraproject.org/rpms/pki-core/pull-request/9
+    #https://src.fedoraproject.org/rpms/freeipa-healthcheck/pull-request/2
+    #TODO: python-nbclient bootstrap
+    #https://src.fedoraproject.org/rpms/python-nbclient/pull-request/1
     #- python-zbase32:
+    #    macros:
+    #      _with_bootstrap: 1
+    #- python-Traits:
     #    macros:
     #      _with_bootstrap: 1
     #- pyutil
@@ -766,3 +795,29 @@ python310:
     #      _without_check: 1
     #- python-lit
     #- clang
+
+    #- python-pcodedmp:
+    #    macros:
+    #      _with_bootstrap: 1
+    #- python-oletools
+    #- python-pcodedmp
+
+    #- ara:
+    #    replaced_macros:
+    #      with_docs: 0
+    #- ara
+
+    #- python-pyface:
+    #    macros:
+          
+
+    #TODO:
+    #- python-molecule:
+    #    replaced_macros:
+    #    #     with_docs: 0
+    #- python-elementpath:
+    #    macros:
+    #      _without_tests: 1
+    #- python-xmlschema
+    #- python-elementpath
+    #- pytest
