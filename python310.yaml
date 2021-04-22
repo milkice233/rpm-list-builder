@@ -196,7 +196,7 @@ python310:
     #- python-sphinxcontrib-trio
     #- python-atomicwrites # docsfull and testfull, not blocking
     #- python-pygments # docsfull, testfull, not blocking
-    #- python-testtools: # docsfull and testfull, not blocking TODO: with test
+    #- python-testtools: # docsfull and testfull, not blocking
     #    macros:
     #      _without_tests: 1
     #- python-nose-cov
@@ -206,9 +206,11 @@ python310:
     #      _without_xdist: 1
     #- python-nose2 # local patch
     #- python-parameterized
-    #- pyxattr:
-    #    macros:
-    #      _without_tests: 1 # this bcond is not in dist git
+    ## double commented to keep it out of koji,
+    ## but preserve it here for the future
+    ##- pyxattr:
+    ##    macros:
+    ##      _without_tests: 1 # this bcond is not in dist git
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako
     #- python-pytest-runner
@@ -223,9 +225,7 @@ python310:
     #- asciidoc
     #- python-more-itertools
     #- automake
-    #- rpm:  # tests fail in copr / mock, build with tests in koji
-    #    macros:
-    #      _without_check: 1
+    #- rpm
     #- unbound #skipped
     #- pycairo
     #- Cython  # testfull, not blocking (SKIPed)
@@ -236,7 +236,6 @@ python310:
     #- python-sure
     #- python-freezegun
     #- python-itsdangerous
-    #- python-cryptography-vectors
     #- python-iso8601
     #- python-pytest-subtests
     #- python-semantic_version
@@ -252,6 +251,13 @@ python310:
     #- python-pycparser
     #- python-cffi
     #- python-cryptography
+    #- python-ptyprocess
+    #- python-pexpect
+    #- python-cpuinfo
+    #- python-pytest-benchmark
+    #- python-sphinx-theme-py3doc-enhanced
+    #- python-fields
+    #- python-pytest-cov
     #- python-pytest-timeout
     #- python-werkzeug
     #- python-flask
@@ -266,8 +272,6 @@ python310:
     #- babel # not blocking
     #- python-dateutil # not blocking
     #- python-configobj
-    #- python-ptyprocess
-    #- python-pexpect
     #- python-bottle
     #- python-tornado
     #- python-jsonpointer
@@ -448,10 +452,6 @@ python310:
     #- python-pynacl
     #- python-pip  # testfull rebuild, wait for breezy, not blocking #skipped
     #- python-sqlalchemy  # xdist enabled tests, no need to build, just clean-up
-    #- python-sphinx-theme-py3doc-enhanced
-    #- python-cpuinfo
-    #- python-pytest-benchmark
-    #- python-fields
     #- python-path
     #- python-termcolor
     #- python-pytest-shutil
@@ -493,7 +493,6 @@ python310:
     #- rpmlint
     #- createrepo_c #skipped
 
-    #- python-pytest-cov
     #- pyflakes
     #- python-flake8
     #- python-pytest-flake8
@@ -774,6 +773,7 @@ python310:
     #- linkchecker
     #- python3-docs #(updated!)
     #- python-ipykernel #skipped
+    #- python-testtools
 
     # additional bootstrap loops (isolated):
 
