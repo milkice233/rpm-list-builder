@@ -201,9 +201,6 @@ python310:
     #      _without_tests: 1
     #- python-nose-cov
     #- python-cov-core
-    #- python-sqlalchemy: # skipped
-    #    macros:
-    #      _without_xdist: 1
     #- python-nose2 # local patch
     #- python-parameterized
     ## double commented to keep it out of koji,
@@ -259,14 +256,18 @@ python310:
     #- python-fields
     #- python-pytest-cov
     #- python-pytest-timeout
-    #- python-werkzeug
+    #- python-greenlet
+    #- python-waitress
+    #- python-requests-unixsocket
+    #- python-sphinx-issues
+    #- python-Pallets-Sphinx-Themes
+    #- python-sphinxcontrib-log-cabinet
+    #- python-werkzeug #without tests
     #- python-flask
-    #- librepo:
-    #    macros:
-    #      _without_pythontests: 1
+    #- gpgme
+    #- librepo
     #- libdnf  # python3-hawkey
     #- libcomps
-    #- gpgme
 
     #- meson  # check disabled by default, if not, without check build needed before pygobject3
     #- babel # not blocking
@@ -290,26 +291,27 @@ python310:
     #- pyserial
     #- libselinux
     #- policycoreutils
-    #- python-ordered-set
     #- pykickstart
     #- python-pyudev
     #- libbytesize
     #- python-blivet
-    #- python-requests-file
     #- python-requests-ftp
     #- libpwquality
     #- python-pydbus
     #- python-ntplib
-    #- python-pid
     #- python-wrapt
-    #- python-polib
     #- python-lazy-object-proxy
-    #- python-argcomplete
     #- python-webencodings
+    #- python-ordered-set
+    #- python-requests-file
+    #- python-pid
+    #- python-polib
+    #- python-argcomplete
     #- python-u-msgpack-python
     #- python-pytest-expect
-    #- python-genshi
-    #- python-html5lib
+    #- python-sqlalchemy: # skipped
+    #    macros:
+    #      _without_xdist: 1
     #- python-sphinxcontrib-websupport
     #- python-sphinx
     #- python-sphinxcontrib-applehelp # all of those are not blocking:
@@ -324,6 +326,8 @@ python310:
     #- pyparted
     #- libblockdev
     #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
+    #- python-genshi
+    #- python-html5lib
 
     ## docs rebuilds, not blocking:
     #- python-packaging
@@ -332,7 +336,6 @@ python310:
     #- python-py
     #- python-six
 
-    #- python-greenlet
     #- python-redis
     #- python-bcrypt
     #- python-olefile
@@ -394,12 +397,7 @@ python310:
     #- python-beautifulsoup4
     #- python-soupsieve  # not blocking
     #- python-cssselect
-    #- python-waitress
     #- python-WSGIProxy2
-    #- python-sphinx-issues
-    #- python-Pallets-Sphinx-Themes
-    #- python-requests-unixsocket
-    #- python-sphinxcontrib-log-cabinet
     #- python-raven
     #- python-isodate
     #- python-towncrier:
@@ -816,7 +814,8 @@ python310:
 
     #- python-pyface:
     #    macros:
-          
+
+    #- python-werkzeug #with tests
 
     #TODO:
     #- python-molecule:
