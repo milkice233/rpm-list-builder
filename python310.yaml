@@ -312,8 +312,12 @@ python310:
     #- python-sqlalchemy: # skipped
     #    macros:
     #      _without_xdist: 1
-    #- python-sphinxcontrib-websupport
-    #- python-sphinx
+    #- python-sphinxcontrib-websupport: # https://pastebin.com/NTnjjHbH
+    #    macros:
+    #      _without_tests: 1
+    #- python-genshi # disabled failing tests https://pastebin.com/r5g78weR
+    #- python-html5lib
+    #- python-sphinx # disabled failing tests https://pastebin.com/Wba12fEB
     #- python-sphinxcontrib-applehelp # all of those are not blocking:
     #- python-sphinxcontrib-devhelp
     #- python-sphinxcontrib-htmlhelp
@@ -325,9 +329,7 @@ python310:
     #- python-oauthlib
     #- pyparted
     #- libblockdev
-    #- python-systemd  # test_notify_no_socket fails in copr, used TESTFLAGS="-k 'not test_notify_no_socket'"
-    #- python-genshi
-    #- python-html5lib
+    #- python-systemd
 
     ## docs rebuilds, not blocking:
     #- python-packaging
@@ -341,9 +343,11 @@ python310:
     #- python-olefile
     #- pyOpenSSL
 
+    #- python-isodate
     #- python-rdflib
     #- python-selenium
     #- python-incremental
+    #- mercurial
     #- python-setuptools_scm  # tesfull, not blocking
     #- python-sqlparse  # needs python3-pytest-cov but tests are disabled by default
     #- sip
@@ -399,7 +403,6 @@ python310:
     #- python-cssselect
     #- python-WSGIProxy2
     #- python-raven
-    #- python-isodate
     #- python-towncrier:
     #    macros:
     #      _without_tests: 1
@@ -412,23 +415,27 @@ python310:
     #- python-factory-boy
     #- python-text-unidecode
     #- python-faker
+    #- numpy  # not blocking until very later (except for cython that we skip)
     #- python-pytest-randomly
     #- python-toml
     #- python-psycopg2
     #- dbus-python
     #- python-qt5 # speed things up by building both pyqts at the same time
-    #- PyQt4 #skipped
-    #- python-pillow #skipped
+    #- PyQt4
+    #- python-sphinx-testing
+    #- python-sphinx-removed-in
+    #- python-pillow
     #- dnf
-    #- libxml2 #skipped
-    #- itstool #skipped
-    #- glade #skipped
+    #- dnf-plugins-core
+    #- libxml2
+    #- itstool
+    #- glade
     #- python-requests-kerberos
     #- python-tzlocal
-    #- python-ephem #skipped
-    #- python-convertdate #skipped, depeds on pyephem(dead package)
-    #- python-dateparser #skipped
-    #- python-arrow #skipped
+    #- python-ephem #disabled failing test https://pastebin.com/BeC5mFbh
+    #- python-convertdate
+    #- python-dateparser
+    #- python-arrow
     #- python-zope-interface
     #- python-service-identity
     #- python-enchant
@@ -448,7 +455,14 @@ python310:
     #- python-should_dsl
     #- python-fluidity-sm
     #- python-pynacl
-    #- python-pip  # testfull rebuild, wait for breezy, not blocking #skipped
+    #- python-flit: #https://src.fedoraproject.org/rpms/python-packaging/pull-request/14 in future it must be build before python-packaging
+    #    macros:
+    #     _without_tests: 1
+    #- python-sphinx-inline-tabs
+    #- breezy  # only blocks pip
+    #- python-patiencediff
+    #- python-paramiko
+    #- python-pip  # testfull rebuild, wait for breezy, not blocking
     #- python-sqlalchemy  # xdist enabled tests, no need to build, just clean-up
     #- python-path
     #- python-termcolor
@@ -473,23 +487,21 @@ python310:
     #- python-pyrsistent
     #- python-feedgen
     #- python-argh
-    #- python-flask-sphinx-themes
     #- python-transaction
     #- python-sphinxcontrib-log-cabinet
     #- python-jinja2  # not blocking
     #- pyxdg
     #- libreport
-    #- python-meh #skipped
-    #- anaconda #skipped
+    #- python-meh
+    #- anaconda
     #- koji
-    #- dnf-plugins-core
-    #- dnf-plugins-extras #skipped
+    #- dnf-plugins-extras
     #- python-simpleline
-    #- abrt #skipped
+    #- abrt
     #- python-paste
     #- python-plaster-pastedeploy
     #- rpmlint
-    #- createrepo_c #skipped
+    #- createrepo_c
 
     #- pyflakes
     #- python-flake8
@@ -501,7 +513,6 @@ python310:
     #- subunit
     #- python-testrepository
     #- python-stevedore
-    #- python-dogpile-cache
 
     #- python-hyperlink
     #- python-hamcrest
@@ -512,9 +523,9 @@ python310:
     #- python-sphinxcontrib-apidoc
     #- python-pbr  # not blocking
 
+    #- python-jmespath
     #- python-botocore
     #- python-s3transfer
-    #- python-jmespath
     #- python-boto3
     #- python-async-timeout:
     #    macros:
@@ -522,13 +533,16 @@ python310:
     #- python-aiohttp
     #- python-monotonic
     #- python-betamax
-    #- python-requests-toolbelt
+    #- python-async-generator
     #- python-outcome
     #- python-curio
     #- python-sniffio
+    #- python-greenlet
+    #- python-dogpile-cache
+    #- python-requests-toolbelt
+    #- python-trustme
     #- python-trio
     #- python-dns
-    #- python-greenlet
     #- python-eventlet
     #- python-httpretty
     #- python-boto
@@ -549,8 +563,6 @@ python310:
     #- python-Automat:
     #    macros:
     #      _without_tests: 1
-    #- python-sphinx-testing
-    #- python-sphinx-removed-in
     #- python-munch
     #- python-productmd
     #- python-multilib
@@ -576,12 +588,9 @@ python310:
     #    macros:
     #      _without_tests: 1
     #- python-attrs  # testfull rebuild, not blocking #skipped
-    #- breezy  # only blocks pip #skipped
     #- python-pytest4 #skipped
     #- python-pytest-relaxed #skipped
     #- python-invoke #skipped
-    #- python-paramiko #skipped
-    #- numpy  # not blocking until very later (except for cython that we skip)
     #- pytest # testfull rebuild #skipped
     #- kernel-tools  # python3-perf #skipped
     #- python-jsonschema  # testfull, not checked here
@@ -591,15 +600,11 @@ python310:
     #- pdc-client
     #- python-gevent
     #- libgit2-glib
-    #- python-flit: #https://src.fedoraproject.org/rpms/python-packaging/pull-request/14 in future it must be build before python-packaging
-    #    macros:
-    #      _without_tests: 1
     #- python-testpath
     #- python-requests-download
     #- python-entrypoints
     #- python-flit  # testfull
     #- python-setuptools  # testfull rebuild #skipped
-    #- python-trustme
     #- python-urllib3  # testfull rebuild
 
     #- python-simplegeneric
@@ -678,7 +683,6 @@ python310:
     #- python-pyramid
     #- python-cornice
     #- python-cornice-sphinx
-    #- python-async-generator
     #- python3-pytest-asyncio
     #- python-asgiref
     #- kobo
@@ -816,6 +820,7 @@ python310:
     #    macros:
 
     #- python-werkzeug #with tests
+    #- python-sphinxcontrib-websupport #with tests
 
     #TODO:
     #- python-molecule:
