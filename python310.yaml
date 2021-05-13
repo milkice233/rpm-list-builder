@@ -503,10 +503,7 @@ python310:
     #- rpmlint
     #- createrepo_c
 
-    #- pyflakes # rm pyflakes/test/test_api.py in prep
-    #- python-flake8
-    #- python-pytest-flake8
-    #- python-httplib2
+    #- python-httplib2  # https://src.fedoraproject.org/rpms/python-httplib2/pull-request/7
     #- python-typing-extensions
     #- python-yarl # disabled failing test https://pastebin.com/5ivfgsXz
     #- python-hupper
@@ -641,7 +638,7 @@ python310:
     #- python-PyPDF2
     #- waf
     #- python-sphinxcontrib-bibtex
-    #- python-scour
+    #- python-scour  # https://src.fedoraproject.org/rpms/python-scour/pull-request/3
     #- python-pytest-rerunfailures
     #- python-readthedocs-sphinx-ext
     #- python-sphinx_rtd_theme  # testfull, not blocking
