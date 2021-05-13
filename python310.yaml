@@ -98,7 +98,7 @@ python310:
     #- python-snowballstemmer
     #- python-tox
     #- python-tox-current-env
-    #- python-filelock:
+    #- python-filelock: # https://src.fedoraproject.org/rpms/python-filelock/pull-request/2
     #    macros:
     #      _without_docs: 1
     #- python-elementpath:  # not blocking
@@ -148,7 +148,7 @@ python310:
     #- python-chardet
     #- python-pluggy
     #- pytz
-    #- babel:
+    #- babel: # bump release
     #    macros:
     #     _with_bootstrap: 1
     #- python-imagesize
@@ -250,7 +250,7 @@ python310:
     #- python-cryptography
     #- python-ptyprocess
     #- python-pexpect
-    #- python-cpuinfo
+    #- python-cpunfo
     #- python-pytest-benchmark
     #- python-sphinx-theme-py3doc-enhanced
     #- python-fields
@@ -312,7 +312,7 @@ python310:
     #- python-sqlalchemy: # skipped
     #    macros:
     #      _without_xdist: 1
-    #- python-sphinxcontrib-websupport: # https://pastebin.com/NTnjjHbH
+    #- python-sphinxcontrib-websupport:
     #    macros:
     #      _without_tests: 1
     #- python-genshi # disabled failing tests https://pastebin.com/r5g78weR
@@ -455,7 +455,7 @@ python310:
     #- python-should_dsl
     #- python-fluidity-sm
     #- python-pynacl
-    #- python-flit: #https://src.fedoraproject.org/rpms/python-packaging/pull-request/14 in future it must be build before python-packaging
+    #- python-flit:
     #    macros:
     #     _without_tests: 1
     #- python-sphinx-inline-tabs
@@ -503,12 +503,12 @@ python310:
     #- rpmlint
     #- createrepo_c
 
-    #- pyflakes
+    #- pyflakes # rm pyflakes/test/test_api.py in prep
     #- python-flake8
     #- python-pytest-flake8
     #- python-httplib2
     #- python-typing-extensions
-    #- python-yarl
+    #- python-yarl # disabled failing test https://pastebin.com/5ivfgsXz
     #- python-hupper
     #- subunit
     #- python-testrepository
@@ -538,12 +538,14 @@ python310:
     #- python-curio
     #- python-sniffio
     #- python-greenlet
-    #- python-dogpile-cache
-    #- python-requests-toolbelt
+    #- python-dogpile-cache # removed failing tests https://pastebin.com/ziMPgSPv
+    #- python-requests-toolbelt # removed failing tests https://pastebin.com/c6UtQFnP
     #- python-trustme
-    #- python-trio
-    #- python-dns
-    #- python-eventlet
+    #- python-trio:
+    #    macros:
+    #      _without_tests: 1
+    #- python-dns # without tests
+    #- python-eventlet # without tests, docs
     #- python-httpretty
     #- python-boto
     #- python-mypy_extensions
@@ -553,6 +555,7 @@ python310:
     #- python-h11
     #- python-httpx
     #- python-httpcore
+    #- python-contextlib2
     #- python-vcrpy
 
     #- python-constantly
@@ -571,6 +574,7 @@ python310:
     #- python3-py3dns
     #- python-pylibravatar
     #- python-pyroute2
+    #- python-templated-dictionary
     #- mock
     #- python-responses
     #- python-alembic
@@ -587,12 +591,12 @@ python310:
     #- python-pygments-pytest:  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing)
     #    macros:
     #      _without_tests: 1
-    #- python-attrs  # testfull rebuild, not blocking #skipped
-    #- python-pytest4 #skipped
-    #- python-pytest-relaxed #skipped
-    #- python-invoke #skipped
-    #- pytest # testfull rebuild #skipped
-    #- kernel-tools  # python3-perf #skipped
+    #- python-attrs  # testfull rebuild, not blocking, disabled failing tests
+    #- python-invoke:
+    #    macros:
+    #      _without_tests: 1
+    #- pytest # testfull rebuild #skipped, blocked by https://bugzilla.redhat.com/show_bug.cgi?id=1948522
+    #- kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here
     #- python-txzmq
     #- python-txws
@@ -604,7 +608,8 @@ python310:
     #- python-requests-download
     #- python-entrypoints
     #- python-flit  # testfull
-    #- python-setuptools  # testfull rebuild #skipped
+    #- python-jaraco-path
+    #- python-setuptools  # testfull rebuild
     #- python-urllib3  # testfull rebuild
 
     #- python-simplegeneric
@@ -617,6 +622,9 @@ python310:
     #- python-genty
     #- python-cycler
     #- python-pymongo
+    #- python-fastjsonschema
+    #- python-sphinxcontrib-github-alt
+    #- python-jupyter-core
     #- python-nbformat
     #- python-pandocfilters
     #- python-orderedset
@@ -637,26 +645,30 @@ python310:
     #- python-pytest-rerunfailures
     #- python-readthedocs-sphinx-ext
     #- python-sphinx_rtd_theme  # testfull, not blocking
-    #- python-sphinxcontrib-github-alt
-    #- python-jupyter-core
     #- python-jupyter-client:
     #    macros:
     #      _without_doc: 1
     #      _without_tests: 1
-    #- python-matplotlib: #skipped
+    #- sip5
+    #- python-wxpython4
+    #- python-matplotlib:
     #    macros:
     #      _without_check: 1
     #- ipython:
     #    macros:
     #      _without_doc: 1
     #      _without_check: 1
+    #- python-matplotlib-inline
     #- python-sphinx-copybutton
     #- python-ipykernel:
     #    macros:
     #      _without_intersphinx: 1
-    #- python-pathlib2 #skipped - dead package
-    #- python-wxpython4
-    #- python-pandas #skipped
+    #- python-pandas
+    ## CONTINUE HERE
+    #- pybind11:
+    #    macros:
+    #      _without_tests: 1
+    #- scipy #skipped
     #- python-sphinx-gallery
     #- python-nbsphinx #skipped
     #- python-nbclient:
@@ -759,13 +771,9 @@ python310:
 
     #- python-requests  # testfull, not blocking
     #- python-numexpr
-    #- pybind11:
-    #    macros:
-    #      _without_tests: 1
     #- librepo # testfull rebuild
     #- python-tables #skipped
     #- python-numpydoc #skipped
-    #- scipy #skipped
     #- pybind11 # testfull, not blocking #skipped
     #- python-sortedcontainers  # testfull, not blocking #skipped
     #- python-Bottleneck #skipped
@@ -821,6 +829,9 @@ python310:
 
     #- python-werkzeug #with tests
     #- python-sphinxcontrib-websupport #with tests
+    #- python-trio #with tests
+    #- python-dns #with tests
+    #- python-eventlet #with tests
 
     #TODO:
     #- python-molecule:
