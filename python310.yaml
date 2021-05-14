@@ -2,6 +2,7 @@ python310:
   packages:
     # bump package version and set macros version to new python
     #- python-rpm-macros
+    ## build python3.9 together with python3.10 without any bcond, verify python3.9 is nonmain python
     #- python3.10:
     #    macros:
     #      _with_bootstrap: 1
@@ -137,7 +138,7 @@ python310:
     #- python-wcwidth:
     #    macros:
     #      _without_tests: 1
-    #- pytest:
+    #- pytest: # https://src.fedoraproject.org/rpms/pytest/pull-request/21
     #    macros:
     #      _without_timeout: 1
     #      _without_tests: 1
@@ -211,7 +212,7 @@ python310:
     #- pyxattr  # tests fail in copr (Operation not supported), commented out
     #- python-mako
     #- python-pytest-runner
-    #- python-parso # one test is failing due to error in pytest, https://pastebin.com/kZ0GpBFG
+    #- python-parso
     #- python-jedi:
     #    macros:
     #      _without_tests: 1
@@ -309,15 +310,15 @@ python310:
     #- python-argcomplete
     #- python-u-msgpack-python
     #- python-pytest-expect
-    #- python-sqlalchemy: # skipped
+    #- python-sqlalchemy: # !!! TODO: opened bgz
     #    macros:
     #      _without_xdist: 1
     #- python-sphinxcontrib-websupport:
     #    macros:
     #      _without_tests: 1
-    #- python-genshi # disabled failing tests https://pastebin.com/r5g78weR
+    #- python-genshi
     #- python-html5lib
-    #- python-sphinx # disabled failing tests https://pastebin.com/Wba12fEB
+    #- python-sphinx
     #- python-sphinxcontrib-applehelp # all of those are not blocking:
     #- python-sphinxcontrib-devhelp
     #- python-sphinxcontrib-htmlhelp
@@ -503,9 +504,9 @@ python310:
     #- rpmlint
     #- createrepo_c
 
-    #- pyflakes # rm pyflakes/test/test_api.py in prep
-    #- python-flake8
-    #- python-pytest-flake8
+    #- pyflakes # rm pyflakes/test/test_api.py in prep # XXX
+    #- python-flake8 # XXX
+    #- python-pytest-flake8 # XXX
     #- python-httplib2
     #- python-typing-extensions
     #- python-yarl # disabled failing test https://pastebin.com/5ivfgsXz
@@ -545,8 +546,7 @@ python310:
     #    macros:
     #      _without_tests: 1
     #- python-dns # without tests
-    #- python-eventlet # without tests, docs
-    #- python-httpretty
+    #- python-httpretty # we need to build httpretty with this PR to avoid a dependency on python-eventlet - https://src.fedoraproject.org/rpms/python-httpretty/pull-request/12
     #- python-boto
     #- python-mypy_extensions
     #- python3-mypy
@@ -588,14 +588,12 @@ python310:
     #- python-twisted
     #- python-towncrier  # testfull rebuild, untested here
     #- python-Automat  # testfull rebuild
-    #- python-pygments-pytest:  # tests were disabled during 3.9 bootstrap (pygments-ansi-color missing)
-    #    macros:
-    #      _without_tests: 1
+    #- python-pygments-pytest
     #- python-attrs  # testfull rebuild, not blocking, disabled failing tests
     #- python-invoke:
     #    macros:
     #      _without_tests: 1
-    #- pytest # testfull rebuild #skipped, blocked by https://bugzilla.redhat.com/show_bug.cgi?id=1948522
+    #- pytest # testfull rebuild #skipped, blocked by https://bugzilla.redhat.com/show_bug.cgi?id=1948522, https://src.fedoraproject.org/rpms/pytest/pull-request/21
     #- kernel-tools  # python3-perf
     #- python-jsonschema  # testfull, not checked here
     #- python-txzmq
@@ -664,34 +662,42 @@ python310:
     #    macros:
     #      _without_intersphinx: 1
     #- python-pandas
-    ## CONTINUE HERE
     #- pybind11:
     #    macros:
     #      _without_tests: 1
-    #- scipy #skipped
+    #- scipy
     #- python-sphinx-gallery
-    #- python-nbsphinx #skipped
-    #- python-nbclient:
-    #    macros:
-    #      _without_check: 1
+    #- python-jupyterlab_pygments
     #- python-nbconvert:
     #    macros:
     #      _without_doc: 1
-    #- python-matplotlib #skipped
-    #- python-pikepdf #skipped
-    #- python-notebook #skipped
+    #      _without_check: 1
+    #- python-nest_asyncio
+    #- python-nbclient:
+    #    macros:
+    #      _without_check: 1
+    #- python-sphinx-last-updated-by-git
+    #- python-sphinxcontrib-svg2pdfconverter
+    #- python-nbsphinx
+    #- python-xmp-toolkit
+    #- python-setuptools_scm_git_archive
+    #- python-pikepdf
+    #- python-argon2-cffi
+    #- python-notebook
+    #- python-ipywidgets
+    #- python-xmltodict
+    #- python-widgetsnbextension
     #- python-nbclient
-    #- python-nbconvert  # not blocking #skipped
-    #- ipython  # docsfull, testfull #skipped
-    #- python-jupyter-client  # docsfull, testfull #skipped
-
+    #- ipython  # docsfull, testfull
+    #- python-jupyter-client  # docsfull, testfull
+    #- python-matplotlib
 
     #- python-webob
     #- python-pyquery:
     #    macros:
     #      _without_tests: 1
+    #- python-pylons-sphinx-themes
     #- python-webtest
-    #- python-pyquery  # testfull rebuild after webtest
     #- python-pyramid
     #- python-cornice
     #- python-cornice-sphinx
@@ -704,10 +710,11 @@ python310:
     #- pydot
     #- python-sqlalchemy_schemadisplay
     #- python-pika
-    #- python-crochet
-    #- fedora-messaging
     #- python-pycdlib
     #- python-keyring
+    #- python-pep517
+    # CONTINUE HERE
+    #- python-poetry-core
     #- poetry
     #- python-dict-sorted
     #- python-smartcols
@@ -729,7 +736,6 @@ python310:
     #- pungi #skipped
     #- python-cherrypy
     #- python-zc-lockfile
-    #- python-setuptools_scm_git_archive
     #- python-jaraco-classes
     #- python-jaraco-functools
     #- python-tempora
@@ -748,6 +754,9 @@ python310:
     #- cloud-init  # not blocking #skipped
     #- libsolv #skipped
     #- fedmod #skipped
+    #- python-pyquery  # testfull rebuild after webtest, skipped, fails due to new version of libxml2
+    #- python-crochet #skipped
+    #- fedora-messaging #skipped
 
     #- python-vine
     #- python-case
@@ -805,6 +814,7 @@ python310:
     #    macros:
     #      _without_check: 1
     #- python-lit
+    #- marshallparser
     #- clang
 
     #- python-pcodedmp:
@@ -818,7 +828,7 @@ python310:
     #      with_docs: 0
     #- ara
 
-    #- python-libcst: # https://src.fedoraproject.org/rpms/python-libcst/pull-request/1
+    #- python-libcst
     #    macros:
     #      _without_tests: 1
     #- python-hypothesmith
@@ -831,7 +841,9 @@ python310:
     #- python-sphinxcontrib-websupport #with tests
     #- python-trio #with tests
     #- python-dns #with tests
-    #- python-eventlet #with tests
+    
+    # Don't forget to rebuild this later
+    #- python-nbconvert  # not blocking #skipped
 
     #TODO:
     #- python-molecule:
