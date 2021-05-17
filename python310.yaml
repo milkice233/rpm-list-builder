@@ -713,43 +713,53 @@ python310:
     #- python-pycdlib
     #- python-keyring
     #- python-pep517
-    # CONTINUE HERE
+    #- python-tomlkit
+    #- python-lark-parser
     #- python-poetry-core
+    #- python-sortedcontainers  # testfull, not blocking
+    #- python-trio #with tests
+    #- python-pytest-trio
+    #- python-jeepney
+    #- python-shellingham
+    #- python-msgpack
+    #- python-zc-lockfile
+    #- python-jaraco-classes
+    #- python-jaraco-functools
+    #- python-cheroot
+    #- python-jaraco-collections
+    #- python-tempora
+    #- python-portend
+    #- python-jaraco-text
+    #- python-cherrypy:
+    #    macros:
+    #      _without_tests: 1
+    #- python-CacheControl
+    #- python-pkginfo
+    #- python-SecretStorage
+    #- python-crashtest
+    #- python-clikit
+    #- python-cachy
+    #- python-cleo
+    #- python-pastel
+    #- python-pylev
     #- poetry
     #- python-dict-sorted
-    #- python-smartcols
     #- python-pytest-aiohttp
     #- python-async-timeout  # not blocking
     #- python-click-completion
-    #- python-shellingham
     #- libmodulemd
     #- python-gssapi
     #- python-requests-gssapi
-    #- rpkg #skipped
+    #- rpkg
     #- python-django #skipped
-    #- python3-openid #skipped
+    #- python3-openid
+    # CONTINUE HERE
     #- python-openid-cla #skipped
     #- python-openid-teams #skipped
     #- python-pyramid-fas-openid #skipped
     #- python-fedora #skipped
     #- fedmsg #skipped
     #- pungi #skipped
-    #- python-cherrypy
-    #- python-zc-lockfile
-    #- python-jaraco-classes
-    #- python-jaraco-functools
-    #- python-tempora
-    #- python-portend
-    #- python-cachy
-    #- python-cleo
-    #- python-clikit
-    #- python-pkginfo
-    #- python-tomlkit
-    #- python-cheroot
-    #- python-CacheControl
-    #- python-jeepney
-    #- python-SecretStorage
-    #- python-pastel
     #- python-backoff
     #- cloud-init  # not blocking #skipped
     #- libsolv #skipped
@@ -757,6 +767,7 @@ python310:
     #- python-pyquery  # testfull rebuild after webtest, skipped, fails due to new version of libxml2
     #- python-crochet #skipped
     #- fedora-messaging #skipped
+    #- python-smartcols #skipped
 
     #- python-vine
     #- python-case
@@ -764,7 +775,6 @@ python310:
     #- python-nose-cover3
     #- python-billiard
     #- python-kombu
-    #- python-msgpack
     #- python-celery
     #- bodhi #skipped
     #- fedpkg  # not blocking #skipped
@@ -784,7 +794,6 @@ python310:
     #- python-tables #skipped
     #- python-numpydoc #skipped
     #- pybind11 # testfull, not blocking #skipped
-    #- python-sortedcontainers  # testfull, not blocking #skipped
     #- python-Bottleneck #skipped
     #- python-sphinx-hoverxref
     #- python-hypothesis  # testfull, not blocking #skipped
@@ -839,11 +848,11 @@ python310:
 
     #- python-werkzeug #with tests
     #- python-sphinxcontrib-websupport #with tests
-    #- python-trio #with tests
     #- python-dns #with tests
     
     # Don't forget to rebuild this later
     #- python-nbconvert  # not blocking #skipped
+    #- python-cherrypy # testfull skipped
 
     #TODO:
     #- python-molecule:
