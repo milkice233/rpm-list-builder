@@ -224,7 +224,7 @@ python310:
     #- python-more-itertools
     #- automake
     #- rpm
-    #- unbound #skipped
+    #- unbound
     #- pycairo
     #- Cython  # testfull, not blocking (SKIPed)
 
@@ -753,21 +753,14 @@ python310:
     #- rpkg
     #- python-django #skipped
     #- python3-openid
-    # CONTINUE HERE
-    #- python-openid-cla #skipped
-    #- python-openid-teams #skipped
-    #- python-pyramid-fas-openid #skipped
-    #- python-fedora #skipped
-    #- fedmsg #skipped
-    #- pungi #skipped
+    #- python-openid-cla
+    #- python-openid-teams
+    #- python-pyramid-fas-openid
+    #- python-fedora
+    #- fedmsg
+    #- pungi
     #- python-backoff
-    #- cloud-init  # not blocking #skipped
-    #- libsolv #skipped
-    #- fedmod #skipped
-    #- python-pyquery  # testfull rebuild after webtest, skipped, fails due to new version of libxml2
-    #- python-crochet #skipped
-    #- fedora-messaging #skipped
-    #- python-smartcols #skipped
+    #- libsolv
 
     #- python-vine
     #- python-case
@@ -776,40 +769,42 @@ python310:
     #- python-billiard
     #- python-kombu
     #- python-celery
+    #- python-pyquery  # testfull rebuild after webtest, skipped, fails due to new version of libxml2
+    #- python-crochet #skipped
+    #- fedora-messaging #skipped
+    #- python-smartcols #skipped
+    #- cloud-init  # not blocking #skipped
+    #- fedmod #skipped
     #- bodhi #skipped
     #- fedpkg  # not blocking #skipped
 
     ## this can run sooner
     #- gdb  # not blocking
-    #- openmpi #skipped - failure not related with Python 3.10
-    #- mpich #skipped
+    #- openmpi
+    #- mpich
     #- python-dill
     #- mpi4py #skipped
     #- vtk #skipped
-    #- boost  # not blocking #skipped
+    #- boost  # not blocking
 
     #- python-requests  # testfull, not blocking
     #- python-numexpr
     #- librepo # testfull rebuild
-    #- python-tables #skipped
-    #- python-numpydoc #skipped
-    #- pybind11 # testfull, not blocking #skipped
-    #- python-Bottleneck #skipped
+    #- python-tables
+    #- python-numpydoc
+    #- pybind11 # testfull, not blocking
     #- python-sphinx-hoverxref
-    #- python-hypothesis  # testfull, not blocking #skipped
+    #- python-sphinx_selective_exclude
 
     #- linkchecker
-    #- python3-docs #(updated!)
-    #- python-ipykernel #skipped
-    #- python-testtools
+    #- python-ipykernel
+    #- python-Bottleneck #skipped
+    #- python-hypothesis  # testfull, not blocking #skipped
+    #- python3-docs #(updated!) #skipped
+    #- python-testtools #skipped
 
     # additional bootstrap loops (isolated):
 
-    #TODO: freeipa-healthcheck bootstrap loop
-    #https://src.fedoraproject.org/rpms/pki-core/pull-request/9
-    #https://src.fedoraproject.org/rpms/freeipa-healthcheck/pull-request/2
-    #TODO: python-nbclient bootstrap
-    #https://src.fedoraproject.org/rpms/python-nbclient/pull-request/1
     #- python-zbase32:
     #    macros:
     #      _with_bootstrap: 1
@@ -823,21 +818,30 @@ python310:
     #    macros:
     #      _without_check: 1
     #- python-lit
-    #- marshallparser
+    #- marshalparser
     #- clang
 
+    - python-werkzeug #with tests
+    - python-sphinxcontrib-websupport #with tests
+    - python-dns #with tests
+    
+    # Don't forget to rebuild this later
+    #- python-nbconvert  # not blocking #skipped
+    #- python-cherrypy # testfull skipped
+
+    #- python-pypandoc
     #- python-pcodedmp:
     #    macros:
     #      _with_bootstrap: 1
-    #- python-oletools
-    #- python-pcodedmp
+    #- python-oletools # skipped
+    #- python-pcodedmp # skipped
 
     #- ara:
     #    replaced_macros:
-    #      with_docs: 0
+    #      _with_docs: 0
     #- ara
 
-    #- python-libcst
+    #- python-libcst:
     #    macros:
     #      _without_tests: 1
     #- python-hypothesmith
@@ -845,14 +849,6 @@ python310:
 
     #- python-pyface:
     #    macros:
-
-    #- python-werkzeug #with tests
-    #- python-sphinxcontrib-websupport #with tests
-    #- python-dns #with tests
-    
-    # Don't forget to rebuild this later
-    #- python-nbconvert  # not blocking #skipped
-    #- python-cherrypy # testfull skipped
 
     #TODO:
     #- python-molecule:
