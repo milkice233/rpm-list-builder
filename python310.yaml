@@ -835,6 +835,7 @@ python310:
     #- python-hypothesis  # testfull, not blocking #skipped
     #- bodhi #skipped
     #- fedpkg  # not blocking #skipped
+    #- python-virtualenv  # with tests, remove xonsh
 
     #- python-pypandoc
     #- python-pcodedmp:
