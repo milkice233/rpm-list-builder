@@ -310,7 +310,7 @@ python310:
     #- python-argcomplete
     #- python-u-msgpack-python
     #- python-pytest-expect
-    #- python-sqlalchemy: # !!! TODO: opened bgz
+    #- python-sqlalchemy:
     #    macros:
     #      _without_xdist: 1
     #- python-sphinxcontrib-websupport:
@@ -463,6 +463,9 @@ python310:
     #- breezy  # only blocks pip
     #- python-patiencediff
     #- python-paramiko
+    #- python-markdown-it-py
+    #- python-mdit-py-plugins
+    #- python-myst-parser
     #- python-pip  # testfull rebuild, wait for breezy, not blocking
     #- python-sqlalchemy  # xdist enabled tests, no need to build, just clean-up
     #- python-path
@@ -504,9 +507,6 @@ python310:
     #- rpmlint
     #- createrepo_c
 
-    #- pyflakes # rm pyflakes/test/test_api.py in prep # XXX
-    #- python-flake8 # XXX
-    #- python-pytest-flake8 # XXX
     #- python-httplib2
     #- python-typing-extensions
     #- python-yarl # disabled failing test https://pastebin.com/5ivfgsXz
@@ -751,7 +751,7 @@ python310:
     #- python-gssapi
     #- python-requests-gssapi
     #- rpkg
-    #- python-django #skipped
+    #- python-django
     #- python3-openid
     #- python-openid-cla
     #- python-openid-teams
@@ -769,22 +769,20 @@ python310:
     #- python-billiard
     #- python-kombu
     #- python-celery
-    #- python-pyquery  # testfull rebuild after webtest, skipped, fails due to new version of libxml2
-    #- python-crochet #skipped
-    #- fedora-messaging #skipped
-    #- python-smartcols #skipped
+    #- python-crochet
+    #- fedora-messaging
     #- cloud-init  # not blocking #skipped
-    #- fedmod #skipped
-    #- bodhi #skipped
-    #- fedpkg  # not blocking #skipped
+
+    #- python-smartcols
+    #- fedmod
 
     ## this can run sooner
     #- gdb  # not blocking
     #- openmpi
     #- mpich
     #- python-dill
-    #- mpi4py #skipped
-    #- vtk #skipped
+    #- mpi4py
+    #- vtk
     #- boost  # not blocking
 
     #- python-requests  # testfull, not blocking
@@ -798,10 +796,10 @@ python310:
 
     #- linkchecker
     #- python-ipykernel
-    #- python-Bottleneck #skipped
-    #- python-hypothesis  # testfull, not blocking #skipped
-    #- python3-docs #(updated!) #skipped
-    #- python-testtools #skipped
+    #- python-Bottleneck
+    #- python-docs-theme
+    #- python3-docs #(updated!)
+    #- python-testtools
 
     # additional bootstrap loops (isolated):
 
@@ -813,6 +811,10 @@ python310:
     #      _with_bootstrap: 1
     #- pyutil
     #- python-zbase32
+    #TODO: loop between pyface & traitsui
+    #- python-pyface
+    #- python-traitsui
+    #- python-Traits
 
     #- python-lit:
     #    macros:
@@ -821,13 +823,18 @@ python310:
     #- marshalparser
     #- clang
 
-    - python-werkzeug #with tests
-    - python-sphinxcontrib-websupport #with tests
-    - python-dns #with tests
+    #- python-werkzeug #with tests
+    #- python-dns #with tests
     
     # Don't forget to rebuild this later
     #- python-nbconvert  # not blocking #skipped
     #- python-cherrypy # testfull skipped
+    #- xapian-bindings
+    #- python-sphinxcontrib-websupport #with tests
+    #- python-pyquery  # testfull rebuild after webtest, skipped, fails due to new version of libxml2
+    #- python-hypothesis  # testfull, not blocking #skipped
+    #- bodhi #skipped
+    #- fedpkg  # not blocking #skipped
 
     #- python-pypandoc
     #- python-pcodedmp:
@@ -836,7 +843,7 @@ python310:
     #- python-oletools # skipped
     #- python-pcodedmp # skipped
 
-    #- ara:
+    #- ara: # skipped
     #    replaced_macros:
     #      _with_docs: 0
     #- ara
@@ -847,16 +854,8 @@ python310:
     #- python-hypothesmith
     #- python-libcst
 
-    #- python-pyface:
-    #    macros:
-
-    #TODO:
-    #- python-molecule:
-    #    replaced_macros:
-    #    #     with_docs: 0
     #- python-elementpath:
     #    macros:
     #      _without_tests: 1
     #- python-xmlschema
     #- python-elementpath
-    #- pytest
